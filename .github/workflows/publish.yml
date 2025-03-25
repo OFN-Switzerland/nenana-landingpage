@@ -43,21 +43,21 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-#      - name: Set Status Message
-#        id: set_status
-#        shell: bash
-#        run: |
-#          if [ "${{ job.status }}" == "success" ]; then
-#            echo "STATUS_MESSAGE=Build completed successfully, image pushed. ${{ steps.meta.outputs.tags }} ${{ steps.meta.outputs.labels }} :white_check_mark:" >> $GITHUB_ENV
-#          else
-#            echo "STATUS_MESSAGE=:boom: :boom: :boom: Build failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
-#          fi
-#
-#      - name: Mattermost Notification
-#        uses: mattermost/action-mattermost-notify@master
-#        with:
-#          MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
-#          TEXT: |
-#            This is a message from ${{ github.repository }}.
-#            [Pipeline](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) ${{ env.STATUS_MESSAGE }}
-#          MATTERMOST_USERNAME: ${{ github.triggering_actor }}
+      - name: Set Status Message
+        id: set_status
+        shell: bash
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "STATUS_MESSAGE=Build completed successfully, image pushed. ${{ steps.meta.outputs.tags }} ${{ steps.meta.outputs.labels }} :white_check_mark:" >> $GITHUB_ENV
+          else
+            echo "STATUS_MESSAGE=:boom: :boom: :boom: Build failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
+          fi
+
+      - name: Mattermost Notification
+        uses: mattermost/action-mattermost-notify@master
+        with:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+          TEXT: |
+            This is a message from ${{ github.repository }}.
+            [Pipeline](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) ${{ env.STATUS_MESSAGE }}
+          MATTERMOST_USERNAME: ${{ github.triggering_actor }}
