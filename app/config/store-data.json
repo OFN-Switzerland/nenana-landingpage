@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "date": "2025-03-25T14:48:00Z",
+  "stores": [
+    {
+      "id": 1,
+      "name": "Open Food Network Australia",
+      "ofnUrl": "https://openfoodnetwork.org.au"
+    },
+    {
+      "id": 2,
+      "name": "Open Food Network Canada",
+      "ofnUrl": "https://openfoodnetwork.ca"
+    }
+  ]
+}

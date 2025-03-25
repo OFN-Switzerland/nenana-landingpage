@@ -1,9 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme {
+  --font-display: "Open Sans", "sans-serif";
+  --font-anton: "Anton", "sans-serif";
+}
+
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: blue;
-  --color-secondary: teal;
+  --color-primary: #046c31;
+  --color-secondary: #ff0000;
+}
+
+html, body {
+  font-family: var(--font-display), "sans-serif";
 }

@@ -1,10 +1,10 @@
 node_modules
 .idea
 .yarn/cache
-.yarn/install-state.gz
 
 /.cache
 /build
 /dist
 .env
 .react-router/
+.yarn/install-state.gz

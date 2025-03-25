@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 import vitePluginSvgr from 'vite-plugin-svgr'
 
 export default defineConfig(() => ({
-	plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), ViteImageOptimizer(), vitePluginSvgr()],
+	plugins: [reactRouter(), tailwindcss(), tsconfigPaths(), ViteImageOptimizer(), vitePluginSvgr()],
 	server: {
 		host: true,
 	},
