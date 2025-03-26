@@ -100,6 +100,8 @@ export function Layout({ children }: PropsWithChildren) {
 		}
 	}, [])
 
+	IfailHard()
+
 	return (
 		<html lang={locale} dir={i18n.dir()} className={cn(['h-svh'])}>
 			<head>

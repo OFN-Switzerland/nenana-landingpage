@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push-image:
+  build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -43,14 +43,19 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+  notify:
+    needs: build-and-push
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
       - name: Set Status Message
         id: set_status
         shell: bash
         run: |
-          if [ "${{ job.status }}" == "success" ]; then
-            echo "STATUS_MESSAGE=Build completed successfully, image pushed. ${{ steps.meta.outputs.tags }} ${{ steps.meta.outputs.labels }} :white_check_mark:" >> $GITHUB_ENV
+          if [ "${{ needs.build-and-push.result }}" == "success" ]; then
+            echo "STATUS_MESSAGE=Successfully built and pushed the docker image ${{ steps.meta.outputs.tags }} ${{ steps.meta.outputs.labels }} :white_check_mark:" >> $GITHUB_ENV
           else
-            echo "STATUS_MESSAGE=:boom: :boom: :boom: Build failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
+            echo "STATUS_MESSAGE=:boom: :boom: :boom: Building the docker image failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
           fi
 
       - name: Mattermost Notification
@@ -59,5 +64,5 @@ jobs:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
           TEXT: |
             This is a message from ${{ github.repository }}.
-            [Pipeline](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) ${{ env.STATUS_MESSAGE }}
+            [Pipeline](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}): ${{ env.STATUS_MESSAGE }}
           MATTERMOST_USERNAME: ${{ github.triggering_actor }}

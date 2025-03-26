@@ -9,7 +9,7 @@ on:
       - '**'
 
 jobs:
-  Build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -22,14 +22,19 @@ jobs:
           yarn install
           yarn run build
 
+  notify:
+    needs: build
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
       - name: Set Status Message
         id: set_status
         shell: bash
         run: |
-          if [ "${{ job.status }}" == "success" ]; then
-            echo "STATUS_MESSAGE=Build completed successfully :white_check_mark:" >> $GITHUB_ENV
+          if [ "${{ needs.build.result }}" == "success" ]; then
+            echo "STATUS_MESSAGE=Successfully built the app for the latest commit on main :white_check_mark:" >> $GITHUB_ENV
           else
-            echo "STATUS_MESSAGE=:boom: :boom: :boom: Build failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
+            echo "STATUS_MESSAGE=:boom: :boom: :boom: Building the app based on the latest commit on main failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
           fi
 
       - name: Mattermost Notification
@@ -38,5 +43,5 @@ jobs:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
           TEXT: |
             This is a message from ${{ github.repository }}.
-            [Pipeline](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) ${{ env.STATUS_MESSAGE }}
+            [Pipeline](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}): ${{ env.STATUS_MESSAGE }}
           MATTERMOST_USERNAME: ${{ github.triggering_actor }}
