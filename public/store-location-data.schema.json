@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "forwardUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["id", "name", "description", "forwardUrl"]
+      }
+    }
+  },
+  "required": ["version", "date", "stores"]
+}

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { useLang } from '~/hooks/use-lang.tsx'
 import { StoreCard } from '~/components/home/store-card.tsx'
 import { useRouteLoaderData } from 'react-router'
 import { HomeRouteLoaderData } from '~/routes/home.tsx'
@@ -8,7 +7,6 @@ import { Alert } from '~/components/ui/alert.tsx'
 export const StoreSelection = () => {
 	const loaderData = useRouteLoaderData<HomeRouteLoaderData>('routes/home')
 	const { t } = useTranslation()
-	const { lang } = useLang()
 
 	if (!loaderData?.storeData) {
 		return (
