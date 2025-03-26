@@ -2,13 +2,13 @@ import { resolve } from 'node:path'
 import Backend from 'i18next-fs-backend'
 import { RemixI18Next } from 'remix-i18next/server'
 import i18n from '~/i18n'
-import { i18nextCookie } from '~/services/cookies/i18next-cookie.ts'
+import { i18nextCookieServer } from '~/services/cookies/i18next-cookie.server.ts'
 
 const i18nextServer = new RemixI18Next({
 	detection: {
 		supportedLanguages: i18n.supportedLngs,
 		fallbackLanguage: i18n.fallbackLng,
-		cookie: i18nextCookie,
+		cookie: i18nextCookieServer,
 		order: ['cookie', 'header', 'session'],
 	},
 	// This is the configuration for i18next used

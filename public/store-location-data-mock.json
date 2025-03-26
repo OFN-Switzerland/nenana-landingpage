@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "date": "2025-03-25T14:48:00Z",
+  "stores": [
+    {
+      "id": 1,
+      "name": "Open Food Network Australia",
+      "description": "Australia's local food marketplace",
+      "forwardUrl": "https://openfoodnetwork.org.au"
+    },
+    {
+      "id": 2,
+      "name": "Open Food Network Canada",
+      "description": "Canada's local food marketplace",
+      "forwardUrl": "https://openfoodnetwork.ca"
+    },
+    {
+      "id": 3,
+      "name": "Open Food Network UK",
+      "description": "United Kingdom's local food marketplace",
+      "forwardUrl": "https://openfoodnetwork.org.uk"
+    },
+    {
+      "id": 4,
+      "name": "Open Food Network USA",
+      "description": "United States' local food marketplace",
+      "forwardUrl": "https://openfoodnetwork.org"
+    },
+    {
+      "id": 5,
+      "name": "Open Food Network South Africa",
+      "description": "South Africa's local food marketplace",
+      "forwardUrl": "https://openfoodnetwork.org.za"
+    },
+    {
+      "id": 6,
+      "name": "Open Food Network France",
+      "description": "France's local food marketplace",
+      "forwardUrl": "https://openfoodnetwork.fr"
+    }
+  ]
+}
