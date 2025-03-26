@@ -24,6 +24,8 @@ import { Button } from '~/components/ui/button.tsx'
 import { useTranslation } from 'react-i18next'
 import { logger } from '~/lib/logger.ts'
 import { RedirectOverlay } from '~/components/home/redirect-overlay.tsx'
+import { useIsDevice } from '~/hooks/use-is-device.tsx'
+import { InfoIosInstall } from '~/components/home/info-ios-install.tsx'
 
 export const loader = async ({ request, params }: LoaderFunctionArgs) => {
 	const t = await i18nextServer.getFixedT(request)
@@ -103,10 +105,14 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function Home() {
 	const loaderData = useLoaderData<HomeRouteLoaderData>()
 	const { t } = useTranslation()
+	const { isIOS } = useIsDevice()
 	return (
-		<div className={'flex grow flex-col items-center gap-8'}>
+		<div className={'flex grow flex-col items-center gap-8 pb-8'}>
 			<HomeHero />
-			<HomeInfo />
+			<div className={'flex flex-col items-center gap-8 px-2 md:px-0'}>
+				<HomeInfo />
+				{isIOS && <InfoIosInstall />}
+			</div>
 			<div className={'max-w-3xl'}>
 				<StoreSelection />
 			</div>

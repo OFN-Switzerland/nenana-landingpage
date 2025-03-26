@@ -1,0 +1,49 @@
+{
+  "actions": {
+    "cancel": "Cancel",
+    "info": "More information"
+  },
+  "common": {
+    "404": {
+      "message": "The page you were looking for does not exist.",
+      "title": "Page not found"
+    },
+    "footerLegalInformation": "Legal information",
+    "footerText": "© {{year}} NeNaNA - All rights reserved"
+  },
+  "home": {
+    "hero": {
+      "sub": "Netzwerk Natürliche Nahrung"
+    },
+    "info": {
+      "description": "To make it easier and faster for you to reach your store, your chosen pick-up location will be saved and automatically selected the next time you visit this website.",
+      "title": "Choose your preferred pick-up location"
+    },
+    "infoIosInstall": {
+      "description": "1. Tap the share button at the bottom of the browser. 2. Scroll down and tap \"Add to Home Screen\".",
+      "title": "You can install this website on your iPhone"
+    }
+  },
+  "redirectOverlay": {
+    "description": "You will be redirected to the new page in a few seconds. Click cancel or press Esc to choose another pick-up location",
+    "title": "Redirecting..."
+  },
+  "routes": {
+    "home": {
+      "description": "Choose a store to be forwarded to the next time you visit this site",
+      "title": "NeNaNa"
+    }
+  },
+  "storeInfo": {
+    "address": "Address",
+    "contact": "Contact"
+  },
+  "storeSelection": {
+    "error": "There was an error loading the store data"
+  },
+  "userActions": {
+    "goToSelection": "Go to selection",
+    "goToStore": "Go to store",
+    "select": "Select"
+  }
+}

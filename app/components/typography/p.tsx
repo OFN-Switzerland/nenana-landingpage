@@ -3,13 +3,13 @@ import React from 'react'
 
 import { cn } from '~/lib/utils'
 
-const paragraphVariants = cva('leading-7 [&:not(:first-child)]:mt-6', {
+const paragraphVariants = cva('mb-6 leading-7', {
 	variants: {
 		variant: {
 			default: '',
-			sm: 'text-sm font-light leading-6',
-			lead: 'text-lg font-light leading-8 md:text-xl',
-			muted: 'text-sm text-muted-foreground',
+			sm: 'text-sm leading-6 font-light',
+			lead: 'text-lg leading-8 font-light md:text-xl',
+			muted: 'text-muted-foreground text-sm',
 		},
 	},
 	defaultVariants: {

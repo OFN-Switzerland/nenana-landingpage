@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { H3 } from '~/components/typography/h3.tsx'
 import { P } from '~/components/typography/p.tsx'
 import { HomeRouteLoaderData } from '~/routes/home.tsx'
@@ -7,28 +7,32 @@ import { useRouteLoaderData } from 'react-router'
 import { logger } from '~/lib/logger.ts'
 import { Button } from '~/components/ui/button.tsx'
 
-const COUNTDOWN = 3
+const COUNTDOWN = 4
 
 export const RedirectOverlay = () => {
 	const loaderData = useRouteLoaderData<HomeRouteLoaderData>('routes/home')
-	const [show, setShow] = useState(false)
-	const [timeLeft, setTimeLeft] = useState<number | null>(null)
+	const [timeLeft, setTimeLeft] = useState<number>(COUNTDOWN)
 	const { t } = useTranslation()
+	const dialogRef = useRef<HTMLDialogElement>(null)
+
+	const openDialog = () => {
+		dialogRef.current?.showModal()
+	}
 
 	useEffect(() => {
 		logger.debug({ loaderData })
 		if (loaderData?.isValidPreferences) {
-			setShow(true)
+			openDialog()
 			setTimeLeft(COUNTDOWN)
 		}
 	}, [loaderData])
 
 	useEffect(() => {
-		if (!show) return
+		if (!dialogRef.current?.open) return
 
 		const intervalId = setInterval(() => {
 			setTimeLeft((prev) => {
-				if (prev === null) return null
+				if (prev === 0) return 0
 				if (prev <= 1) {
 					clearInterval(intervalId)
 					return 0
@@ -38,22 +42,23 @@ export const RedirectOverlay = () => {
 		}, 1000)
 
 		return () => clearInterval(intervalId)
-	}, [show])
+	}, [dialogRef.current?.open])
 
 	useEffect(() => {
-		if (show && timeLeft === 0 && loaderData?.storeRedirectUrl) {
+		if (dialogRef.current?.open && timeLeft === 0 && loaderData?.storeRedirectUrl) {
 			window.location.href = loaderData?.storeRedirectUrl
 		}
 	}, [timeLeft])
 
 	const onCancelClick = () => {
-		setShow(false)
+		dialogRef.current?.close()
 	}
 
 	return (
 		<>
-			<dialog open={show} className="modal modal-bottom sm:modal-middle">
+			<dialog ref={dialogRef} className="modal modal-bottom sm:modal-middle">
 				<div className="modal-box">
+					<progress className="progress w-full" value={timeLeft} max={COUNTDOWN}></progress>
 					<H3>{t('redirectOverlay.title', 'Redirecting...')}</H3>
 					<P>
 						{t(
@@ -62,10 +67,7 @@ export const RedirectOverlay = () => {
 						)}
 					</P>
 					<div className="modal-action">
-						<div className={'flex flex-row items-center gap-4'}>
-							<div>{timeLeft}</div>
-							<Button onClick={onCancelClick}>{t('actions.cancel', 'Cancel')}</Button>
-						</div>
+						<Button onClick={onCancelClick}>{t('actions.cancel', 'Cancel')}</Button>
 					</div>
 				</div>
 			</dialog>

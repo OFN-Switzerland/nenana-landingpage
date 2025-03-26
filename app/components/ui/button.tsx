@@ -12,8 +12,10 @@ const variants = cva('btn', {
 			success: 'btn-success',
 			outline: 'btn-outline',
 			neutral: 'btn-neutral',
+			ghost: 'btn-ghost',
 		},
 		size: {
+			xs: 'btn-xs',
 			sm: 'btn-sm',
 			md: 'btn-md',
 			lg: 'btn-lg',
@@ -32,9 +34,9 @@ interface Props
 	className?: string
 }
 
-export function Button({ children, variant, className, ...rest }: Props) {
+export function Button({ children, variant, size, className, ...rest }: Props) {
 	return (
-		<button className={cn([variants({ variant }), className])} {...rest}>
+		<button className={cn([variants({ variant, size }), className])} {...rest}>
 			{children}
 		</button>
 	)

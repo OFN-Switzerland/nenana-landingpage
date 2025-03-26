@@ -9,7 +9,7 @@ const variants = cva('alert', {
 			primary: 'alert-primary',
 			secondary: 'alert-secondary',
 			warning: 'alert-warning',
-			success: 'alert-success',
+			success: 'alert-success text-primary-content',
 			neutral: 'alert-neutral',
 			info: 'alert-info',
 			error: 'alert-error',

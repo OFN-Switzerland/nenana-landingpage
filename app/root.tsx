@@ -30,6 +30,7 @@ import './tailwind.css'
 export const links: LinksFunction = () => [
 	{ rel: 'icon', href: '/favicon.png', type: 'image/png' },
 	{ rel: 'icon', href: '/favicon.ico', type: 'image/png' },
+	{ rel: 'manifest', href: '/manifest.json', crossOrigin: 'use-credentials' },
 ]
 
 export const headers: HeadersFunction = () => {

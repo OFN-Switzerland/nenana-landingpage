@@ -1,7 +1,6 @@
 import { Logo } from '~/components/theme/logo.tsx'
 import { useTranslation } from 'react-i18next'
-import { H1 } from '~/components/typography/h1.tsx'
-import { P } from '~/components/typography/p.tsx'
+import { LogoText } from '~/components/theme/logo-text.tsx'
 
 export const HomeHero: React.FC = () => {
 	const { t } = useTranslation()
@@ -9,8 +8,8 @@ export const HomeHero: React.FC = () => {
 		<div className={'bg-primary text-primary-content relative w-full'}>
 			<div className={'mx-auto flex flex-col items-center gap-2 p-8'}>
 				<Logo variant={'xl'} />
-				<H1>{t('home.hero.title', 'NeNaNa')}</H1>
-				<P>{t('home.hero.sub', 'Netzwerk Natürliche Nahrung')}</P>
+				<LogoText variant={'sm'} />
+				<p className={'text-lg'}>{t('home.hero.sub', 'Netzwerk Natürliche Nahrung')}</p>
 			</div>
 		</div>
 	)
