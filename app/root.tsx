@@ -1,14 +1,14 @@
 import {
-  data,
-  HeadersFunction,
-  Links,
-  type LinksFunction,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLoaderData,
-  useLocation,
+	data,
+	HeadersFunction,
+	Links,
+	type LinksFunction,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	useLoaderData,
+	useLocation,
 } from 'react-router'
 import React, { PropsWithChildren, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -28,8 +28,8 @@ import './webfonts.css'
 import './tailwind.css'
 
 export const links: LinksFunction = () => [
-	{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
-	{ rel: 'icon', href: '/favicon.ico', type: 'image/svg+xml' },
+	{ rel: 'icon', href: '/favicon.png', type: 'image/png' },
+	{ rel: 'icon', href: '/favicon.ico', type: 'image/png' },
 ]
 
 export const headers: HeadersFunction = () => {
