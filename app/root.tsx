@@ -1,14 +1,14 @@
 import {
-	data,
-	HeadersFunction,
-	Links,
-	type LinksFunction,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
-	useLoaderData,
-	useLocation,
+  data,
+  HeadersFunction,
+  Links,
+  type LinksFunction,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+  useLocation,
 } from 'react-router'
 import React, { PropsWithChildren, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -24,6 +24,7 @@ import { cn } from '~/lib/utils.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getLocale } from '~/services/get-locale.ts'
 import type { Route } from './+types/root.ts'
+import './webfonts.css'
 import './tailwind.css'
 
 export const links: LinksFunction = () => [
@@ -105,12 +106,6 @@ export function Layout({ children }: PropsWithChildren) {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-					rel="stylesheet"
-				/>
 				<Meta />
 				<Links />
 			</head>

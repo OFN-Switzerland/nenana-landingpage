@@ -1,11 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@theme {
-  --font-display: "Open Sans", "sans-serif";
-  --font-anton: "Anton", "sans-serif";
-}
-
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
@@ -15,6 +10,16 @@
   --color-secondary: #ff0000;
 }
 
-html, body {
-  font-family: var(--font-display), "sans-serif";
+html, :host {
+  font-family: "Open Sans", ui-sans-serif, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Advent Pro", ui-sans-serif, sans-serif;
+}
+
+.alert {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", ui-sans-serif, sans-serif;
+  }
 }

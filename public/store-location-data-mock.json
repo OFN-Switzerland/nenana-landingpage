@@ -6,36 +6,102 @@
       "id": 1,
       "name": "Open Food Network Australia",
       "description": "Australia's local food marketplace",
+      "address": {
+        "street": "123 Fake St",
+        "city": "Melbourne",
+        "state": "VIC",
+        "zip": "3000",
+        "country": "Australia"
+      },
+      "contact": {
+        "phone": "+61 3 1234 5678",
+        "email": "test@test.com"
+      },
       "forwardUrl": "https://openfoodnetwork.org.au"
     },
     {
       "id": 2,
       "name": "Open Food Network Canada",
       "description": "Canada's local food marketplace",
+      "address": {
+        "street": "456 Fake St",
+        "city": "Toronto",
+        "state": "ON",
+        "zip": "M5V 2B8",
+        "country": "Canada"
+      },
+      "contact": {
+        "phone": "+61 3 1234 5678",
+        "email": "test@test.com"
+      },
       "forwardUrl": "https://openfoodnetwork.ca"
     },
     {
       "id": 3,
       "name": "Open Food Network UK",
       "description": "United Kingdom's local food marketplace",
+      "address": {
+        "street": "789 Fake St",
+        "city": "London",
+        "state": "England",
+        "zip": "SW1A 1AA",
+        "country": "United Kingdom"
+      },
+      "contact": {
+        "phone": "+61 3 1234 5678",
+        "email": "test@test.com"
+      },
       "forwardUrl": "https://openfoodnetwork.org.uk"
     },
     {
       "id": 4,
       "name": "Open Food Network USA",
       "description": "United States' local food marketplace",
+      "address": {
+        "street": "1010 Fake St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "country": "United States"
+      },
+      "contact": {
+        "phone": "+61 3 1234 5678",
+        "email": "test@test.com"
+      },
       "forwardUrl": "https://openfoodnetwork.org"
     },
     {
       "id": 5,
       "name": "Open Food Network South Africa",
       "description": "South Africa's local food marketplace",
+      "address": {
+        "street": "1212 Fake St",
+        "city": "Johannesburg",
+        "state": "Gauteng",
+        "zip": "2000",
+        "country": "South Africa"
+      },
+      "contact": {
+        "phone": "+61 3 1234 5678",
+        "email": "test@test.com"
+      },
       "forwardUrl": "https://openfoodnetwork.org.za"
     },
     {
       "id": 6,
       "name": "Open Food Network France",
       "description": "France's local food marketplace",
+      "address": {
+        "street": "1414 Fake St",
+        "city": "Paris",
+        "state": "Île-de-France",
+        "zip": "75001",
+        "country": "France"
+      },
+      "contact": {
+        "phone": "+61 3 1234 5678",
+        "email": "test@test.com"
+      },
       "forwardUrl": "https://openfoodnetwork.fr"
     }
   ]
