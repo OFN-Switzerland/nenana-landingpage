@@ -1,5 +1,5 @@
 FROM node:22-alpine AS base
-RUN corepack enable && corepack prepare yarn@4.8.1
+RUN corepack enable
 
 # Install dependencies
 FROM base AS deps
@@ -9,10 +9,10 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY .yarnrc.yml ./
-COPY .yarn ./.yarn/
 COPY package.json yarn.lock ./
 
-RUN yarn --immutable
+RUN yarn --version
+RUN yarn install --immutable
 
 # Build the application
 FROM base AS builder
