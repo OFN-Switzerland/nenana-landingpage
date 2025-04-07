@@ -1,6 +1,6 @@
 node_modules
 .idea
-.yarn/cache
+.yarn
 
 /.cache
 /build

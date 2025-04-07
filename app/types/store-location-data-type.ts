@@ -1,4 +1,4 @@
-interface StoreDataType {
+export interface StoreDataType {
 	version: number
 	date: string
 	stores: Store[]

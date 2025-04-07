@@ -1,33 +1,33 @@
+import { toNumber } from 'lodash-es'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 import {
 	data,
 	Link,
-	LoaderFunctionArgs,
+	type LoaderFunctionArgs,
 	type MetaFunction,
 	redirect,
 	useLoaderData,
 } from 'react-router'
-import React from 'react'
-import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
-import { Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
+import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
+import { type Route } from './+types/home.ts'
 import { HomeHero } from '~/components/home/hero.tsx'
+import { InfoIosInstall } from '~/components/home/info-ios-install.tsx'
+import { HomeInfo } from '~/components/home/info.tsx'
+import { RedirectOverlay } from '~/components/home/redirect-overlay.tsx'
+import { StoreSelection } from '~/components/home/store-selection.tsx'
+import { Button } from '~/components/ui/button.tsx'
+import { useIsDevice } from '~/hooks/use-is-device.tsx'
+import i18nextServer from '~/i18next.server.ts'
+import { logger } from '~/lib/logger.ts'
 import userPreferencesCookieSchema, {
-	UserPreferencesCookie,
+	type UserPreferencesCookie,
 	userPreferencesCookie,
 } from '~/services/cookies/store-selection-cookie.server.ts'
-import { Route } from './+types/home.ts'
-import i18nextServer from '~/i18next.server.ts'
-import { StoreSelection } from '~/components/home/store-selection.tsx'
-import { toNumber } from 'lodash-es'
+import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getStoreLocationData } from '~/services/get-store-location-data.ts'
-import { HomeInfo } from '~/components/home/info.tsx'
-import { Button } from '~/components/ui/button.tsx'
-import { useTranslation } from 'react-i18next'
-import { logger } from '~/lib/logger.ts'
-import { RedirectOverlay } from '~/components/home/redirect-overlay.tsx'
-import { useIsDevice } from '~/hooks/use-is-device.tsx'
-import { InfoIosInstall } from '~/components/home/info-ios-install.tsx'
 
-export const loader = async ({ request, params }: LoaderFunctionArgs) => {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const t = await i18nextServer.getFixedT(request)
 	const cookieHeader = request.headers.get('Cookie')
 	const userPrefsCookie = ((await userPreferencesCookie.parse(cookieHeader)) || {
@@ -107,17 +107,17 @@ export default function Home() {
 	const { t } = useTranslation()
 	const { isIOS } = useIsDevice()
 	return (
-		<div className={'flex grow flex-col items-center gap-8 pb-8'}>
+		<div className="flex grow flex-col items-center gap-8 pb-8">
 			<HomeHero />
-			<div className={'flex flex-col items-center gap-8 px-2 md:px-0'}>
+			<div className="flex flex-col items-center gap-8 px-2 md:px-0">
 				<HomeInfo />
 				{isIOS && <InfoIosInstall />}
 			</div>
-			<div className={'max-w-3xl'}>
+			<div className="max-w-3xl">
 				<StoreSelection />
 			</div>
 			<Link to={loaderData.storeRedirectUrl}>
-				<Button variant={'primary'} disabled={!loaderData.storeRedirectUrl}>
+				<Button variant="primary" disabled={!loaderData.storeRedirectUrl}>
 					{t('userActions.goToStore', 'Go to store')}
 				</Button>
 			</Link>

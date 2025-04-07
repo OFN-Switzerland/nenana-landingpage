@@ -1,6 +1,6 @@
+import { type Params } from 'react-router'
 import i18n from '~/i18n.ts'
 import i18nextServer from '~/i18next.server.ts'
-import { Params } from 'react-router'
 
 export const getLocale = async (request: Request, params?: Params<string>): Promise<string> => {
 	if (!params) {

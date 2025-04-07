@@ -1,6 +1,8 @@
+import React, { type PropsWithChildren, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
 	data,
-	HeadersFunction,
+	type HeadersFunction,
 	Links,
 	type LinksFunction,
 	Meta,
@@ -10,20 +12,19 @@ import {
 	useLoaderData,
 	useLocation,
 } from 'react-router'
-import React, { PropsWithChildren, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useChangeLanguage } from 'remix-i18next/react'
-import { DevModeOverlay } from '~/components/devmode-overlay'
-import { logger } from '~/lib/logger.ts'
-import { getTheme } from '~/services/theme.server'
-import versionFile from './version.json'
+import { type Route } from './+types/root.ts'
 import { plausibleClientEvent } from './lib/plausible/plausible-client-event.ts'
-import { getHostname } from '~/lib/plausible/get-hostname.ts'
+import versionFile from './version.json'
+import { DevModeOverlay } from '~/components/devmode-overlay'
+import { isClient } from '~/lib/is-client.ts'
+import { logger } from '~/lib/logger.ts'
 import { GenericAppEvents } from '~/lib/plausible/event-names.ts'
+import { getHostname } from '~/lib/plausible/get-hostname.ts'
 import { cn } from '~/lib/utils.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getLocale } from '~/services/get-locale.ts'
-import type { Route } from './+types/root.ts'
+import { getTheme } from '~/services/theme.server'
 import './webfonts.css'
 import './tailwind.css'
 
@@ -96,11 +97,9 @@ export function Layout({ children }: PropsWithChildren) {
 		plausibleClientEvent({ name: GenericAppEvents.PageView })
 	}, [location.pathname])
 
-	useEffect(() => {
-		if (window.ENV.VERSION !== version) {
-			logger.error('🔄 Should reload page or clear cache due to version mismatch')
-		}
-	}, [])
+	if (isClient() && window.ENV.VERSION !== version) {
+		logger.error('🔄 Should reload page or clear cache due to version mismatch')
+	}
 
 	return (
 		<html lang={locale} dir={i18n.dir()} className={cn(['h-svh'])}>
@@ -110,7 +109,7 @@ export function Layout({ children }: PropsWithChildren) {
 				<Meta />
 				<Links />
 			</head>
-			<body className={'h-svh'}>
+			<body className="h-svh">
 				{children}
 				<ScrollRestoration />
 				<Scripts />

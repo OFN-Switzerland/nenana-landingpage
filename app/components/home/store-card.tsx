@@ -1,13 +1,13 @@
-import { useTranslation } from 'react-i18next'
-import { Button } from '~/components/ui/button.tsx'
-import { Form, href, useRouteLoaderData } from 'react-router'
-import { HomeRouteLoaderData } from '~/routes/home.tsx'
-import { useMemo } from 'react'
-import { useLang } from '~/hooks/use-lang.tsx'
 import { toNumber } from 'lodash-es'
-import { cn } from '~/lib/utils.ts'
 import { CheckCircle2Icon } from 'lucide-react'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Form, href, useRouteLoaderData } from 'react-router'
 import { StoreInfoOverlay } from '~/components/home/store-info-overlay.tsx'
+import { Button } from '~/components/ui/button.tsx'
+import { useLang } from '~/hooks/use-lang.tsx'
+import { cn } from '~/lib/utils.ts'
+import { type HomeRouteLoaderData } from '~/routes/home.tsx'
 
 type Props = {
 	data: StoreDataType['stores'][0]
@@ -37,11 +37,11 @@ export const StoreCard: React.FC<Props> = ({ data }) => {
 					<div className="card-actions items-center justify-between">
 						<StoreInfoOverlay data={data} />
 						{isSelected ? (
-							<div className={'text-success'}>
+							<div className="text-success">
 								<CheckCircle2Icon size={32} />
 							</div>
 						) : (
-							<Button type="submit" variant={'outline'} size={'sm'}>
+							<Button type="submit" variant="outline" size="sm">
 								{t('userActions.select', 'Select')}
 							</Button>
 						)}

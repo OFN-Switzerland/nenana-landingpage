@@ -9,5 +9,5 @@ export default {
   printWidth: 100,
   bracketSameLine: true,
   plugins: ['prettier-plugin-tailwindcss'],
-  tailwindFunctions: ['clsx', 'cva'],
+  tailwindFunctions: ['clsx', 'cva', 'cn'],
 }

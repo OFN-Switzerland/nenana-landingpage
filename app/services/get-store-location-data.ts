@@ -1,3 +1,5 @@
+import { type StoreDataType } from '~/types/store-location-data-type.ts'
+
 export const getStoreLocationData = async () => {
 	let url = ''
 

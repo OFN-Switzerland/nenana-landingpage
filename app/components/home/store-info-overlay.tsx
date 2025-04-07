@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next'
-import { useRef } from 'react'
-import { P } from '~/components/typography/p.tsx'
-import { Button } from '~/components/ui/button.tsx'
 import { InfoIcon } from 'lucide-react'
+import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { H3 } from '~/components/typography/h3.tsx'
 import { H4 } from '~/components/typography/h4.tsx'
+import { P } from '~/components/typography/p.tsx'
+import { Button } from '~/components/ui/button.tsx'
 
 type Props = {
 	data: StoreDataType['stores'][0]
@@ -25,10 +25,10 @@ export const StoreInfoOverlay: React.FC<Props> = ({ data }) => {
 	return (
 		<>
 			<Button
-				variant={'ghost'}
-				size={'xs'}
+				variant="ghost"
+				size="xs"
 				onClick={openDialog}
-				type={'button'}
+				type="button"
 				name={t('actions.info', 'More information')}>
 				<InfoIcon />
 			</Button>
@@ -51,8 +51,8 @@ export const StoreInfoOverlay: React.FC<Props> = ({ data }) => {
 						<a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>
 					</P>
 					<div className="modal-action">
-						<div className={'flex flex-row items-center gap-4'}>
-							<Button type={'button'} onClick={onCancelClick}>
+						<div className="flex flex-row items-center gap-4">
+							<Button type="button" onClick={onCancelClick}>
 								{t('actions.cancel', 'Cancel')}
 							</Button>
 						</div>

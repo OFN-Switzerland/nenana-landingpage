@@ -1,18 +1,23 @@
-import { data, href, LoaderFunctionArgs, redirect, useLoaderData, useNavigate } from 'react-router'
 import React from 'react'
-import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
-import { Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
+import { useTranslation } from 'react-i18next'
+import {
+	data,
+	href,
+	type LoaderFunctionArgs,
+	redirect,
+	useLoaderData,
+	useNavigate,
+} from 'react-router'
+import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
+import { Button } from '~/components/ui/button.tsx'
 import userPreferencesCookieSchema, {
-	UserPreferencesCookie,
+	type UserPreferencesCookie,
 	userPreferencesCookie,
 } from '~/services/cookies/store-selection-cookie.server.ts'
-import i18nextServer from '~/i18next.server.ts'
+import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getStoreLocationData } from '~/services/get-store-location-data.ts'
-import { Button } from '~/components/ui/button.tsx'
-import { useTranslation } from 'react-i18next'
 
-export const loader = async ({ request, params }: LoaderFunctionArgs) => {
-	const t = await i18nextServer.getFixedT(request)
+export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const cookieHeader = request.headers.get('Cookie')
 	const userPrefsCookie = ((await userPreferencesCookie.parse(cookieHeader)) || {
 		storeRedirectUrl: '',
@@ -50,13 +55,13 @@ export default function Embed() {
 		await navigate(href('/'))
 	}
 	return (
-		<div className={'flex size-full grow flex-col'}>
-			<div className={'bg-primary'}>
-				<Button type={'button'} onClick={onGoToSelection} size={'xs'}>
+		<div className="flex size-full grow flex-col">
+			<div className="bg-primary">
+				<Button type="button" onClick={onGoToSelection} size="xs">
 					{t('userActions.goToSelection', 'Go to selection')}
 				</Button>
 			</div>
-			<iframe className={'grow'} src={loaderData.storeRedirectUrl} />
+			<iframe className="grow" src={loaderData.storeRedirectUrl} />
 		</div>
 	)
 }

@@ -1,11 +1,11 @@
-import { useTranslation } from 'react-i18next'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useRouteLoaderData } from 'react-router'
 import { H3 } from '~/components/typography/h3.tsx'
 import { P } from '~/components/typography/p.tsx'
-import { HomeRouteLoaderData } from '~/routes/home.tsx'
-import { useRouteLoaderData } from 'react-router'
-import { logger } from '~/lib/logger.ts'
 import { Button } from '~/components/ui/button.tsx'
+import { logger } from '~/lib/logger.ts'
+import { type HomeRouteLoaderData } from '~/routes/home.tsx'
 
 const COUNTDOWN = 4
 
@@ -48,7 +48,7 @@ export const RedirectOverlay = () => {
 		if (dialogRef.current?.open && timeLeft === 0 && loaderData?.storeRedirectUrl) {
 			window.location.href = loaderData?.storeRedirectUrl
 		}
-	}, [timeLeft])
+	}, [loaderData?.storeRedirectUrl, timeLeft])
 
 	const onCancelClick = () => {
 		dialogRef.current?.close()

@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '~/lib/utils'
 import { LogoTextSvg } from '~/components/theme/logos/text.tsx'
+import { cn } from '~/lib/utils'
 
 export const variants = cva(['object-contain'], {
 	variants: {

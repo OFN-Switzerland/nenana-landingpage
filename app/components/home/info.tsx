@@ -1,11 +1,11 @@
+import { InfoIcon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Alert } from '~/components/ui/alert.tsx'
-import { InfoIcon } from 'lucide-react'
 
 export const HomeInfo: React.FC = () => {
 	const { t } = useTranslation()
 	return (
-		<div className={'max-w-3xl'}>
+		<div className="max-w-3xl">
 			<Alert>
 				<InfoIcon />
 				<div>
