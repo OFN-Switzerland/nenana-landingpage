@@ -8,6 +8,7 @@ import { Button } from '~/components/ui/button.tsx'
 import { useLang } from '~/hooks/use-lang.tsx'
 import { cn } from '~/lib/utils.ts'
 import { type HomeRouteLoaderData } from '~/routes/home.tsx'
+import { type StoreDataType } from '~/types/store-location-data-type.ts'
 
 type Props = {
 	data: StoreDataType['stores'][0]

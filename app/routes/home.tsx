@@ -26,6 +26,7 @@ import userPreferencesCookieSchema, {
 } from '~/services/cookies/store-selection-cookie.server.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getStoreLocationData } from '~/services/get-store-location-data.ts'
+import { type StoreDataType } from '~/types/store-location-data-type.ts'
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const t = await i18nextServer.getFixedT(request)
