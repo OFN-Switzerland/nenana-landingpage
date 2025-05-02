@@ -8,6 +8,7 @@
       "message": "Die gesuchte Seite existiert nicht.",
       "title": "Seite nicht gefunden"
     },
+    "close": "Schliessen",
     "footerLegalInformation": "Rechtliche Hinweise",
     "footerText": "© {{year}} NeNaNA - Alle Rechte vorbehalten"
   },
@@ -37,6 +38,10 @@
       "title": "NeNaNa"
     }
   },
+  "store": {
+    "selectedStore": "Ausgewählter Standort",
+    "unknown": "Unbekannter Standort"
+  },
   "storeInfo": {
     "address": "Adresse",
     "contact": "Kontakt"
@@ -58,7 +63,7 @@
   },
   "userActions": {
     "goToSelection": "Zur Auswahl",
-    "goToStore": "Zum Laden",
+    "goToStore": "Zum gewählten Standort",
     "select": "Auswählen"
   }
 }

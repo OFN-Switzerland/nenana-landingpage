@@ -89,7 +89,6 @@ export const StoreSelection = () => {
 						: t('storeSelection.showMap', 'Show Map')}
 				</button>
 			</div>
-
 			{showMap ? <StoreMap stores={filteredStores} /> : <StoreResults stores={filteredStores} />}
 		</div>
 	)

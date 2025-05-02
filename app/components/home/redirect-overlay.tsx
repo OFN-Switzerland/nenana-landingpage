@@ -45,8 +45,14 @@ export const RedirectOverlay = () => {
 	}, [dialogRef.current?.open])
 
 	useEffect(() => {
+		// Don't redirect in dev
+		if (window.ENV.NODE_ENV === 'development') {
+			dialogRef.current?.close()
+			return
+		}
 		if (dialogRef.current?.open && timeLeft === 0 && loaderData?.storeRedirectUrl) {
 			window.location.href = loaderData?.storeRedirectUrl
+			dialogRef.current?.close()
 		}
 	}, [loaderData?.storeRedirectUrl, timeLeft])
 

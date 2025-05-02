@@ -5,7 +5,7 @@ import { cn } from '~/lib/utils'
 export const variants = cva(['object-contain'], {
 	variants: {
 		variant: {
-			sm: 'w-16',
+			sm: 'w-8',
 			md: 'w-20',
 			lg: 'w-32',
 			xl: 'w-48',

@@ -18,7 +18,6 @@ const layoutContainerVariants = cva(
 
 type Props = PropsWithChildren<VariantProps<typeof layoutContainerVariants>>
 
-const LayoutContainer: React.FC<Props> = ({ children, variant }) => {
+export const LayoutContainer: React.FC<Props> = ({ children, variant }) => {
 	return <div className={layoutContainerVariants({ variant })}>{children}</div>
 }
-export { LayoutContainer }

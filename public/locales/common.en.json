@@ -8,8 +8,9 @@
       "message": "The page you were looking for does not exist.",
       "title": "Page not found"
     },
+    "close": "Close",
     "footerLegalInformation": "Legal information",
-    "footerText": "© {{year}} NeNaNA - All rights reserved"
+    "footerText": "‎ {{year}} NeNaNA - All rights reserved"
   },
   "home": {
     "hero": {
@@ -37,6 +38,10 @@
       "title": "NeNaNa"
     }
   },
+  "store": {
+    "selectedStore": "Selected store",
+    "unknown": "Unknown store"
+  },
   "storeInfo": {
     "address": "Address",
     "contact": "Contact"
@@ -58,7 +63,7 @@
   },
   "userActions": {
     "goToSelection": "Go to selection",
-    "goToStore": "Go to store",
+    "goToStore": "Go to selected store",
     "select": "Select"
   }
 }

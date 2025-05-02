@@ -3,7 +3,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import {
 	data,
-	Link,
 	type LoaderFunctionArgs,
 	type MetaFunction,
 	redirect,
@@ -15,8 +14,9 @@ import { HomeHero } from '~/components/home/hero.tsx'
 import { InfoIosInstall } from '~/components/home/info-ios-install.tsx'
 import { HomeInfo } from '~/components/home/info.tsx'
 import { RedirectOverlay } from '~/components/home/redirect-overlay.tsx'
+import { SelectedStore } from '~/components/home/selected-store.tsx'
 import { StoreSelection } from '~/components/home/store-selection.tsx'
-import { Button } from '~/components/ui/button.tsx'
+import { Footer } from '~/components/layout/footer.tsx'
 import { useIsDevice } from '~/hooks/use-is-device.tsx'
 import i18nextServer from '~/i18next.server.ts'
 import { logger } from '~/lib/logger.ts'
@@ -110,19 +110,23 @@ export default function Home() {
 	return (
 		<div className="flex grow flex-col items-center gap-8 pb-8">
 			<HomeHero />
-			<div className="flex flex-col items-center gap-8 px-2 md:px-0">
-				<HomeInfo />
+			<div className="flex w-full max-w-3xl flex-col items-center gap-8 px-3 md:px-0">
+				{loaderData?.storeRedirectUrl ? (
+					<SelectedStore
+						storeId={loaderData.storeId}
+						storeRedirectUrl={loaderData.storeRedirectUrl}
+						stores={loaderData.storeData?.stores || []}
+					/>
+				) : (
+					<HomeInfo />
+				)}
 				{isIOS && <InfoIosInstall />}
 			</div>
-			<div className="w-full max-w-3xl">
+			<div className="w-full max-w-3xl px-3 md:px-0">
 				<StoreSelection />
 			</div>
-			<Link to={loaderData.storeRedirectUrl}>
-				<Button variant="primary" disabled={!loaderData.storeRedirectUrl}>
-					{t('userActions.goToStore', 'Go to store')}
-				</Button>
-			</Link>
 			{loaderData?.isValidPreferences && loaderData?.storeRedirectUrl && <RedirectOverlay />}
+			<Footer />
 		</div>
 	)
 }
