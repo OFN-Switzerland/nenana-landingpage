@@ -114,7 +114,7 @@ async function handleBrowserRequest(
 			...i18n, // spread the configuration
 			lng, // The locale we detected above
 			ns, // The namespaces the routes about to render wants to use
-			backend: { loadPath: resolve('./public/locales/{{lng}}/{{ns}}.json') },
+			backend: { loadPath: resolve('./public/locales/{{ns}}.{{lng}}.json') },
 		})
 
 	return new Promise((resolve, reject) => {

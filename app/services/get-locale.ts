@@ -11,8 +11,7 @@ export const getLocale = async (request: Request, params?: Params<string>): Prom
 			}
 		}
 	}
-	const urlLocale = params?.lang || i18n.fallbackLng
-	return (
-		i18n.supportedLngs.includes(urlLocale) ? urlLocale : await i18nextServer.getLocale(request)
-	) as string
+	const requestLang = await i18nextServer.getLocale(request)
+	const urlLocale = requestLang || params?.lang || i18n.fallbackLng
+	return (i18n.supportedLngs.includes(urlLocale) ? urlLocale : i18n.fallbackLng) as string
 }

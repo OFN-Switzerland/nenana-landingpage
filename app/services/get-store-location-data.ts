@@ -18,7 +18,9 @@ export const getStoreLocationData = async () => {
 	// Parse and validate data
 	const result = storeDataSchema.safeParse(data)
 	if (result.success) {
-		return result.data as StoreData
+		const stores = result.data.stores.filter((store) => store.status === 'active')
+
+		return { stores, date: result.data.date } as StoreData
 	} else {
 		throw new Error(result.error.message)
 	}

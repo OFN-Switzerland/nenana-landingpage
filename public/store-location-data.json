@@ -21,7 +21,8 @@
         "phone": "+41 78 953 76 42",
         "email": "dorji.tering@hotmail.com"
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-heiden/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-heiden/shop",
+      "status": "hidden"
     },
     {
       "id": 2,
@@ -42,28 +43,8 @@
         "phone": "+41 (0)61 701 1017",
         "email": "brodbeck@rechtsozial.ch"
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-rehetobel/shop"
-    },
-    {
-      "id": 3,
-      "name": "Reute",
-      "description": "",
-      "address": {
-        "street": "",
-        "city": "Reute",
-        "state": "Appenzell Ausserrhoden",
-        "zip": "9411",
-        "country": "Switzerland",
-        "position": {
-          "latitude": 47.4195905,
-          "longitude": 9.5726679
-        }
-      },
-      "contact": {
-        "phone": "",
-        "email": ""
-      },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-reute/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-rehetobel/shop",
+      "status": "hidden"
     },
     {
       "id": 4,
@@ -84,7 +65,8 @@
         "phone": "",
         "email": ""
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-stein/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-stein/shop",
+      "status": "hidden"
     },
     {
       "id": 5,
@@ -105,28 +87,8 @@
         "phone": "+41 (0)77 429 10 26",
         "email": "info@saienbruecke.ch"
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-urnasch/shop"
-    },
-    {
-      "id": 7,
-      "name": "Mörschwil",
-      "description": "",
-      "address": {
-        "street": "Gaiserwaldweg 56",
-        "city": "Mörschwil",
-        "state": "St. Gallen",
-        "zip": "9327",
-        "country": "Switzerland",
-        "position": {
-          "latitude": 47.4675534,
-          "longitude": 9.4227493
-        }
-      },
-      "contact": {
-        "phone": "",
-        "email": ""
-      },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-morschwil/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-urnasch/shop",
+      "status": "hidden"
     },
     {
       "id": 8,
@@ -147,7 +109,8 @@
         "phone": "",
         "email": ""
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-rebstein/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-rebstein/shop",
+      "status": "hidden"
     },
     {
       "id": 9,
@@ -168,14 +131,15 @@
         "phone": "",
         "email": ""
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-st-gallen/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-st-gallen/shop",
+      "status": "hidden"
     },
     {
       "id": 10,
       "name": "Wittenbach",
       "description": "",
       "address": {
-        "street": "",
+        "street": "Dorfstrasse 36",
         "city": "Wittenbach",
         "state": "St. Gallen",
         "zip": "9300",
@@ -186,10 +150,11 @@
         }
       },
       "contact": {
-        "phone": "",
-        "email": ""
+        "phone": "078 740 60 77",
+        "email": "sabrina@yogaambodensee.ch"
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-wittenbach/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-wittenbach/shop",
+      "status": "hidden"
     },
     {
       "id": 11,
@@ -210,7 +175,30 @@
         "phone": "+41 71 793 10 55",
         "email": "reuter.a@bluewin.ch"
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ai-appenzell/shop"
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ai-appenzell/shop",
+      "status": "hidden"
+    },
+    {
+      "id": 12,
+      "name": "Lüchingen",
+      "description": "",
+      "address": {
+        "street": "Im Moos 20",
+        "city": "Lüchingen",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9450",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.38371134327522,
+          "longitude": 9.563362092232879
+        }
+      },
+      "contact": {
+        "phone": "+41 (0)79 295 01 33",
+        "email": "claudia@gorbach.biz"
+      },
+      "forwardUrl": null,
+      "status": "active"
     }
   ]
 }

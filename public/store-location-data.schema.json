@@ -3,11 +3,12 @@
   "type": "object",
   "properties": {
     "version": {
-      "type": "integer"
+      "type": "number"
     },
     "date": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Date must be in ISO format"
     },
     "stores": {
       "type": "array",
@@ -15,11 +16,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer"
+            "type": "number"
           },
           "name": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Store name is required"
           },
           "description": {
             "type": ["string", "null"]
@@ -70,11 +72,15 @@
             }
           },
           "forwardUrl": {
-            "type": "string",
+            "type": ["string", "null"],
             "format": "uri"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "hidden"]
           }
         },
-        "required": ["id", "name", "address", "contact", "forwardUrl"]
+        "required": ["id", "name", "address", "contact", "forwardUrl", "status"]
       }
     }
   },

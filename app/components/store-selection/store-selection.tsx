@@ -8,7 +8,6 @@ import {
 	filterStores,
 	StoreSearchFilter,
 } from '~/components/store-selection/store-search-filter.tsx'
-import { StoreStateFilter } from '~/components/store-selection/store-state-filter.tsx'
 import { Alert } from '~/components/ui/alert.tsx'
 import { type HomeRouteLoaderData } from '~/routes/home.tsx'
 
@@ -37,15 +36,15 @@ export const StoreSelection = () => {
 	}
 
 	// Function to update the selected state in the URL
-	const setSelectedState = (state: string) => {
-		const newParams = new URLSearchParams(searchParams)
-		if (state) {
-			newParams.set('state', state)
-		} else {
-			newParams.delete('state')
-		}
-		setSearchParams(newParams, { replace: true })
-	}
+	// const setSelectedState = (state: string) => {
+	// 	const newParams = new URLSearchParams(searchParams)
+	// 	if (state) {
+	// 		newParams.set('state', state)
+	// 	} else {
+	// 		newParams.delete('state')
+	// 	}
+	// 	setSearchParams(newParams, { replace: true })
+	// }
 
 	// Function to clear all filters
 	const clearAllFilters = () => {
@@ -72,11 +71,11 @@ export const StoreSelection = () => {
 		<div className="flex flex-col gap-4">
 			<div className="flex items-start gap-4">
 				<StoreSearchFilter searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-				<StoreStateFilter
-					stores={loaderData.storeData.stores}
-					selectedState={selectedState}
-					setSelectedState={setSelectedState}
-				/>
+				{/*<StoreStateFilter*/}
+				{/*	stores={loaderData.storeData.stores}*/}
+				{/*	selectedState={selectedState}*/}
+				{/*	setSelectedState={setSelectedState}*/}
+				{/*/>*/}
 				{hasActiveFilters && (
 					<button
 						className="btn btn-outline"

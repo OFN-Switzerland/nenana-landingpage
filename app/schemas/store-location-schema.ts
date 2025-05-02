@@ -28,7 +28,8 @@ export const storeSchema = z.object({
 	description: z.string().nullable(),
 	address: addressSchema,
 	contact: contactSchema,
-	forwardUrl: z.string().url({ message: 'Forward URL must be a valid URL' }),
+	forwardUrl: z.string().nullable(),
+	status: z.enum(['active', 'hidden']),
 })
 
 // Main store data schema

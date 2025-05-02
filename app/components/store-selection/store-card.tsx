@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Form, href, useRevalidator, useRouteLoaderData } from 'react-router'
 import { StoreInfoOverlay } from '~/components/store-selection/store-info-overlay.tsx'
+import { Alert } from '~/components/ui/alert.tsx'
 import { Button } from '~/components/ui/button.tsx'
 import { useLang } from '~/hooks/use-lang.tsx'
 import { cn } from '~/lib/utils.ts'
@@ -40,7 +41,7 @@ export const StoreCard: React.FC<Props> = ({ data, embedded }) => {
 				)}>
 				<div className={cn('card-body', embedded ? 'px-0 py-2' : '')}>
 					<h2 className="card-title">{data.name}</h2>
-					<p>{data.description}</p>
+					{data.description && <p>{data.description}</p>}
 					<p>
 						{data.address.street}
 						<br />
@@ -48,14 +49,22 @@ export const StoreCard: React.FC<Props> = ({ data, embedded }) => {
 					</p>
 					<div className="card-actions items-center justify-between">
 						<StoreInfoOverlay data={data} />
-						{isSelected ? (
-							<div className="text-success">
-								<CheckCircle2Icon size={32} />
-							</div>
+						{data.forwardUrl ? (
+							<>
+								{isSelected ? (
+									<div className="text-success">
+										<CheckCircle2Icon size={32} />
+									</div>
+								) : (
+									<Button type="submit" variant="outline" size="sm">
+										{t('userActions.select', 'Select')}
+									</Button>
+								)}
+							</>
 						) : (
-							<Button type="submit" variant="outline" size="sm">
-								{t('userActions.select', 'Select')}
-							</Button>
+							<Alert variant="warning" size="sm" className="">
+								{t('store.notAvailable', 'Location link is not available')}
+							</Alert>
 						)}
 					</div>
 				</div>
