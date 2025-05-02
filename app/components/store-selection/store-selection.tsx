@@ -2,10 +2,13 @@ import { X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRouteLoaderData, useSearchParams } from 'react-router'
-import { StoreMap } from '~/components/home/store-map.tsx'
-import { StoreResults } from '~/components/home/store-results.tsx'
-import { filterStores, StoreSearchFilter } from '~/components/home/store-search-filter.tsx'
-import { StoreStateFilter } from '~/components/home/store-state-filter.tsx'
+import { StoreMap } from '~/components/store-selection/store-map.tsx'
+import { StoreResults } from '~/components/store-selection/store-results.tsx'
+import {
+	filterStores,
+	StoreSearchFilter,
+} from '~/components/store-selection/store-search-filter.tsx'
+import { StoreStateFilter } from '~/components/store-selection/store-state-filter.tsx'
 import { Alert } from '~/components/ui/alert.tsx'
 import { type HomeRouteLoaderData } from '~/routes/home.tsx'
 

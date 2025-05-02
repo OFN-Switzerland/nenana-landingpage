@@ -2,8 +2,8 @@ import { toNumber } from 'lodash-es'
 import { CheckCircle2Icon } from 'lucide-react'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Form, href, useRouteLoaderData } from 'react-router'
-import { StoreInfoOverlay } from '~/components/home/store-info-overlay.tsx'
+import { Form, href, useRevalidator, useRouteLoaderData } from 'react-router'
+import { StoreInfoOverlay } from '~/components/store-selection/store-info-overlay.tsx'
 import { Button } from '~/components/ui/button.tsx'
 import { useLang } from '~/hooks/use-lang.tsx'
 import { cn } from '~/lib/utils.ts'
@@ -19,13 +19,18 @@ export const StoreCard: React.FC<Props> = ({ data, embedded }) => {
 	const { t } = useTranslation()
 	const { lang } = useLang()
 	const loaderData = useRouteLoaderData<HomeRouteLoaderData>('routes/home')
+	const revalidate = useRevalidator().revalidate
 
 	const isSelected = useMemo(() => {
 		return toNumber(loaderData?.storeId) === data.id
 	}, [loaderData, data.id])
 
+	const handleSelect = async () => {
+		await revalidate()
+	}
+
 	return (
-		<Form action={href('/:lang?/home', { lang })} method="post">
+		<Form action={href('/:lang?/home', { lang })} method="post" onSubmit={handleSelect}>
 			<input type="hidden" name="selectedStoreId" value={data.id} />
 			<div
 				className={cn(

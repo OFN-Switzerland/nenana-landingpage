@@ -1,7 +1,7 @@
 // Inner component that contains the actual map implementation
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import { StoreCard } from '~/components/home/store-card.tsx'
+import { StoreCard } from '~/components/store-selection/store-card.tsx'
 import { type Store } from '~/schemas/store-location-schema.ts'
 
 // Imports for leaflet styling

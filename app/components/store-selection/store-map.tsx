@@ -3,7 +3,7 @@ import { ClientOnly } from 'remix-utils/client-only'
 import {
 	MapImplementationClient,
 	type StoreMapProps,
-} from '~/components/home/map-implementation.client.tsx'
+} from '~/components/store-selection/map-implementation.client.tsx'
 import { Spinner } from '~/components/ui/spinner.tsx'
 
 // Main component that wraps the map implementation with ClientOnly

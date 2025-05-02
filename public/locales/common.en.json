@@ -1,7 +1,8 @@
 {
   "actions": {
     "cancel": "Cancel",
-    "info": "More information"
+    "info": "More information",
+    "notNow": "Not Now"
   },
   "common": {
     "404": {
@@ -10,7 +11,7 @@
     },
     "close": "Close",
     "footerLegalInformation": "Legal information",
-    "footerText": "‎ {{year}} NeNaNA - All rights reserved"
+    "footerText": "{{year}} NeNaNA - All rights reserved"
   },
   "home": {
     "hero": {
@@ -26,7 +27,10 @@
     }
   },
   "installPwa": {
-    "installApp": "Install this app on your home screen"
+    "description": "Install this app on your device for quicker access and better performance.",
+    "installApp": "Install this app on your home screen",
+    "installButton": "Install Now",
+    "title": "Install App"
   },
   "redirectOverlay": {
     "description": "You will be redirected to the new page in a few seconds. Click cancel or press Esc to choose another pick-up location",

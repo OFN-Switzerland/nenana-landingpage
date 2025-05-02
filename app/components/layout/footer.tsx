@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
 			</Link>
 			<div className="flex items-center gap-2 text-xs">
 				<div>
-					{t('common.footerText', '© {{year}} NeNaNA - All rights reserved', {
+					{t('common.footerText', '{{year}} NeNaNA - All rights reserved', {
 						year: new Date().getFullYear(),
 					})}
 				</div>

@@ -15,14 +15,10 @@ export const RedirectOverlay = () => {
 	const { t } = useTranslation()
 	const dialogRef = useRef<HTMLDialogElement>(null)
 
-	const openDialog = () => {
-		dialogRef.current?.showModal()
-	}
-
 	useEffect(() => {
-		logger.debug({ loaderData })
 		if (loaderData?.isValidPreferences) {
-			openDialog()
+			logger.debug({ loaderData })
+			dialogRef.current?.showModal()
 			setTimeLeft(COUNTDOWN)
 		}
 	}, [loaderData])

@@ -30,7 +30,7 @@ export const InfoIosInstall: React.FC = () => {
 
 	return (
 		<div className="w-full max-w-3xl">
-			<Alert variant="success">
+			<Alert variant="success" className="relative">
 				<InfoIcon />
 				<div>
 					<h3 className="font-bold">
@@ -43,7 +43,11 @@ export const InfoIosInstall: React.FC = () => {
 						)}
 					</div>
 				</div>
-				<Button variant="primary" onClick={handleDismiss} aria-label={t('common.close', 'Close')}>
+				<Button
+					onClick={handleDismiss}
+					className="absolute top-2 right-2"
+					variant="ghost"
+					aria-label={t('common.close', 'Close')}>
 					<X size={18} />
 				</Button>
 			</Alert>

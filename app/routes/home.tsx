@@ -1,6 +1,5 @@
 import { toNumber } from 'lodash-es'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import {
 	data,
 	type LoaderFunctionArgs,
@@ -13,10 +12,11 @@ import { type Route } from './+types/home.ts'
 import { HomeHero } from '~/components/home/hero.tsx'
 import { InfoIosInstall } from '~/components/home/info-ios-install.tsx'
 import { HomeInfo } from '~/components/home/info.tsx'
-import { RedirectOverlay } from '~/components/home/redirect-overlay.tsx'
-import { SelectedStore } from '~/components/home/selected-store.tsx'
-import { StoreSelection } from '~/components/home/store-selection.tsx'
 import { Footer } from '~/components/layout/footer.tsx'
+import { InstallPwaPrompt } from '~/components/pwa/install-prompt.tsx'
+import { RedirectOverlay } from '~/components/store-selection/redirect-overlay.tsx'
+import { SelectedStore } from '~/components/store-selection/selected-store.tsx'
+import { StoreSelection } from '~/components/store-selection/store-selection.tsx'
 import { useIsDevice } from '~/hooks/use-is-device.tsx'
 import i18nextServer from '~/i18next.server.ts'
 import { logger } from '~/lib/logger.ts'
@@ -105,7 +105,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function Home() {
 	const loaderData = useLoaderData<HomeRouteLoaderData>()
-	const { t } = useTranslation()
 	const { isIOS } = useIsDevice()
 	return (
 		<div className="flex grow flex-col items-center gap-8 pb-8">
@@ -121,6 +120,7 @@ export default function Home() {
 					<HomeInfo />
 				)}
 				{isIOS && <InfoIosInstall />}
+				<InstallPwaPrompt />
 			</div>
 			<div className="w-full max-w-3xl px-3 md:px-0">
 				<StoreSelection />

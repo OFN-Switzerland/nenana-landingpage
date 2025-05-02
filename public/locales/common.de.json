@@ -1,7 +1,8 @@
 {
   "actions": {
     "cancel": "Abbrechen",
-    "info": "Mehr Informationen"
+    "info": "Mehr Informationen",
+    "notNow": "Später"
   },
   "common": {
     "404": {
@@ -10,7 +11,7 @@
     },
     "close": "Schliessen",
     "footerLegalInformation": "Rechtliche Hinweise",
-    "footerText": "© {{year}} NeNaNA - Alle Rechte vorbehalten"
+    "footerText": "{{year}} NeNaNA - Alle Rechte vorbehalten"
   },
   "home": {
     "hero": {
@@ -26,7 +27,10 @@
     }
   },
   "installPwa": {
-    "installApp": "Installiere diese App auf deinem Home-Bildschirm"
+    "description": "Installiere diese App auf deinem Gerät für schnelleren Zugriff und bessere Leistung.",
+    "installApp": "Installiere diese App auf deinem Home-Bildschirm",
+    "installButton": "Jetzt installieren",
+    "title": "App installieren"
   },
   "redirectOverlay": {
     "description": "Du wirst in wenigen Sekunden zur neuen Seite weitergeleitet. Klicke auf Abbrechen oder drücke Esc, um einen anderen Abholort zu wählen",
