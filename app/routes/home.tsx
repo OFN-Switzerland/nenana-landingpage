@@ -20,13 +20,13 @@ import { Button } from '~/components/ui/button.tsx'
 import { useIsDevice } from '~/hooks/use-is-device.tsx'
 import i18nextServer from '~/i18next.server.ts'
 import { logger } from '~/lib/logger.ts'
+import { type StoreData } from '~/schemas/store-location-schema.ts'
 import userPreferencesCookieSchema, {
 	type UserPreferencesCookie,
 	userPreferencesCookie,
 } from '~/services/cookies/store-selection-cookie.server.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getStoreLocationData } from '~/services/get-store-location-data.ts'
-import { type StoreDataType } from '~/types/store-location-data-type.ts'
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const t = await i18nextServer.getFixedT(request)
@@ -77,7 +77,7 @@ export async function action({ request }: Route.ActionArgs) {
 	const storeData = await getStoreLocationData()
 
 	if (selectedStoreId) {
-		const { stores } = storeData as StoreDataType
+		const { stores } = storeData as StoreData
 		const selectedStore = stores.find((store) => store.id === selectedStoreId)
 		userPrefsCookie.storeRedirectUrl = selectedStore?.forwardUrl
 		userPrefsCookie.storeId = selectedStoreId.toString()
@@ -114,7 +114,7 @@ export default function Home() {
 				<HomeInfo />
 				{isIOS && <InfoIosInstall />}
 			</div>
-			<div className="max-w-3xl">
+			<div className="w-full max-w-3xl">
 				<StoreSelection />
 			</div>
 			<Link to={loaderData.storeRedirectUrl}>

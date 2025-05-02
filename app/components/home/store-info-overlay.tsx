@@ -5,10 +5,10 @@ import { H3 } from '~/components/typography/h3.tsx'
 import { H4 } from '~/components/typography/h4.tsx'
 import { P } from '~/components/typography/p.tsx'
 import { Button } from '~/components/ui/button.tsx'
-import { type StoreDataType } from '~/types/store-location-data-type.ts'
+import { type Store } from '~/schemas/store-location-schema.ts'
 
 type Props = {
-	data: StoreDataType['stores'][0]
+	data: Store
 }
 
 export const StoreInfoOverlay: React.FC<Props> = ({ data }) => {

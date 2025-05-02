@@ -8,13 +8,14 @@ import { Button } from '~/components/ui/button.tsx'
 import { useLang } from '~/hooks/use-lang.tsx'
 import { cn } from '~/lib/utils.ts'
 import { type HomeRouteLoaderData } from '~/routes/home.tsx'
-import { type StoreDataType } from '~/types/store-location-data-type.ts'
+import { type Store } from '~/schemas/store-location-schema.ts'
 
 type Props = {
-	data: StoreDataType['stores'][0]
+	data: Store
+	embedded?: boolean
 }
 
-export const StoreCard: React.FC<Props> = ({ data }) => {
+export const StoreCard: React.FC<Props> = ({ data, embedded }) => {
 	const { t } = useTranslation()
 	const { lang } = useLang()
 	const loaderData = useRouteLoaderData<HomeRouteLoaderData>('routes/home')
@@ -26,8 +27,13 @@ export const StoreCard: React.FC<Props> = ({ data }) => {
 	return (
 		<Form action={href('/:lang?/home', { lang })} method="post">
 			<input type="hidden" name="selectedStoreId" value={data.id} />
-			<div className={cn('card card-border bg-base-100 h-full drop-shadow-xl')}>
-				<div className="card-body">
+			<div
+				className={cn(
+					embedded
+						? 'card card-compact min-w-48'
+						: 'card card-border bg-base-100 h-full drop-shadow-xl',
+				)}>
+				<div className={cn('card-body', embedded ? 'px-0 py-2' : '')}>
 					<h2 className="card-title">{data.name}</h2>
 					<p>{data.description}</p>
 					<p>

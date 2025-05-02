@@ -1,49 +1,64 @@
 {
-    "actions": {
-      "cancel": "Abbrechen",
-      "info": "Mehr Informationen"
+  "actions": {
+    "cancel": "Abbrechen",
+    "info": "Mehr Informationen"
+  },
+  "common": {
+    "404": {
+      "message": "Die gesuchte Seite existiert nicht.",
+      "title": "Seite nicht gefunden"
     },
-    "common": {
-      "404": {
-        "message": "Die gesuchte Seite existiert nicht.",
-        "title": "Seite nicht gefunden"
-      },
-      "footerLegalInformation": "Rechtliche Hinweise",
-      "footerText": "© {{year}} NeNaNA - Alle Rechte vorbehalten"
+    "footerLegalInformation": "Rechtliche Hinweise",
+    "footerText": "© {{year}} NeNaNA - Alle Rechte vorbehalten"
+  },
+  "home": {
+    "hero": {
+      "sub": "Netzwerk Natürliche Nahrung"
     },
-    "home": {
-      "hero": {
-        "sub": "Netzwerk Natürliche Nahrung"
-      },
-      "info": {
-        "description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
-        "title": "Wähle deinen bevorzugten Abholort"
-      },
-      "infoIosInstall": {
-        "description": "1. Tippe auf die Teilen-Schaltfläche unten im Browser. 2. Scrolle nach unten und tippe auf \"Zum Home-Bildschirm hinzufügen\".",
-        "title": "Du kannst diese Website auf deinem iPhone installieren"
-      }
+    "info": {
+      "description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
+      "title": "Wähle deinen bevorzugten Abholort"
     },
-    "redirectOverlay": {
-      "description": "Du wirst in wenigen Sekunden zur neuen Seite weitergeleitet. Klicke auf Abbrechen oder drücke Esc, um einen anderen Abholort zu wählen",
-      "title": "Weiterleitung..."
-    },
-    "routes": {
-      "home": {
-        "description": "Wähle einen Laden aus, zu dem du beim nächsten Besuch dieser Seite weitergeleitet wirst",
-        "title": "NeNaNa"
-      }
-    },
-    "storeInfo": {
-      "address": "Adresse",
-      "contact": "Kontakt"
-    },
-    "storeSelection": {
-      "error": "Beim Laden der Ladendaten ist ein Fehler aufgetreten"
-    },
-    "userActions": {
-      "goToSelection": "Zur Auswahl",
-      "goToStore": "Zum Laden",
-      "select": "Auswählen"
+    "infoIosInstall": {
+      "description": "1. Tippe auf die Teilen-Schaltfläche unten im Browser. 2. Scrolle nach unten und tippe auf \"Zum Home-Bildschirm hinzufügen\".",
+      "title": "Du kannst diese Website auf deinem iPhone installieren"
     }
+  },
+  "installPwa": {
+    "installApp": "Install this app on your home screen"
+  },
+  "redirectOverlay": {
+    "description": "Du wirst in wenigen Sekunden zur neuen Seite weitergeleitet. Klicke auf Abbrechen oder drücke Esc, um einen anderen Abholort zu wählen",
+    "title": "Weiterleitung..."
+  },
+  "routes": {
+    "home": {
+      "description": "Wähle einen Laden aus, zu dem du beim nächsten Besuch dieser Seite weitergeleitet wirst",
+      "title": "NeNaNa"
+    }
+  },
+  "storeInfo": {
+    "address": "Adresse",
+    "contact": "Kontakt"
+  },
+  "storeMap": {
+    "loading": "Loading map...",
+    "noStores": "No stores found to display on map"
+  },
+  "storeSelection": {
+    "allStates": "All States",
+    "clearFilters": "Clear filters",
+    "error": "Beim Laden der Ladendaten ist ein Fehler aufgetreten",
+    "noResults": "No stores match your search",
+    "resultsCount_one": "Showing {{count}} results",
+    "resultsCount_other": "Showing {{count}} results",
+    "searchPlaceholder": "Search stores...",
+    "showList": "Show List",
+    "showMap": "Show Map"
+  },
+  "userActions": {
+    "goToSelection": "Zur Auswahl",
+    "goToStore": "Zum Laden",
+    "select": "Auswählen"
   }
+}

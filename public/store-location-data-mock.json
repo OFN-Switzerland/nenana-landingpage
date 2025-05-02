@@ -11,7 +11,11 @@
         "city": "Melbourne",
         "state": "VIC",
         "zip": "3000",
-        "country": "Australia"
+        "country": "Australia",
+        "position": {
+          "latitude": -37.8136,
+          "longitude": 144.9631
+        }
       },
       "contact": {
         "phone": "+61 3 1234 5678",
@@ -28,7 +32,11 @@
         "city": "Toronto",
         "state": "ON",
         "zip": "M5V 2B8",
-        "country": "Canada"
+        "country": "Canada",
+        "position": {
+          "latitude": 43.6532,
+          "longitude": -79.3832
+        }
       },
       "contact": {
         "phone": "+61 3 1234 5678",
@@ -45,7 +53,11 @@
         "city": "London",
         "state": "England",
         "zip": "SW1A 1AA",
-        "country": "United Kingdom"
+        "country": "United Kingdom",
+        "position": {
+          "latitude": 51.5074,
+          "longitude": -0.1278
+        }
       },
       "contact": {
         "phone": "+61 3 1234 5678",
@@ -62,7 +74,11 @@
         "city": "New York",
         "state": "NY",
         "zip": "10001",
-        "country": "United States"
+        "country": "United States",
+        "position": {
+          "latitude": 40.7128,
+          "longitude": -74.0060
+        }
       },
       "contact": {
         "phone": "+61 3 1234 5678",
@@ -79,7 +95,11 @@
         "city": "Johannesburg",
         "state": "Gauteng",
         "zip": "2000",
-        "country": "South Africa"
+        "country": "South Africa",
+        "position": {
+          "latitude": -26.2041,
+          "longitude": 28.0473
+        }
       },
       "contact": {
         "phone": "+61 3 1234 5678",
@@ -96,7 +116,11 @@
         "city": "Paris",
         "state": "Île-de-France",
         "zip": "75001",
-        "country": "France"
+        "country": "France",
+        "position": {
+          "latitude": 48.8566,
+          "longitude": 2.3522
+        }
       },
       "contact": {
         "phone": "+61 3 1234 5678",

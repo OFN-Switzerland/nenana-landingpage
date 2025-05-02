@@ -1,4 +1,4 @@
-import { type StoreDataType } from '~/types/store-location-data-type.ts'
+import { type StoreData, storeDataSchema } from '~/schemas/store-location-schema.ts'
 
 export const getStoreLocationData = async () => {
 	let url = ''
@@ -15,5 +15,11 @@ export const getStoreLocationData = async () => {
 
 	const response = await fetch(url)
 	const data = await response.json()
-	return data as StoreDataType
+	// Parse and validate data
+	const result = storeDataSchema.safeParse(data)
+	if (result.success) {
+		return result.data as StoreData
+	} else {
+		throw new Error(result.error.message)
+	}
 }

@@ -4,14 +4,18 @@
   "stores": [
     {
       "id": 1,
-      "name": "Ne'Na'Na AR Heiden",
+      "name": "Heiden",
       "description": "",
       "address": {
-        "street": "Schneebergstrasse 21",
-        "city": "St. Gallen",
-        "state": "St. Gallen",
-        "zip": "9000",
-        "country": "Switzerland"
+        "street": "",
+        "city": "Heiden",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9010",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4421715,
+          "longitude": 9.532089
+        }
       },
       "contact": {
         "phone": "+41 78 953 76 42",
@@ -21,99 +25,102 @@
     },
     {
       "id": 2,
-      "name": "Ne'Na'Na AR Rehetobel",
+      "name": "Rehetobel",
       "description": "",
       "address": {
         "street": "Sägholzstrasse 11a",
         "city": "Rehetobel",
         "state": "Appenzell Ausserrhoden",
         "zip": "9038",
-        "country": "Switzerland"
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4253735,
+          "longitude": 9.4855146
+        }
       },
       "contact": {
-        "phone": "+41 78 953 76 42",
-        "email": "dorji.tering@hotmail.com"
+        "phone": "+41 (0)61 701 1017",
+        "email": "brodbeck@rechtsozial.ch"
       },
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-rehetobel/shop"
     },
     {
       "id": 3,
-      "name": "Ne'Na'Na AR Reute",
+      "name": "Reute",
       "description": "",
       "address": {
-        "street": "Schneebergstrasse 21",
-        "city": "St. Gallen",
-        "state": "St. Gallen",
-        "zip": "900",
-        "country": "Switzerland"
+        "street": "",
+        "city": "Reute",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9411",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4195905,
+          "longitude": 9.5726679
+        }
       },
       "contact": {
-        "phone": "+41 78 953 76 42",
-        "email": "dorji.tering@hotmail.com"
+        "phone": "",
+        "email": ""
       },
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-reute/shop"
     },
     {
       "id": 4,
-      "name": "Ne'Na'Na AR Stein",
+      "name": "Stein",
       "description": "",
       "address": {
-        "street": "Schneebergstrasse 21",
-        "city": "St. Gallen",
-        "state": "St. Gallen",
-        "zip": "9000",
-        "country": "Switzerland"
+        "street": "",
+        "city": "Stein",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9063",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.3782288,
+          "longitude": 9.3416677
+        }
       },
       "contact": {
         "phone": "",
-        "email": "dorji.tering@hotmail.com"
+        "email": ""
       },
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-stein/shop"
     },
     {
       "id": 5,
-      "name": "Ne'Na'Na AR Urnäsch",
+      "name": "Urnäsch",
       "description": "",
       "address": {
         "street": "Saien 959, Werkstatt Saienbrücke",
         "city": "Urnäsch",
         "state": "Appenzell Ausserrhoden",
         "zip": "9107",
-        "country": "Switzerland"
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.3178621,
+          "longitude": 9.2834506
+        }
       },
       "contact": {
-        "phone": "+41 77 429 10 26",
+        "phone": "+41 (0)77 429 10 26",
         "email": "info@saienbruecke.ch"
       },
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-urnasch/shop"
     },
     {
-      "id": 6,
-      "name": "Ne'Na'Na Rehetobel",
-      "description": "",
-      "address": {
-        "street": "Schneebergstrasse 21",
-        "city": "St. Gallen",
-        "state": "St. Gallen",
-        "zip": "9000",
-        "country": "Switzerland"
-      },
-      "contact": {
-        "phone": "0712227642",
-        "email": ""
-      },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/nenana-rehetobel/shop"
-    },
-    {
       "id": 7,
-      "name": "Ne'Na'Na SG Mörschwil",
+      "name": "Mörschwil",
       "description": "",
       "address": {
         "street": "Gaiserwaldweg 56",
         "city": "Mörschwil",
         "state": "St. Gallen",
         "zip": "9327",
-        "country": "Switzerland"
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4675534,
+          "longitude": 9.4227493
+        }
       },
       "contact": {
         "phone": "",
@@ -123,31 +130,39 @@
     },
     {
       "id": 8,
-      "name": "Ne'Na'Na SG Rebstein",
+      "name": "Rebstein",
       "description": "",
       "address": {
-        "street": "cccccccccccc",
+        "street": "",
         "city": "Rebstein",
-        "state": "Aargau",
-        "zip": "xxxx",
-        "country": "Switzerland"
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9445",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.398476,
+          "longitude": 9.5822387
+        }
       },
       "contact": {
-        "phone": "+41792950133",
-        "email": "claudia@grobach.biz"
+        "phone": "",
+        "email": ""
       },
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-rebstein/shop"
     },
     {
       "id": 9,
-      "name": "Ne'Na'Na SG St. Gallen",
+      "name": "St. Gallen",
       "description": "",
       "address": {
         "street": "Gaiserwaldweg 56",
         "city": "St. Gallen",
         "state": "St. Gallen",
         "zip": "9000",
-        "country": "Switzerland"
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4191561,
+          "longitude": 9.3276683
+        }
       },
       "contact": {
         "phone": "",
@@ -157,14 +172,18 @@
     },
     {
       "id": 10,
-      "name": "Ne'Na'Na SG Wittenbach",
+      "name": "Wittenbach",
       "description": "",
       "address": {
-        "street": "Gaiserwaldweg 56",
+        "street": "",
         "city": "Wittenbach",
         "state": "St. Gallen",
         "zip": "9300",
-        "country": "Switzerland"
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4624072,
+          "longitude": 9.3820343
+        }
       },
       "contact": {
         "phone": "",
@@ -174,14 +193,18 @@
     },
     {
       "id": 11,
-      "name": "Ne'Na'Na AI Appenzell",
+      "name": "Appenzell",
       "description": "",
       "address": {
         "street": "Hofladen Weiersbrugg, Anja Reuter Ebneter",
         "city": "Appenzell",
         "state": "Appenzell Innerrhoden",
         "zip": "9050",
-        "country": "Switzerland"
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.3299506,
+          "longitude": 9.4099311
+        }
       },
       "contact": {
         "phone": "+41 71 793 10 55",

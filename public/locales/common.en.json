@@ -24,6 +24,9 @@
       "title": "You can install this website on your iPhone"
     }
   },
+  "installPwa": {
+    "installApp": "Install this app on your home screen"
+  },
   "redirectOverlay": {
     "description": "You will be redirected to the new page in a few seconds. Click cancel or press Esc to choose another pick-up location",
     "title": "Redirecting..."
@@ -38,8 +41,20 @@
     "address": "Address",
     "contact": "Contact"
   },
+  "storeMap": {
+    "loading": "Loading map...",
+    "noStores": "No stores found to display on map"
+  },
   "storeSelection": {
-    "error": "There was an error loading the store data"
+    "allStates": "All States",
+    "clearFilters": "Clear filters",
+    "error": "There was an error loading the store data",
+    "noResults": "No stores match your search",
+    "resultsCount_one": "Showing {{count}} results",
+    "resultsCount_other": "Showing {{count}} results",
+    "searchPlaceholder": "Search stores...",
+    "showList": "Show List",
+    "showMap": "Show Map"
   },
   "userActions": {
     "goToSelection": "Go to selection",
