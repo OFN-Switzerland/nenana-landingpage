@@ -1,0 +1,11 @@
+{
+  "common": {
+    "footerLegalInformation": "Legal information"
+  },
+  "installPwa": {
+    "installApp": "Install this app on your home screen"
+  },
+  "storeMap": {
+    "loading": "Loading map..."
+  }
+}

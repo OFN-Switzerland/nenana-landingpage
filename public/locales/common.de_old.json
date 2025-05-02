@@ -1,0 +1,11 @@
+{
+  "common": {
+    "footerLegalInformation": "Rechtliche Hinweise"
+  },
+  "installPwa": {
+    "installApp": "Installiere diese App auf deinem Home-Bildschirm"
+  },
+  "storeMap": {
+    "loading": "Lade ..."
+  }
+}

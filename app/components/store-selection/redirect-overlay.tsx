@@ -7,50 +7,78 @@ import { Button } from '~/components/ui/button.tsx'
 import { logger } from '~/lib/logger.ts'
 import { type HomeRouteLoaderData } from '~/routes/home.tsx'
 
-const COUNTDOWN = 4
+const COUNTDOWN_SECONDS = 4
+const ANIMATION_INTERVAL_MS = 50 // Update every 50ms for smooth animation
 
 export const RedirectOverlay = () => {
 	const loaderData = useRouteLoaderData<HomeRouteLoaderData>('routes/home')
-	const [timeLeft, setTimeLeft] = useState<number>(COUNTDOWN)
+	const [progress, setProgress] = useState<number>(COUNTDOWN_SECONDS)
 	const { t } = useTranslation()
 	const dialogRef = useRef<HTMLDialogElement>(null)
+	const [isInitialized, setIsInitialized] = useState(false)
 
+	// Initial render effect that runs once the component is mounted
 	useEffect(() => {
-		if (loaderData?.isValidPreferences) {
-			logger.debug({ loaderData })
-			dialogRef.current?.showModal()
-			setTimeLeft(COUNTDOWN)
+		if (!isInitialized && loaderData?.isValidPreferences) {
+			logger.debug({ loaderData, message: 'Opening redirect dialog on initial load' })
+
+			// Use setTimeout to ensure the dialog opens after the DOM is fully updated
+			setTimeout(() => {
+				if (dialogRef.current) {
+					dialogRef.current.showModal()
+					setProgress(COUNTDOWN_SECONDS)
+				}
+			}, 100)
+
+			setIsInitialized(true)
 		}
-	}, [loaderData])
+	}, [loaderData, isInitialized])
+
+	// Effect for handling changes to loaderData after initial render
+	useEffect(() => {
+		if (isInitialized && loaderData?.isValidPreferences) {
+			logger.debug({ loaderData, message: 'Opening redirect dialog after data change' })
+			if (dialogRef.current && !dialogRef.current.open) {
+				dialogRef.current.showModal()
+				setProgress(COUNTDOWN_SECONDS)
+			}
+		}
+	}, [loaderData, isInitialized])
 
 	useEffect(() => {
 		if (!dialogRef.current?.open) return
 
+		// Calculate decrement per interval for smooth progress
+		const decrementPerInterval = ANIMATION_INTERVAL_MS / 1000
+
 		const intervalId = setInterval(() => {
-			setTimeLeft((prev) => {
-				if (prev === 0) return 0
-				if (prev <= 1) {
+			setProgress((prev) => {
+				// Smoothly decrease by the calculated amount
+				const newValue = Math.max(0, prev - decrementPerInterval)
+
+				// If we've reached 0, clear the interval
+				if (newValue === 0) {
 					clearInterval(intervalId)
-					return 0
 				}
-				return prev - 1
+
+				return newValue
 			})
-		}, 1000)
+		}, ANIMATION_INTERVAL_MS)
 
 		return () => clearInterval(intervalId)
 	}, [dialogRef.current?.open])
 
 	useEffect(() => {
 		// Don't redirect in dev
-		if (window.ENV.NODE_ENV === 'development') {
-			dialogRef.current?.close()
-			return
-		}
-		if (dialogRef.current?.open && timeLeft === 0 && loaderData?.storeRedirectUrl) {
+		if (dialogRef.current?.open && progress === 0 && loaderData?.storeRedirectUrl) {
+			if (window.ENV?.NODE_ENV === 'development') {
+				dialogRef.current?.close()
+				return
+			}
 			window.location.href = loaderData?.storeRedirectUrl
 			dialogRef.current?.close()
 		}
-	}, [loaderData?.storeRedirectUrl, timeLeft])
+	}, [loaderData?.storeRedirectUrl, progress])
 
 	const onCancelClick = () => {
 		dialogRef.current?.close()
@@ -60,7 +88,11 @@ export const RedirectOverlay = () => {
 		<>
 			<dialog ref={dialogRef} className="modal modal-bottom sm:modal-middle">
 				<div className="modal-box">
-					<progress className="progress w-full" value={timeLeft} max={COUNTDOWN}></progress>
+					<div className="mb-4 h-2 w-full overflow-hidden rounded-full bg-gray-200">
+						<div
+							className="bg-primary h-full transition-all duration-100 ease-linear"
+							style={{ width: `${(progress / COUNTDOWN_SECONDS) * 100}%` }}></div>
+					</div>
 					<H3>{t('redirectOverlay.title', 'Redirecting...')}</H3>
 					<P>
 						{t(

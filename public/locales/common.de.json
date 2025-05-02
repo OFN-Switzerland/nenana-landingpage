@@ -10,7 +10,6 @@
       "title": "Seite nicht gefunden"
     },
     "close": "Schliessen",
-    "footerLegalInformation": "Rechtliche Hinweise",
     "footerText": "{{year}} NeNaNA - Alle Rechte vorbehalten"
   },
   "home": {
@@ -28,7 +27,6 @@
   },
   "installPwa": {
     "description": "Installiere diese App auf deinem Gerät für schnelleren Zugriff und bessere Leistung.",
-    "installApp": "Installiere diese App auf deinem Home-Bildschirm",
     "installButton": "Jetzt installieren",
     "title": "App installieren"
   },
@@ -51,7 +49,6 @@
     "contact": "Kontakt"
   },
   "storeMap": {
-    "loading": "Lade ...",
     "noStores": "Es gibt keine Standorte, die auf der Karte angezeigt werden sollen"
   },
   "storeSelection": {
