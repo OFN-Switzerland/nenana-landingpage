@@ -5134,6 +5134,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"leaflet-defaulticon-compatibility@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "leaflet-defaulticon-compatibility@npm:0.1.2"
+  checksum: 10c0/aac51998bfbfbca65f7d65a6f0c48c8b0dfeba11b627bd2982ff7bcccfcdbc06bbcf04a432753b9fd7b295e38522d8fd77cfe0884a5ac236da4258bda321d89f
+  languageName: node
+  linkType: hard
+
 "leaflet@npm:^1.9.4":
   version: 1.9.4
   resolution: "leaflet@npm:1.9.4"
@@ -5704,6 +5711,7 @@ __metadata:
     is-ip: "npm:^5.0.1"
     isbot: "npm:^5.1.27"
     leaflet: "npm:^1.9.4"
+    leaflet-defaulticon-compatibility: "npm:^0.1.2"
     lodash-es: "npm:^4.17.21"
     lucide-react: "npm:^0.505.0"
     prettier: "npm:^3.5.3"

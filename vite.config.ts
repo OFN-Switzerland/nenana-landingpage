@@ -23,6 +23,6 @@ export default defineConfig(() => ({
 	},
 	ssr: {
 		// Exclude client-only libraries from server bundle
-		external: ['leaflet', 'react-leaflet'],
+		// external: ['leaflet', 'react-leaflet'],
 	},
 }))

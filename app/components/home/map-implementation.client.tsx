@@ -4,6 +4,11 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { StoreCard } from '~/components/home/store-card.tsx'
 import { type Store } from '~/schemas/store-location-schema.ts'
 
+// Imports for leaflet styling
+import 'leaflet/dist/leaflet.css'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css' // Re-uses images from ~leaflet package
+import 'leaflet-defaulticon-compatibility'
+
 export type StoreMapProps = {
 	stores: Store[]
 }

@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import 'leaflet/dist/leaflet.css'
 import { ClientOnly } from 'remix-utils/client-only'
 import {
 	MapImplementationClient,
