@@ -5,6 +5,10 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#469344",
+  "scope": "/",
+  "id": "/",
+  "categories": ["food", "shopping"],
+  "handle_links": "preferred",
   "icons": [
     {
       "src": "/pwa-assets/windows11/SmallTile.scale-100.png",

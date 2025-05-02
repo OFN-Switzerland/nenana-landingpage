@@ -21,8 +21,4 @@ export default defineConfig(() => ({
 			transformMixedEsModules: true,
 		},
 	},
-	ssr: {
-		// Exclude client-only libraries from server bundle
-		// external: ['leaflet', 'react-leaflet'],
-	},
 }))

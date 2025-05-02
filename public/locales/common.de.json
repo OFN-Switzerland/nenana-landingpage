@@ -25,7 +25,7 @@
     }
   },
   "installPwa": {
-    "installApp": "Install this app on your home screen"
+    "installApp": "Installiere diese App auf deinem Home-Bildschirm"
   },
   "redirectOverlay": {
     "description": "Du wirst in wenigen Sekunden zur neuen Seite weitergeleitet. Klicke auf Abbrechen oder drücke Esc, um einen anderen Abholort zu wählen",
@@ -42,19 +42,19 @@
     "contact": "Kontakt"
   },
   "storeMap": {
-    "loading": "Loading map...",
-    "noStores": "No stores found to display on map"
+    "loading": "Lade ...",
+    "noStores": "Es gibt keine Standorte, die auf der Karte angezeigt werden sollen"
   },
   "storeSelection": {
-    "allStates": "All States",
-    "clearFilters": "Clear filters",
-    "error": "Beim Laden der Ladendaten ist ein Fehler aufgetreten",
-    "noResults": "No stores match your search",
-    "resultsCount_one": "Showing {{count}} results",
-    "resultsCount_other": "Showing {{count}} results",
-    "searchPlaceholder": "Search stores...",
-    "showList": "Show List",
-    "showMap": "Show Map"
+    "allStates": "Alle Kantone",
+    "clearFilters": "Zurücksetzen",
+    "error": "Beim Laden der Standorte ist ein Fehler aufgetreten",
+    "noResults": "Keine Standorte gefunden",
+    "resultsCount_one": "Zeige {{count}} Standort",
+    "resultsCount_other": "Zeige {{count}} Standorte",
+    "searchPlaceholder": "Standorte suchen...",
+    "showList": "Liste anzeigen",
+    "showMap": "Karte anzeigen"
   },
   "userActions": {
     "goToSelection": "Zur Auswahl",
