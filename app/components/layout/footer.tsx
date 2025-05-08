@@ -15,11 +15,12 @@ export const Footer: React.FC = () => {
 						year: new Date().getFullYear(),
 					})}
 				</div>
-				{/*<div>*/}
-				{/*	<Link to={href('/:lang?/information')}>*/}
-				{/*		{t('common.footerLegalInformation', 'Legal information')}*/}
-				{/*	</Link>*/}
-				{/*</div>*/}
+				<div>
+					<Link to="https://nenana.ch">nenana.ch</Link>
+				</div>
+				<div>
+					<Link to="https://tegonal.com">Made with ❤️ by Tegonal</Link>
+				</div>
 			</div>
 		</div>
 	)

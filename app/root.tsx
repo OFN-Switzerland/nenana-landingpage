@@ -25,6 +25,7 @@ import { cn } from '~/lib/utils.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getLocale } from '~/services/get-locale.ts'
 import { getTheme } from '~/services/theme.server'
+import { ServiceWorkerUpdater } from '~/components/pwa/service-worker-updater.client'
 import './webfonts.css'
 import './tailwind.css'
 
@@ -97,9 +98,13 @@ export function Layout({ children }: PropsWithChildren) {
 		plausibleClientEvent({ name: GenericAppEvents.PageView })
 	}, [location.pathname])
 
-	if (isClient() && window.ENV.VERSION !== version) {
-		logger.error('🔄 Should reload page or clear cache due to version mismatch')
-	}
+	useEffect(() => {
+		if (isClient() && window.ENV.VERSION !== version) {
+			logger.error('🔄 Should reload page or clear cache due to version mismatch')
+			// Force reload the page when a version mismatch is detected
+			window.location.reload();
+		}
+	}, [version]);
 
 	return (
 		<html lang={locale} dir={i18n.dir()} className={cn(['h-svh'])}>
@@ -114,6 +119,8 @@ export function Layout({ children }: PropsWithChildren) {
 				<ScrollRestoration />
 				<Scripts />
 				<DevModeOverlay />
+				{/* Service Worker Updater Component - manages PWA updates */}
+				{isClient() && <ServiceWorkerUpdater />}
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `window.ENV = ${JSON.stringify(ENV)}`,

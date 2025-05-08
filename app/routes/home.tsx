@@ -7,17 +7,16 @@ import {
 	redirect,
 	useLoaderData,
 } from 'react-router'
+import { ClientOnly } from 'remix-utils/client-only'
 import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 import { type Route } from './+types/home.ts'
 import { HomeHero } from '~/components/home/hero.tsx'
-import { InfoIosInstall } from '~/components/home/info-ios-install.tsx'
 import { HomeInfo } from '~/components/home/info.tsx'
 import { Footer } from '~/components/layout/footer.tsx'
-import { InstallPwaPrompt } from '~/components/pwa/install-prompt.tsx'
+import { PwaInstallClient } from '~/components/pwa/pwa-install.client.tsx'
 import { RedirectOverlay } from '~/components/store-selection/redirect-overlay.tsx'
 import { SelectedStore } from '~/components/store-selection/selected-store.tsx'
 import { StoreSelection } from '~/components/store-selection/store-selection.tsx'
-import { useIsDevice } from '~/hooks/use-is-device.tsx'
 import i18nextServer from '~/i18next.server.ts'
 import { logger } from '~/lib/logger.ts'
 import { type StoreData } from '~/schemas/store-location-schema.ts'
@@ -105,7 +104,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function Home() {
 	const loaderData = useLoaderData<HomeRouteLoaderData>()
-	const { isIOS } = useIsDevice()
 	return (
 		<div className="flex grow flex-col items-center gap-8 pb-8">
 			<HomeHero />
@@ -119,8 +117,7 @@ export default function Home() {
 				) : (
 					<HomeInfo />
 				)}
-				{isIOS && <InfoIosInstall />}
-				<InstallPwaPrompt />
+				<ClientOnly>{() => <PwaInstallClient />}</ClientOnly>
 			</div>
 			<div className="w-full max-w-3xl px-3 md:px-0">
 				<StoreSelection />
