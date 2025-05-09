@@ -199,6 +199,28 @@
       },
       "forwardUrl": "https://app.openfoodswitzerland.ch/nenana-sg-altstaetten-luechingen/shop#/shop_panel",
       "status": "active"
+    },
+    {
+      "id": 13,
+      "name": "Food hub",
+      "description": "",
+      "address": {
+        "street": "Freie Str. 53 ",
+        "city": "Basel-Stadt",
+        "state": "Basel",
+        "zip": "4001",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.55624264140523,
+          "longitude": 7.590458039870904
+        }
+      },
+      "contact": {
+        "phone": "+41 (0)00 000 00 00",
+        "email": "info@openfoodswitzerland.ch"
+      },
+      "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop",
+      "status": "active"
     }
   ]
 }
