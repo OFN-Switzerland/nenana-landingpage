@@ -219,7 +219,7 @@
         "phone": "+41 (0)00 000 00 00",
         "email": "info@openfoodswitzerland.ch"
       },
-      "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop#/shop_panel",
       "status": "active"
     }
   ]
