@@ -205,14 +205,14 @@
       "name": "Food hub",
       "description": "",
       "address": {
-        "street": "Freie Str. 53 ",
-        "city": "Basel-Stadt",
-        "state": "Basel",
-        "zip": "4001",
+        "street": "Tobelbachstrasse 4",
+        "city": "Altstätten",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9450",
         "country": "Switzerland",
         "position": {
-          "latitude": 47.55624264140523,
-          "longitude": 7.590458039870904
+          "latitude": 47.38470880123354,
+          "longitude": 9.545472281371868
         }
       },
       "contact": {
