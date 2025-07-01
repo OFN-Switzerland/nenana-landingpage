@@ -71,6 +71,10 @@
               }
             }
           },
+          "registrationRecipientEmail": {
+            "type": "string",
+            "format": "email"
+          },
           "forwardUrl": {
             "type": ["string", "null"],
             "format": "uri"

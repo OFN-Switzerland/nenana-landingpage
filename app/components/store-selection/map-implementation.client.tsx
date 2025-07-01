@@ -1,6 +1,7 @@
 // Inner component that contains the actual map implementation
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+
 import { StoreCard } from '~/components/store-selection/store-card.tsx'
 import { type Store } from '~/schemas/store-location-schema.ts'
 
@@ -49,7 +50,7 @@ export const MapImplementationClient: React.FC<StoreMapProps> = ({ stores }) => 
 	}
 
 	return (
-		<MapContainer center={center} zoom={zoom} className="h-full w-full">
+		<MapContainer center={center} className="h-full w-full" zoom={zoom}>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
  */
 export const ServiceWorkerUpdater: React.FC = () => {
 	const [updateAvailable, setUpdateAvailable] = useState(false)
-	const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(null)
+	const [waitingWorker, setWaitingWorker] = useState<null | ServiceWorker>(null)
 
 	// Handle update when user clicks the update button
 	const handleUpdate = () => {
@@ -74,8 +74,8 @@ export const ServiceWorkerUpdater: React.FC = () => {
 				<strong>Update Available!</strong> Reload for the latest version.
 			</div>
 			<button
-				onClick={handleUpdate}
-				className="rounded-md bg-white px-4 py-2 font-medium text-green-600 hover:bg-gray-100">
+				className="rounded-md bg-white px-4 py-2 font-medium text-green-600 hover:bg-gray-100"
+				onClick={handleUpdate}>
 				Update Now
 			</button>
 		</div>

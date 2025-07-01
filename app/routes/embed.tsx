@@ -8,37 +8,24 @@ import {
 	useLoaderData,
 	useNavigate,
 } from 'react-router'
-import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
+
 import { Button } from '~/components/ui/button.tsx'
-import userPreferencesCookieSchema, {
-	type UserPreferencesCookie,
-	userPreferencesCookie,
-} from '~/services/cookies/store-selection-cookie.server.ts'
+import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
-import { getStoreLocationData } from '~/services/get-store-location-data.ts'
+
+import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const cookieHeader = request.headers.get('Cookie')
-	const userPrefsCookie = ((await userPreferencesCookie.parse(cookieHeader)) || {
-		storeRedirectUrl: '',
-		storeId: '',
-		storeVersionDate: '',
-	}) as UserPreferencesCookie
-	const storeData = await getStoreLocationData()
+	const preferences = await getUserPreferences(request)
 	let headers = new Headers()
 
-	const isValidPreferences =
-		userPreferencesCookieSchema.safeParse(userPrefsCookie).success &&
-		userPrefsCookie.storeVersionDate === storeData.date
-
-	if (!isValidPreferences) {
+	if (!preferences) {
 		return redirect(href('/'))
 	}
 
 	return data(
 		{
-			...userPrefsCookie,
-			isValidPreferences,
+			...preferences,
 		},
 		{ headers },
 	)
@@ -57,11 +44,11 @@ export default function Embed() {
 	return (
 		<div className="flex size-full grow flex-col">
 			<div className="bg-primary">
-				<Button type="button" onClick={onGoToSelection} size="xs">
+				<Button onClick={onGoToSelection} size="xs" type="button">
 					{t('userActions.goToSelection', 'Go to selection')}
 				</Button>
 			</div>
-			<iframe className="grow" src={loaderData.storeRedirectUrl} />
+			<iframe className="grow" src={loaderData.preferences.storeRedirectUrl} />
 		</div>
 	)
 }

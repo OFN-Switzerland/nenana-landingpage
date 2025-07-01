@@ -13,26 +13,32 @@ import {
 	useLocation,
 } from 'react-router'
 import { useChangeLanguage } from 'remix-i18next/react'
-import { type Route } from './+types/root.ts'
-import { plausibleClientEvent } from './lib/plausible/plausible-client-event.ts'
-import versionFile from './version.json'
+
 import { DevModeOverlay } from '~/components/devmode-overlay'
+import { ServiceWorkerUpdater } from '~/components/pwa/service-worker-updater.client'
+import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
+import { userPreferencesCookie } from '~/lib/cookies/store-selection/store-selection-cookie.server.ts'
 import { isClient } from '~/lib/is-client.ts'
 import { logger } from '~/lib/logger.ts'
 import { GenericAppEvents } from '~/lib/plausible/event-names.ts'
 import { getHostname } from '~/lib/plausible/get-hostname.ts'
 import { cn } from '~/lib/utils.ts'
-import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
-import { getLocale } from '~/services/get-locale.ts'
-import { getTheme } from '~/services/theme.server'
-import { ServiceWorkerUpdater } from '~/components/pwa/service-worker-updater.client'
+import { getLocale, i18nextMiddleware } from '~/middleware/i18next.ts'
+import { performanceMiddleware } from '~/middleware/performance.ts'
+
 import './webfonts.css'
 import './tailwind.css'
+import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
+import { getTheme } from '~/services/theme.server'
+
+import { type Route } from './+types/root.ts'
+import { plausibleClientEvent } from './lib/plausible/plausible-client-event.ts'
+import versionFile from './version.json'
 
 export const links: LinksFunction = () => [
-	{ rel: 'icon', href: '/favicon.png', type: 'image/png' },
-	{ rel: 'icon', href: '/favicon.ico', type: 'image/png' },
-	{ rel: 'manifest', href: '/manifest.json', crossOrigin: 'use-credentials' },
+	{ href: '/favicon.png', rel: 'icon', type: 'image/png' },
+	{ href: '/favicon.ico', rel: 'icon', type: 'image/png' },
+	{ crossOrigin: 'use-credentials', href: '/manifest.json', rel: 'manifest' },
 ]
 
 export const headers: HeadersFunction = () => {
@@ -41,8 +47,11 @@ export const headers: HeadersFunction = () => {
 	}
 }
 
-export const loader = async ({ request, params }: Route.LoaderArgs) => {
-	const locale = await getLocale(request)
+export const loader = async ({ context, params, request }: Route.LoaderArgs) => {
+	const locale = getLocale(context)
+	const userPreferences = await getUserPreferences(request)
+
+	logger.debug(`User language is ${locale}`)
 
 	let response = {}
 
@@ -53,30 +62,37 @@ export const loader = async ({ request, params }: Route.LoaderArgs) => {
 		// prevent redirect loop
 		if (!pathname.startsWith(`/${locale}/`)) {
 			response = {
-				status: 301,
 				headers: {
 					Location: `/${locale}${pathname}`,
 				},
+				status: 301,
 			}
 		}
 	}
 
+	if (!userPreferences.isValidPreferences) {
+		console.log({ userPreferences })
+		const headers = new Headers()
+		headers.append('Set-Cookie', await userPreferencesCookie.serialize(userPreferences.preferences))
+	}
+
 	return data(
 		{
-			locale,
+			...userPreferences,
 			domain: getHostname(process.env.ORIGIN),
-			version: versionFile.version,
-			isDev: process.env.NODE_ENV !== 'production',
 			ENV: {
 				INSTANCE_NAME: process.env.INSTANCE_NAME,
 				NODE_ENV: process.env.NODE_ENV,
 				VERSION: versionFile.version,
 			},
+			isDev: process.env.NODE_ENV !== 'production',
+			locale,
 			requestInfo: {
 				userPrefs: {
 					theme: getTheme(request),
 				},
 			},
+			version: versionFile.version,
 		},
 		response,
 	)
@@ -84,13 +100,23 @@ export const loader = async ({ request, params }: Route.LoaderArgs) => {
 
 export type RootRouteLoaderData = typeof loader
 
+export const unstable_middleware = [i18nextMiddleware, performanceMiddleware]
+
 export const handle = {
 	i18n: 'common',
 }
 
+export default function App() {
+	return <Outlet />
+}
+
+export function ErrorBoundary(args: Route.ErrorBoundaryProps) {
+	return ErrorBoundaryShared(args)
+}
+
 export function Layout({ children }: PropsWithChildren) {
 	const location = useLocation()
-	const { locale, version, ENV } = useLoaderData<typeof loader>()
+	const { ENV, locale, version } = useLoaderData<typeof loader>()
 	const { i18n } = useTranslation()
 	useChangeLanguage(locale || i18n.language)
 
@@ -102,15 +128,15 @@ export function Layout({ children }: PropsWithChildren) {
 		if (isClient() && window.ENV.VERSION !== version) {
 			logger.error('🔄 Should reload page or clear cache due to version mismatch')
 			// Force reload the page when a version mismatch is detected
-			window.location.reload();
+			window.location.reload()
 		}
-	}, [version]);
+	}, [version])
 
 	return (
-		<html lang={locale} dir={i18n.dir()} className={cn(['h-svh'])}>
+		<html className={cn(['h-svh'])} dir={i18n.dir()} lang={locale}>
 			<head>
 				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta content="width=device-width, initial-scale=1" name="viewport" />
 				<Meta />
 				<Links />
 			</head>
@@ -129,12 +155,4 @@ export function Layout({ children }: PropsWithChildren) {
 			</body>
 		</html>
 	)
-}
-
-export default function App() {
-	return <Outlet />
-}
-
-export function ErrorBoundary(args: Route.ErrorBoundaryProps) {
-	return ErrorBoundaryShared(args)
 }

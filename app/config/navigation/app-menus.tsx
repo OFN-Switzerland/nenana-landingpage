@@ -1,24 +1,24 @@
 import type React from 'react'
 
 type AppRoute = {
-	path: (...args: any) => string
-	name: string
 	icon?: React.ReactElement
+	name: string
+	path: (...args: any) => string
 }
 
 export const MenuElements = {
 	divider: 'divider',
 }
 
+export type Menu = Record<string, MenuItems>
+
+export type MenuDivider = (typeof MenuElements)['divider']
+
 export type MenuItem = AppRoute & {
 	children?: MenuItem[]
 }
 
-export type MenuDivider = (typeof MenuElements)['divider']
-
-export type MenuItems = (MenuItem | MenuDivider)[]
-
-export type Menu = Record<string, MenuItems>
+export type MenuItems = (MenuDivider | MenuItem)[]
 
 export const AppMenus: Menu = {
 	app: [

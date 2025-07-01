@@ -5,8 +5,8 @@ declare global {
 		ENV: {
 			INSTANCE_NAME: string
 			NODE_ENV: string
-			VERSION: string
 			STORE_DATA_URL: string
+			VERSION: string
 		}
 	}
 }

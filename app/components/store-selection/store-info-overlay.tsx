@@ -1,9 +1,7 @@
-import { InfoIcon } from 'lucide-react'
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { H3 } from '~/components/typography/h3.tsx'
-import { H4 } from '~/components/typography/h4.tsx'
-import { P } from '~/components/typography/p.tsx'
+
+import { StoreInfoDisplay } from '~/components/store-selection/store-info-display.tsx'
 import { Button } from '~/components/ui/button.tsx'
 import { type Store } from '~/schemas/store-location-schema.ts'
 
@@ -26,34 +24,19 @@ export const StoreInfoOverlay: React.FC<Props> = ({ data }) => {
 	return (
 		<>
 			<Button
-				variant="ghost"
-				size="xs"
+				name={t('actions.info', 'More information')}
 				onClick={openDialog}
+				size="sm"
 				type="button"
-				name={t('actions.info', 'More information')}>
-				<InfoIcon />
+				variant="outline">
+				{t('actions.hubInfo', 'Information')}
 			</Button>
-			<dialog ref={dialogRef} className="modal modal-bottom sm:modal-middle">
+			<dialog className="modal modal-bottom sm:modal-middle" ref={dialogRef}>
 				<div className="modal-box">
-					<H3>{data.name}</H3>
-					<P>{data.description}</P>
-					<H4>{t('storeInfo.address', 'Address')}</H4>
-					<P>
-						{data.address.street}
-						<br />
-						{data.address.zip} {data.address.city}
-						<br />
-						{data.address.country}
-					</P>
-					<H4>{t('storeInfo.contact', 'Contact')}</H4>
-					<P>
-						<a href={`tel:${data.contact.phone}`}>{data.contact.phone}</a>
-						<br />
-						<a href={`mailto:${data.contact.email}`}>{data.contact.email}</a>
-					</P>
+					<StoreInfoDisplay data={data} />
 					<div className="modal-action">
 						<div className="flex flex-row items-center gap-4">
-							<Button type="button" onClick={onCancelClick}>
+							<Button onClick={onCancelClick} type="button">
 								{t('actions.cancel', 'Cancel')}
 							</Button>
 						</div>

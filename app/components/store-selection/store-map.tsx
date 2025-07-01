@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { ClientOnly } from 'remix-utils/client-only'
+
 import {
 	MapImplementationClient,
 	type StoreMapProps,

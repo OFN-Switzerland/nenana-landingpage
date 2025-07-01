@@ -1,20 +1,17 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type PropsWithChildren } from 'react'
 
-const layoutContainerVariants = cva(
-	'container flex max-w-[1280px] grow px-0 md:px-4 lg:px-4 xl:px-0',
-	{
-		variants: {
-			variant: {
-				default: 'flex-col gap-8',
-				row: 'flex-row gap-8',
-			},
-		},
-		defaultVariants: {
-			variant: 'default',
+const layoutContainerVariants = cva('flex w-full max-w-3xl items-center px-3 md:px-0', {
+	defaultVariants: {
+		variant: 'default',
+	},
+	variants: {
+		variant: {
+			default: 'flex-col gap-8',
+			row: 'flex-row gap-8',
 		},
 	},
-)
+})
 
 type Props = PropsWithChildren<VariantProps<typeof layoutContainerVariants>>
 

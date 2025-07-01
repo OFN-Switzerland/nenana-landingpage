@@ -1,5 +1,6 @@
 import { SearchIcon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+
 import { type StoreData } from '~/schemas/store-location-schema.ts'
 
 type StoreSearchFilterProps = {
@@ -17,11 +18,11 @@ export const StoreSearchFilter = ({ searchQuery, setSearchQuery }: StoreSearchFi
 					<SearchIcon size={20} />
 				</div>
 				<input
-					type="text"
-					placeholder={t('storeSelection.searchPlaceholder', 'Search stores...')}
 					className="input input-bordered w-full"
-					value={searchQuery}
 					onChange={(e) => setSearchQuery(e.target.value)}
+					placeholder={t('storeSelection.searchPlaceholder', 'Search stores...')}
+					type="text"
+					value={searchQuery}
 				/>
 			</div>
 		</div>

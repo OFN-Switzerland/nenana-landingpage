@@ -2,6 +2,7 @@ import { X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useRouteLoaderData, useSearchParams } from 'react-router'
+
 import { StoreMap } from '~/components/store-selection/store-map.tsx'
 import { StoreResults } from '~/components/store-selection/store-results.tsx'
 import {
@@ -9,10 +10,10 @@ import {
 	StoreSearchFilter,
 } from '~/components/store-selection/store-search-filter.tsx'
 import { Alert } from '~/components/ui/alert.tsx'
-import { type HomeRouteLoaderData } from '~/routes/home.tsx'
+import { type RootRouteLoaderData } from '~/root.tsx'
 
 export const StoreSelection = () => {
-	const loaderData = useRouteLoaderData<HomeRouteLoaderData>('routes/home')
+	const loaderData = useRouteLoaderData<RootRouteLoaderData>('root')
 	const { t } = useTranslation()
 	const [searchParams, setSearchParams] = useSearchParams()
 	const [showMap, setShowMap] = useState(true)
@@ -34,17 +35,6 @@ export const StoreSelection = () => {
 		}
 		setSearchParams(newParams, { replace: true })
 	}
-
-	// Function to update the selected state in the URL
-	// const setSelectedState = (state: string) => {
-	// 	const newParams = new URLSearchParams(searchParams)
-	// 	if (state) {
-	// 		newParams.set('state', state)
-	// 	} else {
-	// 		newParams.delete('state')
-	// 	}
-	// 	setSearchParams(newParams, { replace: true })
-	// }
 
 	// Function to clear all filters
 	const clearAllFilters = () => {
@@ -71,17 +61,12 @@ export const StoreSelection = () => {
 		<div className="flex flex-col gap-4">
 			<div className="flex items-start gap-4">
 				<StoreSearchFilter searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-				{/*<StoreStateFilter*/}
-				{/*	stores={loaderData.storeData.stores}*/}
-				{/*	selectedState={selectedState}*/}
-				{/*	setSelectedState={setSelectedState}*/}
-				{/*/>*/}
 				{hasActiveFilters && (
 					<button
-						className="btn btn-outline"
-						type="button"
 						aria-label={t('storeSelection.clearFilters', 'Clear filters')}
-						onClick={clearAllFilters}>
+						className="btn btn-outline"
+						onClick={clearAllFilters}
+						type="button">
 						<X />
 					</button>
 				)}

@@ -1,24 +1,19 @@
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router'
+import { href, Link, useRouteLoaderData } from 'react-router'
+
 import { P } from '~/components/typography/p.tsx'
 import { Button } from '~/components/ui/button.tsx'
-import { type Store } from '~/schemas/store-location-schema.ts'
+import { StoreSelectionStatus } from '~/lib/cookies/store-selection/store-selection-status.ts'
+import { type RootRouteLoaderData } from '~/root.tsx'
 
-interface SelectedStoreProps {
-	storeId: string
-	storeRedirectUrl: string
-	stores: Store[]
-}
+export const SelectedStore: React.FC = () => {
+	const loaderData = useRouteLoaderData<RootRouteLoaderData>('root')
+	const {
+		i18n: { language: lang },
+		t,
+	} = useTranslation()
 
-export const SelectedStore: React.FC<SelectedStoreProps> = ({
-	storeId,
-	storeRedirectUrl,
-	stores,
-}) => {
-	const { t } = useTranslation()
-
-	// Find the selected store
-	const selectedStore = stores.find((store) => store.id.toString() === storeId)
+	const { preferences, selectedStore } = loaderData || {}
 
 	return (
 		<div className="bg-base-200 flex w-full flex-col items-center justify-between gap-4 rounded-lg p-4 sm:flex-row">
@@ -33,12 +28,27 @@ export const SelectedStore: React.FC<SelectedStoreProps> = ({
 					</P>
 				)}
 			</div>
-
-			<Link to={storeRedirectUrl} className="w-full sm:w-auto">
-				<Button variant="primary" type="button" className="w-full">
-					{t('userActions.goToStore', 'Go to selected store')}
-				</Button>
-			</Link>
+			{preferences?.storeSelectionStatus === StoreSelectionStatus.registration_started && (
+				<Link to={href('/:lang?/registration/form', { lang })}>
+					<Button type="button" variant="neutral">
+						{t('userActions.continueRegistration', 'Continue registration')}
+					</Button>
+				</Link>
+			)}
+			{preferences?.storeSelectionStatus === StoreSelectionStatus.registration_pending && (
+				<Link className="w-full sm:w-auto" to={href('/:lang?/registration/completed', { lang })}>
+					<Button className="w-full" type="button" variant="primary">
+						{t('userActions.finalizeRegistration', 'I received my registration info')}
+					</Button>
+				</Link>
+			)}
+			{preferences?.storeSelectionStatus === StoreSelectionStatus.registration_completed && (
+				<Link className="w-full sm:w-auto" to={selectedStore?.forwardUrl || href('/')}>
+					<Button className="w-full" type="button" variant="primary">
+						{t('userActions.navigateToStore', 'To store')}
+					</Button>
+				</Link>
+			)}
 		</div>
 	)
 }

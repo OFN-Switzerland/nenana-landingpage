@@ -1,5 +1,6 @@
 import '@khmyznikov/pwa-install'
 import { useRef } from 'react'
+
 import { Button } from '~/components/ui/button.tsx'
 
 export const PwaInstallClient: React.FC = () => {

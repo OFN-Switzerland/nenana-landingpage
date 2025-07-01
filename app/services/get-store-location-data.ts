@@ -20,7 +20,7 @@ export const getStoreLocationData = async () => {
 	if (result.success) {
 		const stores = result.data.stores.filter((store) => store.status === 'active')
 
-		return { stores, date: result.data.date } as StoreData
+		return { date: result.data.date, stores } as StoreData
 	} else {
 		throw new Error(result.error.message)
 	}

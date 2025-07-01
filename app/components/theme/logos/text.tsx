@@ -1,5 +1,5 @@
 export const LogoTextSvg: React.FC<{ className?: string }> = ({ className }) => (
-	<svg viewBox="0 0 351 56" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+	<svg className={className} fill="none" viewBox="0 0 351 56" xmlns="http://www.w3.org/2000/svg">
 		<path
 			d="M349.046 10.4978L343.701 31.5447L350.174 54.5501H337.128C335.844 48.7517 334.871 43.7611 334.207 39.5783C333.322 44.8013 332.359 49.7919 331.319 54.5501H320.098L325.874 31.5447L320.098 10.4978H331.319C333.111 19.4831 334.074 24.5844 334.207 25.8016C335.49 18.2991 336.464 13.1978 337.128 10.4978H349.046Z"
 			fill="currentColor"

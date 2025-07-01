@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { href, Link } from 'react-router'
+
 import { Logo } from '~/components/theme/logo.tsx'
 
 export const Footer: React.FC = () => {
 	const { t } = useTranslation()
 	return (
-		<div className="flex flex-row items-center justify-between">
+		<div className="mt-6 flex flex-row items-center justify-between md:mt-16">
 			<Link to={href('/')}>
 				<Logo variant="sm" />
 			</Link>

@@ -1,5 +1,6 @@
 import { InfoIcon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+
 import { Alert } from '~/components/ui/alert.tsx'
 
 export const HomeInfo: React.FC = () => {

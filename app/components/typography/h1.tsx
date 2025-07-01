@@ -1,17 +1,18 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import React from 'react'
+
 import { cn } from '~/lib/utils.ts'
 
-const headingVariants = cva('scroll-m-20 font-extrabold tracking-tight', {
-	variants: {
-		variant: {
-			default: 'text-4xl lg:text-5xl',
-			sm: 'text-lg lg:text-xl',
-			md: 'text-md leading-5',
-		},
-	},
+const headingVariants = cva('w-full scroll-m-20 font-extrabold tracking-tight', {
 	defaultVariants: {
 		variant: 'default',
+	},
+	variants: {
+		variant: {
+			default: 'text-3xl lg:text-4xl',
+			md: 'text-md leading-5',
+			sm: 'text-lg lg:text-xl',
+		},
 	},
 })
 
@@ -20,6 +21,6 @@ export interface HeadingProps extends VariantProps<typeof headingVariants> {
 	className?: string
 }
 
-export function H1({ children, variant, className }: HeadingProps) {
+export function H1({ children, className, variant }: HeadingProps) {
 	return <h1 className={cn([headingVariants({ variant }), className])}>{children}</h1>
 }
