@@ -17,6 +17,7 @@
     "up": "yarn upgrade-interactive",
     "i18n:extract": "i18next './app/**/*.{js,ts,tsx}' --config i18next-parser.config.mjs && yarn i18n:generate",
     "i18n:generate": "i18next-resources-for-ts toc -i ./app/locales/en/ -o ./app/locales/en.ts && i18next-resources-for-ts toc -i ./app/locales/de/ -o ./app/locales/de.ts",
+    "email": "email dev",
     "self-update": "yarn set version latest && yarn"
   },
   "dependencies": {
