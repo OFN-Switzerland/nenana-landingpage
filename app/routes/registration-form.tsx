@@ -103,10 +103,20 @@ export async function action({ context, request }: ActionFunctionArgs) {
 		throw new Error('REGISTRATION_ENDPOINT_URL environment variable is not set')
 	}
 
+	if (!process.env.REGISTRATION_ENDPOINT_USER || !process.env.REGISTRATION_ENDPOINT_PW) {
+		throw new Error(
+			'REGISTRATION_ENDPOINT_USER or REGISTRATION_ENDPOINT_PW environment variable is not set',
+		)
+	}
+
 	try {
+		const authString = `${process.env.REGISTRATION_ENDPOINT_USER}:${process.env.REGISTRATION_ENDPOINT_PW}`
+		const base64Auth = Buffer.from(authString).toString('base64')
+
 		await fetch(process.env.REGISTRATION_ENDPOINT_URL, {
 			body: JSON.stringify(data),
 			headers: {
+				Authorization: `Basic ${base64Auth}`,
 				'Content-Type': 'application/json',
 			},
 			method: 'POST',
