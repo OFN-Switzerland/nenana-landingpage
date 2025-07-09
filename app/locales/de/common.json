@@ -54,7 +54,8 @@
     "actions": {
       "continue": "Ohne Registrierung fortfahren",
       "register": "Registrieren",
-      "registerLegend": "Für neue Kunden"
+      "registerLegend": "Für neue Kunden",
+      "continueLegend": "Für bestehende Kunden mit OFN Account"
     },
     "p1": "Um auf den NeNaNa OpenFoodNetwork Hub zugreifen zu können, ist eine Registrierung erforderlich. Wenn Sie bereits ein Konto haben und Anweisungen von einem unserer Hub-Manager erhalten haben (vielleicht verwenden Sie diese App auf einem neuen Gerät?), können Sie ohne weitere Registrierung fortfahren und warten, bis Sie zu Ihrem ausgewählten Hub weitergeleitet werden.",
     "title": "Sie haben bereits ein Konto?"

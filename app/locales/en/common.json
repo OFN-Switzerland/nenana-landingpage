@@ -54,7 +54,8 @@
     "actions": {
       "continue": "Continue without registration",
       "register": "Start registration",
-      "registerLegend": "For existing customers"
+      "registerLegend": "For new customers",
+      "continueLegend": "For existing customer with an OFN account"
     },
     "p1": "Registration is required in order to access the NeNaNa OpenFoodNetwork Hub. If you already have an account and received instructions from one of our hub managers (maybe you are using this app on a new device?), you can continue without another registration process and wait to be redirected to your selected hub.",
     "title": "Already have an account?"

@@ -41,7 +41,7 @@ export default function RegistrationStart() {
 							{t('registerStart.actions.continue', 'Continue without registration')}
 						</Button>
 						<legend className="mt-2 text-center">
-							{t('registerStart.actions.registerLegend', 'For existing customers')}
+							{t('registerStart.actions.continueLegend', 'For existing customers')}
 						</legend>
 					</Link>
 				</div>
