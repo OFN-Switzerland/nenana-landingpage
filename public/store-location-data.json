@@ -21,7 +21,7 @@
         "phone": "+41 78 953 76 42",
         "email": "dorji.tering@hotmail.com"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-heiden/shop",
       "status": "hidden"
     },
@@ -44,7 +44,7 @@
         "phone": "+41 (0)61 701 1017",
         "email": "brodbeck@rechtsozial.ch"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-rehetobel/shop",
       "status": "hidden"
     },
@@ -67,7 +67,7 @@
         "phone": "",
         "email": ""
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-stein/shop",
       "status": "hidden"
     },
@@ -90,7 +90,7 @@
         "phone": "+41 (0)77 429 10 26",
         "email": "info@saienbruecke.ch"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-urnasch/shop",
       "status": "hidden"
     },
@@ -113,7 +113,7 @@
         "phone": "",
         "email": ""
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-rebstein/shop",
       "status": "hidden"
     },
@@ -136,7 +136,7 @@
         "phone": "",
         "email": ""
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-st-gallen/shop",
       "status": "hidden"
     },
@@ -159,7 +159,7 @@
         "phone": "078 740 60 77",
         "email": "sabrina@yogaambodensee.ch"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-wittenbach/shop",
       "status": "hidden"
     },
@@ -182,7 +182,7 @@
         "phone": "+41 71 793 10 55",
         "email": "reuter.a@bluewin.ch"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ai-appenzell/shop",
       "status": "hidden"
     },
@@ -205,7 +205,7 @@
         "phone": "+41 (0)79 295 01 33",
         "email": "claudia@gorbach.biz"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/nenana-sg-altstaetten-luechingen/shop#/shop_panel",
       "status": "active"
     },
@@ -228,7 +228,7 @@
         "phone": "+41 (0)00 000 00 00",
         "email": "info@openfoodswitzerland.ch"
       },
-      "registrationRecipientEmail": "oliver.studer@tegonal.ch",
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop#/shop_panel",
       "status": "active"
     }
