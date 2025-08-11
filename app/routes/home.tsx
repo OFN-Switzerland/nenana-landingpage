@@ -33,7 +33,7 @@ import { type Route } from './+types/home.ts'
  * @param request
  */
 export const loader = async ({ context, request }: LoaderFunctionArgs) => {
-	const { language: lang, t } = getInstance(context)
+	const { language: lang, t } = getInstance(context as any)
 	const userPreferences = await getUserPreferences(request)
 
 	if (
@@ -58,7 +58,7 @@ export type HomeRouteLoaderData = typeof loader
  * @param request
  */
 export async function action({ context, request }: Route.ActionArgs) {
-	const { language: lang } = getInstance(context)
+	const { language: lang } = getInstance(context as any)
 	const cookieHeader = request.headers.get('Cookie')
 	const userPrefsCookie = (await userPreferencesCookie.parse(cookieHeader)) || {}
 	const bodyParams = await request.formData()

@@ -12,7 +12,7 @@ const resources = i18nConfig.resources
 export async function loader({ params }: Route.LoaderArgs) {
 	const lng = z
 		.string()
-		.refine((lng): lng is keyof typeof resources => Object.keys(resources).includes(lng))
+		.refine((lng) => Object.keys(resources).includes(lng))
 		.safeParse(params.lang)
 
 	if (lng.error) {
@@ -20,12 +20,12 @@ export async function loader({ params }: Route.LoaderArgs) {
 		return data({ error: lng.error }, { status: 400 })
 	}
 
-	const namespaces = resources[lng.data]
+	const namespaces = (resources as any)[lng.data] as Record<string, any>
 
 	const ns = z
 		.string()
-		.refine((ns): ns is keyof typeof namespaces => {
-			return Object.keys(resources[lng.data]).includes(ns)
+		.refine((ns): ns is string => {
+			return Object.keys(namespaces).includes(ns)
 		})
 		.safeParse(params.ns)
 

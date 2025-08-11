@@ -13,7 +13,6 @@ import {
 	dataTableLabelCell,
 	dataTableLastRow,
 	dataTableRow,
-	footer,
 	heading,
 	paragraph,
 	section,

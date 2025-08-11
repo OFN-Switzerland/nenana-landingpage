@@ -7,7 +7,7 @@ import { type HubApplicationEmailsOptions } from '~/lib/mails/hub-application.ts
 import { Footer } from '../fragments/footer.tsx'
 import { Header } from '../fragments/header.tsx'
 import { MailBody } from '../fragments/mail-body.tsx'
-import { button, container, footer, heading, paragraph, section } from '../styles/styles.ts'
+import { button, container, heading, paragraph, section } from '../styles/styles.ts'
 
 const messages = {
 	de: {

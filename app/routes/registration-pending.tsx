@@ -23,7 +23,7 @@ import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 
 export const loader = async ({ context, request }: LoaderFunctionArgs) => {
-	const { t } = getInstance(context)
+	const { t } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 
 	if (!preferences || !preferences.preferences.storeId) {

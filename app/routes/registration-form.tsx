@@ -48,8 +48,8 @@ const registrationSchema = z.object({
 	registrationRecipientEmail: z.string().email({ message: 'Please enter a valid email address' }),
 	storeId: z.string(),
 	storeName: z.string(),
-	termsAccepted: z.literal(true, {
-		errorMap: () => ({ message: 'You must accept the terms to register' }),
+	termsAccepted: z.boolean().refine((val) => val === true, {
+		message: 'You must accept the terms to register',
 	}),
 })
 
@@ -57,7 +57,7 @@ type RegistrationFormData = z.infer<typeof registrationSchema>
 const resolver = zodResolver(registrationSchema)
 
 export const loader = async ({ context, request }: LoaderFunctionArgs) => {
-	const { t } = getInstance(context)
+	const { t } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 
 	logger.debug('preferences', preferences)
@@ -87,7 +87,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 }
 
 export async function action({ context, request }: ActionFunctionArgs) {
-	const { language: lang } = getInstance(context)
+	const { language: lang } = getInstance(context as any)
 	const {
 		data,
 		errors,

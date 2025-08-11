@@ -48,7 +48,7 @@ export const headers: HeadersFunction = () => {
 }
 
 export const loader = async ({ context, params, request }: Route.LoaderArgs) => {
-	const locale = getLocale(context)
+	const locale = getLocale(context as any)
 	const userPreferences = await getUserPreferences(request)
 
 	logger.debug(`User language is ${locale}`)
