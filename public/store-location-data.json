@@ -230,7 +230,7 @@
       },
       "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop#/shop_panel",
-      "status": "active"
+      "status": "hidden"
     }
   ]
 }
