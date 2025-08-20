@@ -70,9 +70,9 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 		...preferences,
 		description: t(
 			'routes.register.description',
-			'Register for a NeNaNa account to access an OFN store directly via this website.',
+			"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
 		),
-		title: t('routes.register.title', 'NeNaNa - Registration'),
+		title: t('routes.register.title', "Ne'Na'Na - Registration"),
 	})
 }
 
@@ -181,13 +181,13 @@ export default function Register() {
 		<>
 			<LayoutContainer>
 				<H1 className="card-title">
-					{t('register.title', 'NeNaNa Box / OpenFoodNetwork Hub Account Registration')}
+					{t('register.title', "Ne'Na'Na Box / OpenFoodNetwork Hub Account Registration")}
 				</H1>
 				<H2>{t('register.box.title', 'Registration instructions')}</H2>
 				<Alert>
 					<div>
 						<Trans i18nKey="register.box.p1">
-							In order to shop at this hub, NeNaNa must register you as a customer.{' '}
+							In order to shop at this hub, Ne'Na'Na must register you as a customer.{' '}
 							<strong>
 								Only customers who registered using this form can make purchases on OpenFoodNetwork
 							</strong>
@@ -197,14 +197,14 @@ export default function Register() {
 				</Alert>
 				<P>
 					<Trans i18nKey="register.box.p2">
-						After submitting the form, NeNaNa will manually add you to your hub.{' '}
+						After submitting the form, Ne'Na'Na will manually add you to your hub.{' '}
 						<strong>
 							Please note that you will not be able to make purchases until this has been done
 						</strong>
-						. Once you have been added as a customer, you will receive a welcome email from NeNaNa.
-						This email contains all the information you need to proceed, as well as information you
-						will need for shopping (information about OFN, access to the depot, order cycle
-						procedures, etc.).
+						. Once you have been added as a customer, you will receive a welcome email from
+						Ne'Na'Na. This email contains all the information you need to proceed, as well as
+						information you will need for shopping (information about OFN, access to the depot,
+						order cycle procedures, etc.).
 					</Trans>
 				</P>
 			</LayoutContainer>
@@ -250,7 +250,7 @@ export default function Register() {
 								error={errors}
 								label={t(
 									'register.form.label.communication',
-									'Would you like to receive notifications from NeNaNa?',
+									"Would you like to receive notifications from Ne'Na'Na?",
 								)}
 								options={[
 									{
@@ -269,7 +269,7 @@ export default function Register() {
 								{...register('termsAccepted')}
 								label={t(
 									'register.form.label.termsAccepted',
-									'I accept the terms of use: By submitting this form, I agree that NeNaNa may contact me to welcome me and provide me with information on how to proceed (registration on the OpenFoodNetwork platform, access to the repository, etc.).',
+									"I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed (registration on the OpenFoodNetwork platform, access to the repository, etc.).",
 								)}
 							/>
 							{loaderData.selectedStore && (

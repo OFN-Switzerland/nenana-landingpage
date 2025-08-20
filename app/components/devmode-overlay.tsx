@@ -30,8 +30,7 @@ const DevModeOverlay = () => {
 	return (
 		<div className="hidden md:block">
 			{loaderData?.isDev ? (
-				<div
-					className="fixed top-2 right-2 flex flex-row gap-1 text-xs md:top-auto md:right-auto md:bottom-2 md:left-2">
+				<div className="fixed top-2 right-2 flex flex-row gap-1 text-xs md:top-auto md:right-auto md:bottom-2 md:left-2">
 					{isFetching && (
 						<div className="h-4 w-4 rounded-full text-blue-500">
 							<Spinner />

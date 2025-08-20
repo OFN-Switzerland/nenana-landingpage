@@ -1,10 +1,10 @@
-# NeNaNa Landingpage PWA
+# Ne'Na'Na Landingpage PWA
 
-This is the landing page PWA for the NeNaNa project. It provides a store selection interface to OpenFoodNetwork and manages user registration for OFN hubs.
+This is the landing page PWA for the Ne'Na'Na project. It provides a store selection interface to OpenFoodNetwork and manages user registration for OFN hubs.
 
 ## Project Overview
 
-NeNaNa Box is a project that connects users with local OpenFoodNetwork (OFN) hubs where they can purchase local food products. This landing page serves as an entry point for users to:
+Ne'Na'Na Box is a project that connects users with local OpenFoodNetwork (OFN) hubs where they can purchase local food products. This landing page serves as an entry point for users to:
 
 1. Select their preferred pickup location/store
 2. Register for a new account with their chosen hub

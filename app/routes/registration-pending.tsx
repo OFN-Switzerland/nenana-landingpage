@@ -34,9 +34,9 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 		...preferences,
 		description: t(
 			'routes.register.description',
-			'Register for a NeNaNa account to access an OFN store directly via this website.',
+			"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
 		),
-		title: t('routes.register.title', 'NeNaNa - Registration'),
+		title: t('routes.register.title', "Ne'Na'Na - Registration"),
 	})
 }
 
@@ -72,7 +72,7 @@ export default function RegistrationPending() {
 					</div>
 					<P>
 						<Trans i18nKey="registrationPending.box.p1">
-							You have already registered with NeNaNa. Please check your email for instructions on
+							You have already registered with Ne'Na'Na. Please check your email for instructions on
 							how to complete your registration. Please do not register again, instead, if you think
 							something went wrong, contact the hub's manager.
 						</Trans>

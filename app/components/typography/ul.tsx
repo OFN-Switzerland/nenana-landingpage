@@ -10,9 +10,9 @@ const paragraphVariants = cva('my-6 ml-6 list-disc [&>li]:mt-2', {
 	variants: {
 		variant: {
 			default: '',
-			lead: 'text-lg font-light leading-8 md:text-xl',
-			muted: 'text-sm text-muted-foreground',
-			sm: 'text-sm font-light leading-6',
+			lead: 'text-lg leading-8 font-light md:text-xl',
+			muted: 'text-muted-foreground text-sm',
+			sm: 'text-sm leading-6 font-light',
 		},
 	},
 })

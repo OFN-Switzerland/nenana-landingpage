@@ -23,7 +23,7 @@ export default function RegistrationStart() {
 			<P>
 				{t(
 					'registerStart.p1',
-					'Registration is required in order to access the NeNaNa OpenFoodNetwork Hub. If you already have an account and received instructions from one of our hub managers (maybe you are using this app on a new device?), you can continue without another registration process and wait to be redirected to your selected hub.',
+					"Registration is required in order to access the Ne'Na'Na OpenFoodNetwork Hub. If you already have an account and received instructions from one of our hub managers (maybe you are using this app on a new device?), you can continue without another registration process and wait to be redirected to your selected hub.",
 				)}
 			</P>
 			<Alert className="flex w-full flex-col">

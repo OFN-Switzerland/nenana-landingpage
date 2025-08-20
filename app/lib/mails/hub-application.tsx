@@ -14,12 +14,12 @@ type Messages = {
 
 const messages: Messages = {
 	de: {
-		mailSubjectManager: 'Neue NeNaNa Box Registrierung erhalten',
-		mailSubjectUser: 'Ihre NeNaNa Box Registrierung wurde eingereicht',
+		mailSubjectManager: "Neue Ne'Na'Na Box Registrierung erhalten",
+		mailSubjectUser: "Ihre Ne'Na'Na Box Registrierung wurde eingereicht",
 	},
 	en: {
-		mailSubjectManager: 'New NeNaNa Box Registration Received',
-		mailSubjectUser: 'Your NeNaNa Box Registration has been submitted',
+		mailSubjectManager: "New Ne'Na'Na Box Registration Received",
+		mailSubjectUser: "Your Ne'Na'Na Box Registration has been submitted",
 	},
 }
 

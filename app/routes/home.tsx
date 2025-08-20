@@ -47,7 +47,7 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 			'routes.home.description',
 			'Choose a store to be forwarded to the next time you visit this site',
 		),
-		title: t('routes.home.title', 'NeNaNa'),
+		title: t('routes.home.title', "Ne'Na'Na"),
 	})
 }
 

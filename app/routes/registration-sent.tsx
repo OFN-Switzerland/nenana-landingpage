@@ -33,9 +33,9 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 			...preferences,
 			description: t(
 				'routes.register.description',
-				'Register for a NeNaNa account to access an OFN store directly via this website.',
+				"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
 			),
-			title: t('routes.register.title', 'NeNaNa - Registration'),
+			title: t('routes.register.title', "Ne'Na'Na - Registration"),
 		},
 		{
 			headers: {
@@ -71,8 +71,8 @@ export default function RegistrationSent() {
 			<H1 className="card-title">{t('registrationSent.title', 'Your registration was sent')}</H1>
 			<P>
 				<Trans i18nKey="registrationSent.box.p1">
-					Thank you for registering with NeNaNa. Please check your email for instructions on how to
-					proceed. You will hear from us within 2-3 business days.
+					Thank you for registering with Ne'Na'Na. Please check your email for instructions on how
+					to proceed. You will hear from us within 2-3 business days.
 				</Trans>
 			</P>
 			<Link to={href('/')}>
