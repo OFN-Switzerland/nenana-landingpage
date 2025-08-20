@@ -1,132 +1,282 @@
 {
   "version": 1,
-  "date": "2025-03-25T14:48:00Z",
+  "date": "2025-04-30T14:00:00Z",
   "stores": [
     {
       "id": 1,
-      "name": "Open Food Network Australia",
-      "description": "Australia's local food marketplace",
+      "name": "Heiden",
+      "description": "",
       "address": {
-        "street": "123 Fake St",
-        "city": "Melbourne",
-        "state": "VIC",
-        "zip": "3000",
-        "country": "Australia",
+        "street": "Wiesweg 1",
+        "city": "Heiden",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9010",
+        "country": "Switzerland",
         "position": {
-          "latitude": -37.8136,
-          "longitude": 144.9631
+          "latitude": 47.4233182,
+          "longitude": 9.5498199
         }
       },
       "contact": {
-        "phone": "+61 3 1234 5678",
-        "email": "test@test.com"
+        "phone": "+41 78 953 76 42",
+        "email": "info@openfoodswitzerland.ch"
       },
-      "forwardUrl": "https://openfoodnetwork.org.au"
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-heiden/shop",
+      "status": "active"
     },
     {
       "id": 2,
-      "name": "Open Food Network Canada",
-      "description": "Canada's local food marketplace",
+      "name": "Rehetobel",
+      "description": "",
       "address": {
-        "street": "456 Fake St",
-        "city": "Toronto",
-        "state": "ON",
-        "zip": "M5V 2B8",
-        "country": "Canada",
+        "street": "Sägholzstrasse 11a",
+        "city": "Rehetobel",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9038",
+        "country": "Switzerland",
         "position": {
-          "latitude": 43.6532,
-          "longitude": -79.3832
+          "latitude": 47.4253644,
+          "longitude": 9.485517
         }
       },
       "contact": {
-        "phone": "+61 3 1234 5678",
-        "email": "test@test.com"
+        "phone": "+41 78 953 76 42",
+        "email": "info@openfoodswitzerland.ch"
       },
-      "forwardUrl": "https://openfoodnetwork.ca"
-    },
-    {
-      "id": 3,
-      "name": "Open Food Network UK",
-      "description": "United Kingdom's local food marketplace",
-      "address": {
-        "street": "789 Fake St",
-        "city": "London",
-        "state": "England",
-        "zip": "SW1A 1AA",
-        "country": "United Kingdom",
-        "position": {
-          "latitude": 51.5074,
-          "longitude": -0.1278
-        }
-      },
-      "contact": {
-        "phone": "+61 3 1234 5678",
-        "email": "test@test.com"
-      },
-      "forwardUrl": "https://openfoodnetwork.org.uk"
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-rehetobel/shop",
+      "status": "active"
     },
     {
       "id": 4,
-      "name": "Open Food Network USA",
-      "description": "United States' local food marketplace",
+      "name": "Stein",
+      "description": "",
       "address": {
-        "street": "1010 Fake St",
-        "city": "New York",
-        "state": "NY",
-        "zip": "10001",
-        "country": "United States",
+        "street": "",
+        "city": "Stein",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9063",
+        "country": "Switzerland",
         "position": {
-          "latitude": 40.7128,
-          "longitude": -74.0060
+          "latitude": 47.3782288,
+          "longitude": 9.3416677
         }
       },
       "contact": {
-        "phone": "+61 3 1234 5678",
-        "email": "test@test.com"
+        "phone": "",
+        "email": "info@openfoodswitzerland.ch"
       },
-      "forwardUrl": "https://openfoodnetwork.org"
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-stein/shop",
+      "status": "hidden"
     },
     {
       "id": 5,
-      "name": "Open Food Network South Africa",
-      "description": "South Africa's local food marketplace",
+      "name": "Urnäsch",
+      "description": "",
       "address": {
-        "street": "1212 Fake St",
-        "city": "Johannesburg",
-        "state": "Gauteng",
-        "zip": "2000",
-        "country": "South Africa",
+        "street": "Saien 959, Werkstatt Saienbrücke",
+        "city": "Urnäsch",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9107",
+        "country": "Switzerland",
         "position": {
-          "latitude": -26.2041,
-          "longitude": 28.0473
+          "latitude": 47.3345654,
+          "longitude": 9.2893777
         }
       },
       "contact": {
-        "phone": "+61 3 1234 5678",
-        "email": "test@test.com"
+        "phone": "+41 (0)77 429 10 26",
+        "email": "info@openfoodswitzerland.ch"
       },
-      "forwardUrl": "https://openfoodnetwork.org.za"
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-urnasch/shop",
+      "status": "active"
     },
     {
-      "id": 6,
-      "name": "Open Food Network France",
-      "description": "France's local food marketplace",
+      "id": 8,
+      "name": "Rebstein",
+      "description": "",
       "address": {
-        "street": "1414 Fake St",
-        "city": "Paris",
-        "state": "Île-de-France",
-        "zip": "75001",
-        "country": "France",
+        "street": "",
+        "city": "Rebstein",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9445",
+        "country": "Switzerland",
         "position": {
-          "latitude": 48.8566,
-          "longitude": 2.3522
+          "latitude": 47.398476,
+          "longitude": 9.5822387
         }
       },
       "contact": {
-        "phone": "+61 3 1234 5678",
-        "email": "test@test.com"
+        "phone": "",
+        "email": ""
       },
-      "forwardUrl": "https://openfoodnetwork.fr"
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-rebstein/shop",
+      "status": "hidden"
+    },
+    {
+      "id": 9,
+      "name": "St. Gallen",
+      "description": "",
+      "address": {
+        "street": "Gaiserwaldweg 56",
+        "city": "St. Gallen",
+        "state": "St. Gallen",
+        "zip": "9000",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4191561,
+          "longitude": 9.3276683
+        }
+      },
+      "contact": {
+        "phone": "",
+        "email": ""
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-st-gallen/shop",
+      "status": "hidden"
+    },
+    {
+      "id": 10,
+      "name": "Wittenbach",
+      "description": "",
+      "address": {
+        "street": "Dorfstrasse 36",
+        "city": "Wittenbach",
+        "state": "St. Gallen",
+        "zip": "9300",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.4624072,
+          "longitude": 9.3820343
+        }
+      },
+      "contact": {
+        "phone": "078 740 60 77",
+        "email": "sabrina@yogaambodensee.ch"
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-sg-wittenbach/shop",
+      "status": "hidden"
+    },
+    {
+      "id": 11,
+      "name": "Appenzell",
+      "description": "",
+      "address": {
+        "street": "Stockstrasse 2",
+        "city": "Appenzell",
+        "state": "Appenzell Innerrhoden",
+        "zip": "9050",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.3327683,
+          "longitude": 9.387886700000001
+        }
+      },
+      "contact": {
+        "phone": "+41 78 953 76 42",
+        "email": "info@openfoodswitzerland.ch"
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ai-appenzell/shop",
+      "status": "active"
+    },
+    {
+      "id": 12,
+      "name": "Lüchingen",
+      "description": "",
+      "address": {
+        "street": "Im Moos 20",
+        "city": "Lüchingen",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9450",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.38371134327522,
+          "longitude": 9.563362092232879
+        }
+      },
+      "contact": {
+        "phone": "+41 (0)79 295 01 33",
+        "email": "claudia@gorbach.biz"
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/nenana-sg-altstaetten-luechingen/shop#/shop_panel",
+      "status": "active"
+    },
+    {
+      "id": 13,
+      "name": "Food hub",
+      "description": "",
+      "address": {
+        "street": "Tobelbachstrasse 4",
+        "city": "Altstätten",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9450",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.38470880123354,
+          "longitude": 9.545472281371868
+        }
+      },
+      "contact": {
+        "phone": "+41 (0)00 000 00 00",
+        "email": "info@openfoodswitzerland.ch"
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop#/shop_panel",
+      "status": "hidden"
+    },
+    {
+      "id": 14,
+      "name": "Speicher",
+      "description": "",
+      "address": {
+        "street": "Buchenstrasse 5",
+        "city": "Speicher",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9042",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.40904159999999,
+          "longitude": 9.445737399999999
+        }
+      },
+      "contact": {
+        "phone": "+41 78 953 76 42",
+        "email": "info@openfoodswitzerland.ch"
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/nenana-speicher/shop",
+      "status": "active"
+    },
+    {
+      "id": 15,
+      "name": "Niederteufen",
+      "description": "",
+      "address": {
+        "street": "Battenhaus 788",
+        "city": "Niederteufen",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9052",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.3912436,
+          "longitude": 9.3556211
+        }
+      },
+      "contact": {
+        "phone": "+41 78 953 76 42",
+        "email": "info@openfoodswitzerland.ch"
+      },
+      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-ne-na-ar-niederteufen/shop",
+      "status": "active"
     }
   ]
 }

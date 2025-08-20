@@ -7,23 +7,23 @@
       "name": "Heiden",
       "description": "",
       "address": {
-        "street": "",
+        "street": "Wiesweg 1",
         "city": "Heiden",
         "state": "Appenzell Ausserrhoden",
         "zip": "9010",
         "country": "Switzerland",
         "position": {
-          "latitude": 47.4421715,
-          "longitude": 9.532089
+          "latitude": 47.4233182,
+          "longitude": 9.5498199
         }
       },
       "contact": {
         "phone": "+41 78 953 76 42",
-        "email": "dorji.tering@hotmail.com"
+        "email": "dorji.tsering@hotmail.com"
       },
-      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "registrationRecipientEmail": "dorji.tsering@hotmail.com",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-heiden/shop",
-      "status": "hidden"
+      "status": "active"
     },
     {
       "id": 2,
@@ -36,17 +36,17 @@
         "zip": "9038",
         "country": "Switzerland",
         "position": {
-          "latitude": 47.4253735,
-          "longitude": 9.4855146
+          "latitude": 47.4253644,
+          "longitude": 9.485517
         }
       },
       "contact": {
-        "phone": "+41 (0)61 701 1017",
-        "email": "brodbeck@rechtsozial.ch"
+        "phone": "+41 78 953 76 42",
+        "email": "dorji.tsering@hotmail.com"
       },
-      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "registrationRecipientEmail": "dorji.tsering@hotmail.com",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-rehetobel/shop",
-      "status": "hidden"
+      "status": "active"
     },
     {
       "id": 4,
@@ -82,17 +82,17 @@
         "zip": "9107",
         "country": "Switzerland",
         "position": {
-          "latitude": 47.3178621,
-          "longitude": 9.2834506
+          "latitude": 47.3345654,
+          "longitude": 9.2893777
         }
       },
       "contact": {
         "phone": "+41 (0)77 429 10 26",
         "email": "info@saienbruecke.ch"
       },
-      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "registrationRecipientEmail": "dorji.tsering@hotmail.com",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ar-urnasch/shop",
-      "status": "hidden"
+      "status": "active"
     },
     {
       "id": 8,
@@ -168,23 +168,23 @@
       "name": "Appenzell",
       "description": "",
       "address": {
-        "street": "Hofladen Weiersbrugg, Anja Reuter Ebneter",
+        "street": "Stockstrasse 2",
         "city": "Appenzell",
         "state": "Appenzell Innerrhoden",
         "zip": "9050",
         "country": "Switzerland",
         "position": {
-          "latitude": 47.3299506,
-          "longitude": 9.4099311
+          "latitude": 47.3327683,
+          "longitude": 9.387886700000001
         }
       },
       "contact": {
-        "phone": "+41 71 793 10 55",
-        "email": "reuter.a@bluewin.ch"
+        "phone": "+41 78 953 76 42",
+        "email": "dorji.tsering@hotmail.com"
       },
-      "registrationRecipientEmail": "info@openfoodswitzerland.ch",
+      "registrationRecipientEmail": "dorji.tsering@hotmail.com",
       "forwardUrl": "https://app.openfoodswitzerland.ch/ne-na-na-ai-appenzell/shop",
-      "status": "hidden"
+      "status": "active"
     },
     {
       "id": 12,
@@ -231,6 +231,52 @@
       "registrationRecipientEmail": "info@openfoodswitzerland.ch",
       "forwardUrl": "https://app.openfoodswitzerland.ch/test/shop#/shop_panel",
       "status": "hidden"
+    },
+    {
+      "id": 14,
+      "name": "Speicher",
+      "description": "",
+      "address": {
+        "street": "Buchenstrasse 5",
+        "city": "Speicher",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9042",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.40904159999999,
+          "longitude": 9.445737399999999
+        }
+      },
+      "contact": {
+        "phone": "+41 78 953 76 42",
+        "email": "dorji.tsering@hotmail.com"
+      },
+      "registrationRecipientEmail": "dorji.tsering@hotmail.com",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/nenana-speicher/shop",
+      "status": "active"
+    },
+    {
+      "id": 15,
+      "name": "Niederteufen",
+      "description": "",
+      "address": {
+        "street": "Battenhaus 788",
+        "city": "Niederteufen",
+        "state": "Appenzell Ausserrhoden",
+        "zip": "9052",
+        "country": "Switzerland",
+        "position": {
+          "latitude": 47.3912436,
+          "longitude": 9.3556211
+        }
+      },
+      "contact": {
+        "phone": "+41 78 953 76 42",
+        "email": "dorji.tsering@hotmail.com"
+      },
+      "registrationRecipientEmail": "dorji.tsering@hotmail.com",
+      "forwardUrl": "https://app.openfoodswitzerland.ch/ne-ne-na-ar-niederteufen/shop",
+      "status": "active"
     }
   ]
 }

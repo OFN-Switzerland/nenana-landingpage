@@ -1,21 +1,41 @@
+import parser from 'accept-language-parser'
 import { unstable_createI18nextMiddleware } from 'remix-i18next/middleware'
 
 import { i18nConfig } from '~/i18n-config.ts'
 import { i18nCookie } from '~/lib/cookies/i18next-cookie.server.ts'
+import { logger } from '~/lib/logger.ts'
 
 export const [i18nextMiddleware, getLocale, getInstance] = unstable_createI18nextMiddleware({
 	detection: {
 		cookie: i18nCookie,
 		fallbackLanguage: i18nConfig.fallbackLng,
 		async findLocale(request) {
-			const firstPathSegment =
-				new URL(request.url).pathname.split('/').at(1) || i18nConfig.fallbackLng
-			if (i18nConfig.supportedLngs.includes(firstPathSegment)) {
-				return firstPathSegment
+			let locale = i18nConfig.fallbackLng
+
+			const acceptLanguageHeader = request.headers.get('Accept-Language')
+			if (acceptLanguageHeader) {
+				const preferredLanguages = parser.parse(acceptLanguageHeader)
+				if (preferredLanguages.length > 0) {
+					// Find the first language that matches your supported languages
+					const match = preferredLanguages.find((lang) =>
+						i18nConfig.supportedLngs.includes(lang.code),
+					)
+					if (match) {
+						logger.debug({ match })
+						locale = match.code
+					}
+				}
 			}
-			return null
+
+			const firstPathSegment = new URL(request.url).pathname.split('/').at(1) || locale
+			if (i18nConfig.supportedLngs.includes(firstPathSegment)) {
+				locale = firstPathSegment
+			}
+
+			logger.debug({ locale })
+			return locale
 		},
-		order: ['custom', 'cookie', 'header'],
+		order: ['custom', 'header'],
 		supportedLanguages: i18nConfig.supportedLngs,
 	},
 	i18next: {

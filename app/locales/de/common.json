@@ -18,6 +18,10 @@
 			"sub": "Netzwerk Natürliche Nahrung"
 		},
 		"info": {
+			"demo": {
+				"button": "Zum Demo Shop",
+				"description": "Stöbern Sie ohne sich zu registrieren in unserem Demo Hub und entdecken Sie, welche Produkte Sie bei Ne'Na'Na kaufen können."
+			},
 			"description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
 			"title": "Wähle deinen bevorzugten Abholort"
 		}
@@ -53,9 +57,9 @@
 	"registerStart": {
 		"actions": {
 			"continue": "Ohne Registrierung fortfahren",
+			"continueLegend": "Für bestehende Kunden mit OFN Account",
 			"register": "Registrieren",
-			"registerLegend": "Für neue Kunden",
-			"continueLegend": "Für bestehende Kunden mit OFN Account"
+			"registerLegend": "Für neue Kunden"
 		},
 		"p1": "Um im Ne'Na'Na Hub einkaufen zu können, ist eine Registrierung erforderlich. Wenn Sie bereits ein Konto haben und Anweisungen von einem unserer Hub-Manager erhalten haben (vielleicht verwenden Sie diese App auf einem neuen Gerät?), können Sie ohne weitere Registrierung fortfahren und warten, bis Sie zu Ihrem ausgewählten Hub weitergeleitet werden.",
 		"title": "Sie haben bereits ein Konto?"

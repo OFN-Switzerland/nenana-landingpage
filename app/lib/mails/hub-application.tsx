@@ -3,6 +3,7 @@ import React from 'react'
 
 import ManagerNotification from '../../../emails/hub-application/manager-notification'
 import UserNotification from '../../../emails/hub-application/user-notification'
+import UserNotificationHasTelegram from '../../../emails/hub-application/user-notification-has-telegram.tsx'
 import { logger } from '../logger'
 import { sendMail } from './sendmail'
 
@@ -80,6 +81,10 @@ export async function sendHubApplicationEmails({
 			<UserNotification customerData={customerData} languageCode={languageCode} />,
 		)
 
+		const userEmailHasTelegramHtml = await render(
+			<UserNotificationHasTelegram customerData={customerData} languageCode={languageCode} />,
+		)
+
 		const registrationRecipientEmailHtml = await render(
 			<ManagerNotification
 				customerData={customerData}
@@ -88,25 +93,38 @@ export async function sendHubApplicationEmails({
 			/>,
 		)
 
+		// Send confirmation email to the customer
+		const userMailPromise = sendMail({
+			from: process.env.MAIL_FROM,
+			html: userEmailHtml,
+			replyTo: registrationRecipientEmail,
+			subject: messages[languageCode]?.mailSubjectUser || '',
+			to: customerData.email,
+		})
+
+		// Send confirmation email to the customer if they have telegram selected
+		const userMailHasTelegramPromise = sendMail({
+			from: process.env.MAIL_FROM,
+			html: userEmailHasTelegramHtml,
+			replyTo: registrationRecipientEmail,
+			subject: messages[languageCode]?.mailSubjectUser || '',
+			to: customerData.email,
+		})
+
+		// Send notification email to the hub manager
+		const adminEmailPromise = sendMail({
+			from: process.env.MAIL_FROM,
+			html: registrationRecipientEmailHtml,
+			replyTo: customerData.email,
+			subject: messages[languageCode]?.mailSubjectManager || '',
+			to: registrationRecipientEmail,
+		})
+
 		// Send emails in parallel
 		await Promise.all([
-			// Send confirmation email to the customer
-			sendMail({
-				from: process.env.MAIL_FROM,
-				html: userEmailHtml,
-				replyTo: registrationRecipientEmail,
-				subject: messages[languageCode]?.mailSubjectUser || '',
-				to: customerData.email,
-			}),
-
-			// Send notification email to the hub manager
-			sendMail({
-				from: process.env.MAIL_FROM,
-				html: registrationRecipientEmailHtml,
-				replyTo: customerData.email,
-				subject: messages[languageCode]?.mailSubjectManager || '',
-				to: registrationRecipientEmail,
-			}),
+			// userMailPromise,
+			customerData.notificationsByTelegram ? userMailHasTelegramPromise : async () => {},
+			adminEmailPromise,
 		])
 
 		logger.debug('Successfully sent hub application emails', {

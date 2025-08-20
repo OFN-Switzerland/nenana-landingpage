@@ -18,6 +18,10 @@
 			"sub": "Netzwerk Natürliche Nahrung"
 		},
 		"info": {
+			"demo": {
+				"button": "Open Demo Shop",
+				"description": "Browse our demo hub without registering and discover which products you can buy at Ne'Na'Na."
+			},
 			"description": "To make it easier and faster for you to reach your store, your chosen pick-up location will be saved and automatically selected the next time you visit this website.",
 			"title": "Choose your preferred pick-up location"
 		}
@@ -53,9 +57,9 @@
 	"registerStart": {
 		"actions": {
 			"continue": "Continue without registration",
+			"continueLegend": "For existing customer with an OFN account",
 			"register": "Start registration",
-			"registerLegend": "For new customers",
-			"continueLegend": "For existing customer with an OFN account"
+			"registerLegend": "For new customers"
 		},
 		"p1": "Registration is required in order to access the Ne'Na'Na OpenFoodNetwork Hub. If you already have an account and received instructions from one of our hub managers (maybe you are using this app on a new device?), you can continue without another registration process and wait to be redirected to your selected hub.",
 		"title": "Already have an account?"

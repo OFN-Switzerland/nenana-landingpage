@@ -47,7 +47,7 @@ export const headers: HeadersFunction = () => {
 	}
 }
 
-export const loader = async ({ context, params, request }: Route.LoaderArgs) => {
+export const loader = async ({ context, request }: Route.LoaderArgs) => {
 	const locale = getLocale(context as any)
 	const userPreferences = await getUserPreferences(request)
 
@@ -55,9 +55,9 @@ export const loader = async ({ context, params, request }: Route.LoaderArgs) => 
 
 	let response = {}
 
-	if (!params.lang) {
+	if (locale) {
 		const url = new URL(request.url)
-		logger.debug(`🔀 Redirecting to default locale ${locale} on ${url.pathname}`)
+		logger.debug(`🔀 Redirecting to middleware locale ${locale} on ${url.pathname}`)
 		const pathname = url.pathname === '/' ? '/home' : url.pathname
 		// prevent redirect loop
 		if (!pathname.startsWith(`/${locale}/`)) {
