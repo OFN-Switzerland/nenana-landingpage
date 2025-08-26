@@ -19,10 +19,10 @@
 		},
 		"info": {
 			"demo": {
-				"button": "Zum Demo Shop",
+				"button": "Zum Demo Hub",
 				"description": "Stöbern Sie ohne sich zu registrieren in unserem Demo Hub und entdecken Sie, welche Produkte Sie bei Ne'Na'Na kaufen können."
 			},
-			"description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
+			"description": "Um dir den Zugang zu deinem Hub zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
 			"title": "Wähle deinen bevorzugten Abholort"
 		}
 	},
@@ -33,7 +33,7 @@
 	"register": {
 		"box": {
 			"p1": "Um in diesem Hub einkaufen zu können, musst du dich bei Ne'Na'Na als Kunde registrieren. <2>Nur Kunden, die sich über dieses Formular registriert haben, können bei Ne'Na'Na einkaufen</2>. Fülle dazu das untenstehende Formular aus und sende es ab.",
-			"p2": "Nach dem Absenden des Formulars fügt Ne'Na'Na dich manuell zu deinem Hub hinzu. <2>Bitte beachte, dass du erst dann Einkäufe tätigen kannst, wenn dies geschehen ist</2>. Sobald du als Kunde hinzugefügt wurdest, erhältst du eine Willkommens-E-Mail von Ne'Na'Na. Diese E-Mail enthält alle Informationen, die du zum Fortfahren benötigst, sowie Informationen zum Einkaufen (Informationen über OFN, Zugang zum Depot, Bestellzyklusverfahren usw.).",
+			"p2": "Nach dem Absenden des Formulars fügt Ne'Na'Na dich manuell zu deinem Hub hinzu. <2>Bitte beachte, dass du erst dann Einkäufe tätigen kannst, wenn dies geschehen ist</2>. Sobald du als Kunde hinzugefügt wurdest, erhältst du eine Willkommens-E-Mail von Ne'Na'Na. Diese E-Mail enthält alle Informationen, die du zum Fortfahren benötigst, sowie Informationen zum Einkaufen (Informationen über Open Food Network, Zugang zum Depot, Bestellzyklusverfahren usw.).",
 			"title": "Anweisungen zur Registrierung"
 		},
 		"form": {
@@ -80,11 +80,11 @@
 	},
 	"routes": {
 		"home": {
-			"description": "Wählen Sie einen Laden aus, zu dem Sie beim nächsten Besuch dieser Seite weitergeleitet werden",
+			"description": "Wählen Sie einen Hub aus, zu dem Sie beim nächsten Besuch dieser Seite weitergeleitet werden",
 			"title": "Ne'Na'Na"
 		},
 		"register": {
-			"description": "Registrieren Sie sich für ein Ne'Na'Na-Konto, um direkt über diese Website auf einen OFN-Shop zuzugreifen.",
+			"description": "Registrieren Sie sich für ein Ne'Na'Na-Konto, um direkt über diese Website auf einen Hub zuzugreifen.",
 			"title": "Ne'Na'Na - Registration"
 		}
 	},
