@@ -94,13 +94,13 @@ export async function sendHubApplicationEmails({
 		)
 
 		// Send confirmation email to the customer
-		const userMailPromise = sendMail({
-			from: process.env.MAIL_FROM,
-			html: userEmailHtml,
-			replyTo: registrationRecipientEmail,
-			subject: messages[languageCode]?.mailSubjectUser || '',
-			to: customerData.email,
-		})
+		// const userMailPromise = sendMail({
+		// 	from: process.env.MAIL_FROM,
+		// 	html: userEmailHtml,
+		// 	replyTo: registrationRecipientEmail,
+		// 	subject: messages[languageCode]?.mailSubjectUser || '',
+		// 	to: customerData.email,
+		// })
 
 		// Send confirmation email to the customer if they have telegram selected
 		const userMailHasTelegramPromise = sendMail({
