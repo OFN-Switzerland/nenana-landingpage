@@ -107,7 +107,6 @@ export default function Home() {
 	return (
 		<>
 			{loaderData?.preferences?.storeRedirectUrl ? <SelectedStore /> : <HomeInfo />}
-			<DemoHub />
 			<ClientOnly>{() => <PwaInstallClient />}</ClientOnly>
 			<div className="w-full max-w-3xl px-3 md:px-0">
 				<StoreSelection />
@@ -115,6 +114,7 @@ export default function Home() {
 			{loaderData?.isValidPreferences && loaderData?.preferences?.storeRedirectUrl && (
 				<RedirectOverlay />
 			)}
+			<DemoHub />
 		</>
 	)
 }
