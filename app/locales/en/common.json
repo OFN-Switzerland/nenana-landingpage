@@ -11,7 +11,7 @@
 			"message": "The page you were looking for does not exist.",
 			"title": "Page not found"
 		},
-		"footerText": "{{year}} NeNaNA - All rights reserved"
+		"footerText": "{{year}} Ne'Na'Na - All rights reserved"
 	},
 	"home": {
 		"hero": {
@@ -38,17 +38,17 @@
 		},
 		"form": {
 			"description": {
-				"communication": "NeNanA can send you reminders so you don't miss your weekly order cycle, as well as information about events and special offers. You can choose none, one or both.",
+				"communication": "",
 				"email": "The email address we should use to contact you",
 				"name": "Your first and last name",
 				"phone": "Your phone number"
 			},
 			"label": {
 				"communication": "Would you like to receive notifications from Ne'Na'Na?",
-				"email": "Yes, by Email",
+				"email": "Subscribe to the newsletter",
 				"name": "Name",
 				"phone": "Phone",
-				"telegram": "Yes, by Telegram",
+				"telegram": "Receive weekly reminders by email to place my order",
 				"termsAccepted": "I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed (registration on the OpenFoodNetwork platform, access to the repository, etc.)."
 			}
 		},

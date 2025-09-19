@@ -245,7 +245,7 @@ export default function Register() {
 							<CheckboxCombo
 								description={t(
 									'register.form.description.communication',
-									"NeNanA can send you reminders so you don't miss your weekly order cycle, as well as information about events and special offers. You can choose none, one or both.",
+									"Ne'Na'Na can send you reminders so you don't miss your weekly order cycle, as well as information about events and special offers. You can choose none, one or both.",
 								)}
 								error={errors}
 								label={t(

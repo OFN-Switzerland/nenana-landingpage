@@ -38,17 +38,17 @@
 		},
 		"form": {
 			"description": {
-				"communication": "Ne'Na'Na kann dich per E-Mail und/oder per Telegram informieren, damit du deine Bestellungen nicht verpassen. Du kannst auch nichts annehmen.",
+				"communication": "",
 				"email": "Die E-Mailadresse, die wir verwenden, um dich zu kontaktieren",
 				"name": "Deine Vor- und Nachname",
 				"phone": "Deine Telefonnummer unter welcher du tagsüber kontaktiert werden kannst"
 			},
 			"label": {
-				"communication": "Willst du per E-Mail und/oder per Telegram informiert werden?",
-				"email": "E-Mail Adresse",
+				"communication": "Willst du per E-Mail informiert werden?",
+				"email": "Newsletter abonnieren",
 				"name": "Name",
 				"phone": "Telefon",
-				"telegram": "Telegram",
+				"telegram": "Wöchentlich per Mail erinnert werden, meine Bestellung aufzugeben",
 				"termsAccepted": "Ich akzeptiere die Nutzungsbedingungen: Mit dem Absenden dieses Formulars erkläre ich mich damit einverstanden, dass Ne'Na'Na mich kontaktiert, um mich willkommen zu heissen und mir Informationen zum weiteren Vorgehen zu geben (Registrierung auf der Open Food Network Plattform, Zugang zum Hub-Standort usw.)."
 			}
 		},
