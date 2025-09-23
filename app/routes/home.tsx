@@ -112,7 +112,9 @@ export default function Home() {
 			<div className="w-full max-w-3xl px-3 md:px-0">
 				<StoreSelection />
 			</div>
-			{loaderData?.isValidPreferences && loaderData?.preferences?.storeRedirectUrl && (
+			{loaderData?.isValidPreferences &&
+				loaderData?.preferences?.storeRedirectUrl &&
+				loaderData?.preferences?.storeSelectionStatus === StoreSelectionStatus.registration_completed && (
 				<RedirectOverlay />
 			)}
 		</>

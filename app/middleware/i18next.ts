@@ -1,15 +1,15 @@
 import parser from 'accept-language-parser'
-import { unstable_createI18nextMiddleware } from 'remix-i18next/middleware'
+import { createI18nextMiddleware } from 'remix-i18next/middleware'
 
 import { i18nConfig } from '~/i18n-config.ts'
 import { i18nCookie } from '~/lib/cookies/i18next-cookie.server.ts'
 import { logger } from '~/lib/logger.ts'
 
-export const [i18nextMiddleware, getLocale, getInstance] = unstable_createI18nextMiddleware({
+export const [i18nextMiddleware, getLocale, getInstance] = createI18nextMiddleware({
 	detection: {
 		cookie: i18nCookie,
 		fallbackLanguage: i18nConfig.fallbackLng,
-		async findLocale(request) {
+		async findLocale(request: Request) {
 			let locale = i18nConfig.fallbackLng
 
 			const acceptLanguageHeader = request.headers.get('Accept-Language')
