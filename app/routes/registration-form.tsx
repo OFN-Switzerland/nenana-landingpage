@@ -258,6 +258,10 @@ export default function Register() {
 										label: t('register.form.label.email', 'Yes, by Email'),
 										value: true,
 									},
+									{
+										fieldName: 'notificationsByTelegram',
+										label: t('register.form.label.telegram', 'Yes, by Telegram'),
+									},
 								]}
 								register={register as any}
 							/>
