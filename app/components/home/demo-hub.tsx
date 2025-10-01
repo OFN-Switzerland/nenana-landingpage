@@ -4,10 +4,12 @@ import { Link } from 'react-router'
 
 import { P } from '~/components/typography/p.tsx'
 import { Button } from '~/components/ui/button.tsx'
+import { Alert } from '~/components/ui/alert.tsx'
 
 export const DemoHub = () => {
 	const { t } = useTranslation()
 	return (
+		<Alert>
 		<div className="flex flex-col items-center space-y-2">
 			<P className="max-w-md text-center">
 					{t(
@@ -27,5 +29,6 @@ export const DemoHub = () => {
 				</P>
 			</div>
 		</div>
+		</Alert>
 	)
 }
