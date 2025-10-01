@@ -19,11 +19,12 @@
 		},
 		"info": {
 			"demo": {
-				"button": "Zum Demo Hub",
-				"description": "Stöbern Sie ohne sich zu registrieren in unserem Demo Hub und entdecken Sie, welche Produkte Sie bei Ne'Na'Na kaufen können."
+				"demoInstructions": "Du möchtest erst mal schauen, welche Lebensmittel du bei Ne'Na'Na einkaufen kannst? Stöbere durch unseren Demo Laden, um dir ein Bild zu machen, ohne dich registrieren zu müssen. ",
+				"button": "Zum Demo Laden",
+				"description": "Um dich zu registrieren, musst du danach auf diese Seite zurückkehren und dir deinen bevorzugten Abholort aus der Karte auswählen."
 			},
-			"description": "Um dir den Zugang zu deinem Hub zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
-			"title": "Wähle deinen bevorzugten Abholort"
+			"description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
+			"title": "Wähle deinen bevorzugten Abholort auf der Karte aus."
 		}
 	},
 	"redirecting": {
@@ -32,8 +33,8 @@
 	},
 	"register": {
 		"box": {
-			"p1": "Um in diesem Hub einkaufen zu können, musst du dich bei Ne'Na'Na als Kunde registrieren. <2>Nur Kunden, die sich über dieses Formular registriert haben, können bei Ne'Na'Na einkaufen</2>. Fülle dazu das untenstehende Formular aus und sende es ab.",
-			"p2": "Nach dem Absenden des Formulars fügt Ne'Na'Na dich manuell zu deinem Hub hinzu. <2>Bitte beachte, dass du erst dann Einkäufe tätigen kannst, wenn dies geschehen ist</2>. Sobald du als Kunde hinzugefügt wurdest, erhältst du eine Willkommens-E-Mail von Ne'Na'Na. Diese E-Mail enthält alle Informationen, die du zum Fortfahren benötigst, sowie Informationen zum Einkaufen (Informationen über Open Food Network, Zugang zum Depot, Bestellzyklusverfahren usw.).",
+			"p1": "Um in diesem Laden einkaufen zu können, musst du dich bei Ne'Na'Na als Kunde registrieren. <2>Nur Kunden, die sich über dieses Formular registriert haben, können bei Ne'Na'Na einkaufen</2>. Fülle dazu das untenstehende Formular aus und sende es ab.",
+			"p2": "Nach dem Absenden des Formulars fügt Ne'Na'Na dich manuell zu deinem Laden hinzu. <2>Bitte beachte, dass du erst dann Einkäufe tätigen kannst, wenn dies geschehen ist</2>. Sobald du als Kunde hinzugefügt wurdest, erhältst du eine Willkommens-E-Mail von Ne'Na'Na. Diese E-Mail enthält alle Informationen, die du zum Fortfahren benötigst, sowie Informationen zum Einkaufen (Informationen über Open Food Network, Zugang zum Depot, Bestellzyklusverfahren usw.).",
 			"title": "Anweisungen zur Registrierung"
 		},
 		"form": {
@@ -49,10 +50,10 @@
 				"name": "Name",
 				"phone": "Telefon",
 				"telegram": "Wöchentlich per Mail erinnert werden, meine Bestellung aufzugeben",
-				"termsAccepted": "Ich akzeptiere die Nutzungsbedingungen: Mit dem Absenden dieses Formulars erkläre ich mich damit einverstanden, dass Ne'Na'Na mich kontaktiert, um mich willkommen zu heissen und mir Informationen zum weiteren Vorgehen zu geben (Registrierung auf der Open Food Network Plattform, Zugang zum Hub-Standort usw.)."
+				"termsAccepted": "Ich akzeptiere die Nutzungsbedingungen: Mit dem Absenden dieses Formulars erkläre ich mich damit einverstanden, dass Ne'Na'Na mich kontaktiert, um mich willkommen zu heissen und mir Informationen zum weiteren Vorgehen zu geben (Registrierung auf der Open Food Network Plattform, Zugang zum Depot-Standort usw.)."
 			}
 		},
-		"title": "Ne'Na'Na Box / Open Food Network Hub Account Registrierung"
+		"title": "Ne'Na'Na Box / Open Food Network Registrierung"
 	},
 	"registerStart": {
 		"actions": {
@@ -61,12 +62,12 @@
 			"register": "Registrieren",
 			"registerLegend": "Für neue Kunden"
 		},
-		"p1": "Um im Ne'Na'Na Hub einkaufen zu können, ist eine Registrierung erforderlich. Wenn Sie bereits ein Konto haben und Anweisungen von einem unserer Hub-Manager erhalten haben (vielleicht verwenden Sie diese App auf einem neuen Gerät?), können Sie ohne weitere Registrierung fortfahren und warten, bis Sie zu Ihrem ausgewählten Hub weitergeleitet werden.",
+		"p1": "Um im Ne'Na'Na Laden einkaufen zu können, ist eine Registrierung erforderlich. Wenn Sie bereits ein Konto haben und Anweisungen von unserem Team erhalten haben (vielleicht verwenden Sie diese App auf einem neuen Gerät?), können Sie ohne weitere Registrierung fortfahren und warten, bis Sie zu Ihrem ausgewählten Laden weitergeleitet werden.",
 		"title": "Sie haben bereits ein Konto?"
 	},
 	"registrationPending": {
 		"box": {
-			"p1": "Sie haben sich bereits bei Ne'Na'Na registriert. Bitte überprüfen Sie Ihre E-Mails, um Anweisungen zum Abschluss Ihrer Registrierung zu erhalten. Bitte registrieren Sie sich nicht erneut. Wenn Sie glauben, dass ein Fehler aufgetreten ist, wenden Sie sich bitte an den Manager des Hubs.",
+			"p1": "Sie haben sich bereits bei Ne'Na'Na registriert. Bitte überprüfen Sie Ihre E-Mails, um Anweisungen zum Abschluss Ihrer Registrierung zu erhalten. Bitte registrieren Sie sich nicht erneut. Wenn Sie glauben, dass ein Fehler aufgetreten ist, wenden Sie sich bitte an den Manager des Ladens.",
 			"title": "Registrierung bereits gesendet"
 		},
 		"title": "Ihre Registrierung wurde gesendet"
@@ -80,11 +81,11 @@
 	},
 	"routes": {
 		"home": {
-			"description": "Wählen Sie einen Hub aus, zu dem Sie beim nächsten Besuch dieser Seite weitergeleitet werden",
+			"description": "Wählen Sie einen Laden aus, zu dem Sie beim nächsten Besuch dieser Seite weitergeleitet werden",
 			"title": "Ne'Na'Na"
 		},
 		"register": {
-			"description": "Registrieren Sie sich für ein Ne'Na'Na-Konto, um direkt über diese Website auf einen Hub zuzugreifen.",
+			"description": "Registrieren Sie sich für ein Ne'Na'Na-Konto, um direkt über diese Website auf einen Laden zuzugreifen.",
 			"title": "Ne'Na'Na - Registration"
 		}
 	},
