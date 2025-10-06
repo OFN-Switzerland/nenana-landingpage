@@ -20,7 +20,7 @@
 		"info": {
 			"demo": {
 				"button": "Open Demo Shop",
-				"demoInstructions": "",
+				"demoInstructions": "Want to see what groceries you can buy at Ne'Na'Na? Browse through our demo shop to get an idea without having to register.",
 				"description": "Browse our demo hub without registering and discover which products you can buy at Ne'Na'Na."
 			},
 			"description": "To make it easier and faster for you to reach your store, your chosen pick-up location will be saved and automatically selected the next time you visit this website.",
@@ -39,7 +39,7 @@
 		},
 		"form": {
 			"description": {
-				"communication": "",
+				"communication": "Ne'Na'Na can send you reminders so you don't miss your weekly order cycle, as well as information about events and special offers. You can choose none, one or both.",
 				"email": "The email address we should use to contact you",
 				"name": "Your first and last name",
 				"phone": "Your phone number"
