@@ -1,122 +1,124 @@
 {
-	"actions": {
-		"cancel": "Cancel",
-		"hubInfo": "Information",
-		"info": "More information",
-		"register": "Register"
-	},
-	"common": {
-		"404": {
-			"goBack": "Go back",
-			"message": "The page you were looking for does not exist.",
-			"title": "Page not found"
-		},
-		"footerText": "{{year}} Ne'Na'Na - All rights reserved"
-	},
-	"home": {
-		"hero": {
-			"sub": "Netzwerk Natürliche Nahrung"
-		},
-		"info": {
-			"demo": {
-				"button": "Open Demo Shop",
-				"description": "Browse our demo hub without registering and discover which products you can buy at Ne'Na'Na."
-			},
-			"description": "To make it easier and faster for you to reach your store, your chosen pick-up location will be saved and automatically selected the next time you visit this website.",
-			"title": "Choose your preferred pick-up location"
-		}
-	},
-	"redirecting": {
-		"description": "You will be redirected to the new page in a few seconds. Click cancel or press Esc to choose another pick-up location",
-		"title": "Redirecting..."
-	},
-	"register": {
-		"box": {
-			"p1": "In order to shop at this hub, Ne'Na'Na must register you as a customer. <2>Only customers who registered using this form can make purchases on OpenFoodNetwork</2>. To do so, fill out the form below and submit it.",
-			"p2": "After submitting the form, Ne'Na'Na will manually add you to your hub. <2>Please note that you will not be able to make purchases until this has been done</2>. Once you have been added as a customer, you will receive a welcome email from Ne'Na'Na. This email contains all the information you need to proceed, as well as information you will need for shopping (information about OFN, access to the depot, order cycle procedures, etc.).",
-			"title": "Registration instructions"
-		},
-		"form": {
-			"description": {
-				"communication": "",
-				"email": "The email address we should use to contact you",
-				"name": "Your first and last name",
-				"phone": "Your phone number"
-			},
-			"label": {
-				"communication": "Would you like to receive notifications from Ne'Na'Na?",
-				"email": "Subscribe to the newsletter",
-				"name": "Name",
-				"phone": "Phone",
-				"telegram": "Receive weekly reminders by email to place my order",
-				"termsAccepted": "I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed (registration on the OpenFoodNetwork platform, access to the repository, etc.)."
-			}
-		},
-		"title": "Ne'Na'Na Box / OpenFoodNetwork Hub Account Registration"
-	},
-	"registerStart": {
-		"actions": {
-			"continue": "Continue without registration",
-			"continueLegend": "For existing customer with an OFN account",
-			"register": "Start registration",
-			"registerLegend": "For new customers"
-		},
-		"p1": "Registration is required in order to access the Ne'Na'Na OpenFoodNetwork Hub. If you already have an account and received instructions from one of our hub managers (maybe you are using this app on a new device?), you can continue without another registration process and wait to be redirected to your selected hub.",
-		"title": "Already have an account?"
-	},
-	"registrationPending": {
-		"box": {
-			"p1": "You have already registered with Ne'Na'Na. Please check your email for instructions on how to complete your registration. Please do not register again, instead, if you think something went wrong, contact the hub's manager.",
-			"title": "Registration already sent"
-		},
-		"title": "Your registration is pending"
-	},
-	"registrationSent": {
-		"box": {
-			"button": "Go back to the home page",
-			"p1": "Thank you for registering with Ne'Na'Na. Please check your email for instructions on how to proceed. You will hear from us within 2-3 business days."
-		},
-		"title": "Your registration was sent"
-	},
-	"routes": {
-		"home": {
-			"description": "Choose a store to be forwarded to the next time you visit this site",
-			"title": "Ne'Na'Na"
-		},
-		"register": {
-			"description": "Register for a Ne'Na'Na account to access an OFN store directly via this website.",
-			"title": "Ne'Na'Na - Registration"
-		}
-	},
-	"store": {
-		"notAvailable": "Location link is not available",
-		"selected": "Selected",
-		"selectedStore": "Selected store",
-		"unknown": "Unknown store"
-	},
-	"storeInfo": {
-		"address": "Address",
-		"contact": "Contact"
-	},
-	"storeMap": {
-		"noStores": "No stores found to display on map"
-	},
-	"storeSelection": {
-		"allStates": "All States",
-		"clearFilters": "Clear filters",
-		"error": "There was an error loading the store data",
-		"noResults": "No stores match your search",
-		"resultsCount_one": "Showing {{count}} results",
-		"resultsCount_other": "Showing {{count}} results",
-		"searchPlaceholder": "Search stores...",
-		"showList": "Show List",
-		"showMap": "Show Map"
-	},
-	"userActions": {
-		"continueRegistration": "Continue registration",
-		"finalizeRegistration": "I received my registration info",
-		"goToSelection": "Go to selection",
-		"navigateToStore": "To store",
-		"select": "Select"
-	}
+  "actions": {
+    "cancel": "Cancel",
+    "hubInfo": "Information",
+    "info": "More information",
+    "register": "Register"
+  },
+  "common": {
+    "404": {
+      "goBack": "Go back",
+      "message": "The page you were looking for does not exist.",
+      "title": "Page not found"
+    },
+    "footerText": "{{year}} Ne'Na'Na - All rights reserved"
+  },
+  "home": {
+    "hero": {
+      "sub": "Netzwerk Natürliche Nahrung"
+    },
+    "info": {
+      "demo": {
+        "button": "Open Demo Shop",
+        "demoInstructions": "",
+        "description": "Browse our demo hub without registering and discover which products you can buy at Ne'Na'Na."
+      },
+      "description": "To make it easier and faster for you to reach your store, your chosen pick-up location will be saved and automatically selected the next time you visit this website.",
+      "title": "Choose your preferred pick-up location"
+    }
+  },
+  "redirecting": {
+    "description": "You will be redirected to the new page in a few seconds. Click cancel or press Esc to choose another pick-up location",
+    "title": "Redirecting..."
+  },
+  "register": {
+    "box": {
+      "p1": "In order to shop at this hub, Ne'Na'Na must register you as a customer. <2>Only customers who registered using this form can make purchases at Ne'Na'Na</2>. To do so, fill out the form below and submit it.",
+      "p2": "Once you have been added as a customer, you will receive a welcome email from Ne'Na'Na. This email contains all the information you need to proceed, as well as information you will need for shopping (information about Open Food Network, access to the depot, order cycle procedures, etc.).",
+      "title": "Registration instructions"
+    },
+    "form": {
+      "description": {
+        "communication": "",
+        "email": "The email address we should use to contact you",
+        "name": "Your first and last name",
+        "phone": "Your phone number"
+      },
+      "label": {
+        "communication": "Would you like to subscribe to the Ne'Na'Na newsletter?",
+        "email": "Email",
+        "name": "Name",
+        "notificationsByEmail": "Yes, by Email",
+        "phone": "Phone",
+        "telegram": "Receive weekly reminders by email to place my order",
+        "termsAccepted": "I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed. I agree that Ne'Na'Na may send me weekly order reminders. I can unsubscribe from these at any time."
+      }
+    },
+    "title": "Ne'Na'Na Box Registration"
+  },
+  "registerStart": {
+    "actions": {
+      "continue": "Continue without registration",
+      "continueLegend": "For existing customer with an OFN account",
+      "register": "Start registration",
+      "registerLegend": "For new customers"
+    },
+    "p1": "Registration is required in order to shop at the Ne'Na'Na store. If you are already registered with Ne'Na'Na and have received instructions from our team (maybe you are using this app on a new device?), you can continue without another registration and wait. You will then be redirected to your selected store.",
+    "title": "Already registered with Ne'Na'Na?"
+  },
+  "registrationPending": {
+    "box": {
+      "p1": "You have already registered with Ne'Na'Na. Please check your email for instructions on how to complete your registration. Please do not register again, instead, if you think something went wrong, contact the hub's manager.",
+      "title": "Registration already sent"
+    },
+    "title": "Your registration is pending"
+  },
+  "registrationSent": {
+    "box": {
+      "button": "Go back to the home page",
+      "p1": "Thank you for registering with Ne'Na'Na. Please check your email for further instructions. We will contact you within 1-2 business days."
+    },
+    "title": "Your registration was sent"
+  },
+  "routes": {
+    "home": {
+      "description": "Choose a store to be forwarded to the next time you visit this site",
+      "title": "Ne'Na'Na"
+    },
+    "register": {
+      "description": "Register with Ne'Na'Na to access a store directly via this website.",
+      "title": "Ne'Na'Na Registration"
+    }
+  },
+  "store": {
+    "notAvailable": "Location link is not available",
+    "selected": "Selected",
+    "selectedStore": "Selected store",
+    "unknown": "Unknown store"
+  },
+  "storeInfo": {
+    "address": "Address",
+    "contact": "Contact"
+  },
+  "storeMap": {
+    "noStores": "No stores found to display on map"
+  },
+  "storeSelection": {
+    "allStates": "All States",
+    "clearFilters": "Clear filters",
+    "error": "There was an error loading the store data",
+    "noResults": "No stores match your search",
+    "resultsCount_one": "Showing {{count}} results",
+    "resultsCount_other": "Showing {{count}} results",
+    "searchPlaceholder": "Search stores...",
+    "showList": "Show List",
+    "showMap": "Show Map"
+  },
+  "userActions": {
+    "continueRegistration": "Continue registration",
+    "finalizeRegistration": "I received my registration info",
+    "goToSelection": "Go to selection",
+    "navigateToStore": "To store",
+    "select": "Select"
+  }
 }

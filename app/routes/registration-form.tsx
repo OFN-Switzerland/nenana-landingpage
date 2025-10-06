@@ -70,9 +70,9 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 		...preferences,
 		description: t(
 			'routes.register.description',
-			"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
+			'Register with Ne\'Na\'Na to access a store directly via this website.',
 		),
-		title: t('routes.register.title', "Ne'Na'Na - Registration"),
+		title: t('routes.register.title', 'Ne\'Na\'Na Registration'),
 	})
 }
 
@@ -181,7 +181,7 @@ export default function Register() {
 		<>
 			<LayoutContainer>
 				<H1 className="card-title">
-					{t('register.title', "Ne'Na'Na Box / OpenFoodNetwork Hub Account Registration")}
+					{t('register.title', 'Ne\'Na\'Na Box Registration')}
 				</H1>
 				<H2>{t('register.box.title', 'Registration instructions')}</H2>
 				<Alert>
@@ -250,12 +250,12 @@ export default function Register() {
 								error={errors}
 								label={t(
 									'register.form.label.communication',
-									"Would you like to receive notifications from Ne'Na'Na?",
+									'Would you like to subscribe to the Ne\'Na\'Na newsletter?',
 								)}
 								options={[
 									{
 										fieldName: 'notificationsByEmail',
-										label: t('register.form.label.email', 'Yes, by Email'),
+										label: t('register.form.label.notificationsByEmail', 'Yes, by Email'),
 										value: true,
 									},
 									{
@@ -269,7 +269,7 @@ export default function Register() {
 								{...register('termsAccepted')}
 								label={t(
 									'register.form.label.termsAccepted',
-									"I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed (registration on the OpenFoodNetwork platform, access to the repository, etc.).",
+									'I accept the terms of use: By submitting this form, I agree that Ne\'Na\'Na may contact me to welcome me and provide me with information on how to proceed. I agree that Ne\'Na\'Na may send me weekly order reminders. I can unsubscribe from these at any time.',
 								)}
 							/>
 							{loaderData.selectedStore && (

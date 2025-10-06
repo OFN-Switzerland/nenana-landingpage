@@ -19,11 +19,11 @@ export default function RegistrationStart() {
 
 	return (
 		<>
-			<H1 className="card-title">{t('registerStart.title', 'Already have an account?')}</H1>
+			<H1 className="card-title">{t('registerStart.title', 'Already registered with Ne\'Na\'Na?')}</H1>
 			<P>
 				{t(
 					'registerStart.p1',
-					"Registration is required in order to access the Ne'Na'Na OpenFoodNetwork Hub. If you already have an account and received instructions from one of our hub managers (maybe you are using this app on a new device?), you can continue without another registration process and wait to be redirected to your selected hub.",
+					'Registration is required in order to shop at the Ne\'Na\'Na store. If you are already registered with Ne\'Na\'Na and have received instructions from our team (maybe you are using this app on a new device?), you can continue without another registration and wait. You will then be redirected to your selected store.',
 				)}
 			</P>
 			<Alert className="flex w-full flex-col">
@@ -41,7 +41,7 @@ export default function RegistrationStart() {
 							{t('registerStart.actions.continue', 'Continue without registration')}
 						</Button>
 						<legend className="mt-2 text-center">
-							{t('registerStart.actions.continueLegend', 'For existing customers')}
+							{t('registerStart.actions.continueLegend', 'For existing customer with an OFN account')}
 						</legend>
 					</Link>
 				</div>

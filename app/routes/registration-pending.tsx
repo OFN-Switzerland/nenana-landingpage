@@ -34,9 +34,9 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 		...preferences,
 		description: t(
 			'routes.register.description',
-			"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
+			'Register with Ne\'Na\'Na to access a store directly via this website.',
 		),
-		title: t('routes.register.title', "Ne'Na'Na - Registration"),
+		title: t('routes.register.title', 'Ne\'Na\'Na Registration'),
 	})
 }
 
