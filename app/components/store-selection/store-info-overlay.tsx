@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import { StoreInfoDisplay } from '~/components/store-selection/store-info-display.tsx'
 import { Button } from '~/components/ui/button.tsx'
+import { plausibleClientEvent, StoreSelectionEvents } from '~/features/plausible'
 import { type Store } from '~/schemas/store-location-schema.ts'
 
 type Props = {
@@ -14,6 +15,10 @@ export const StoreInfoOverlay: React.FC<Props> = ({ data }) => {
 	const { t } = useTranslation()
 
 	const openDialog = () => {
+		void plausibleClientEvent({
+			name: StoreSelectionEvents.ViewInfo,
+			props: { storeId: data.id.toString(), storeName: data.name },
+		})
 		dialogRef.current?.showModal()
 	}
 

@@ -23,20 +23,20 @@ import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 
 export const loader = async ({ context, request }: LoaderFunctionArgs) => {
-	const { t } = getInstance(context as any)
+	const { language: lang, t } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 
 	if (!preferences || !preferences.preferences.storeId) {
-		return redirect(href('/'))
+		return redirect(href('/:lang/home', { lang }))
 	}
 
 	return data({
 		...preferences,
 		description: t(
 			'routes.register.description',
-			"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
+			"Register with Ne'Na'Na to access a store directly via this website.",
 		),
-		title: t('routes.register.title', "Ne'Na'Na - Registration"),
+		title: t('routes.register.title', "Ne'Na'Na Registration"),
 	})
 }
 

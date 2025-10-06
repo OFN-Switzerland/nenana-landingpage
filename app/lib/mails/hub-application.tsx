@@ -2,7 +2,6 @@ import { render } from '@react-email/render'
 import React from 'react'
 
 import ManagerNotification from '../../../emails/hub-application/manager-notification'
-import UserNotification from '../../../emails/hub-application/user-notification'
 import UserNotificationHasTelegram from '../../../emails/hub-application/user-notification-has-telegram.tsx'
 import { logger } from '../logger'
 import { sendMail } from './sendmail'
@@ -77,10 +76,6 @@ export async function sendHubApplicationEmails({
 		})
 
 		// Render email templates using react-email's render function
-		const userEmailHtml = await render(
-			<UserNotification customerData={customerData} languageCode={languageCode} />,
-		)
-
 		const userEmailHasTelegramHtml = await render(
 			<UserNotificationHasTelegram customerData={customerData} languageCode={languageCode} />,
 		)

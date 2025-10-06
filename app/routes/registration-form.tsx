@@ -24,6 +24,8 @@ import { Button } from '~/components/ui/button.tsx'
 import { CheckboxCombo } from '~/components/ui/checkbox-combo.tsx'
 import { Checkbox } from '~/components/ui/checkbox.tsx'
 import { Input } from '~/components/ui/input.tsx'
+import { plausibleClientEvent, RegistrationEvents } from '~/features/plausible'
+import { useLang } from '~/hooks/use-lang.tsx'
 import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
 import { logger } from '~/lib/logger.ts'
 import {
@@ -57,22 +59,22 @@ type RegistrationFormData = z.infer<typeof registrationSchema>
 const resolver = zodResolver(registrationSchema)
 
 export const loader = async ({ context, request }: LoaderFunctionArgs) => {
-	const { t } = getInstance(context as any)
+	const { language: lang, t } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 
 	logger.debug('preferences', preferences)
 
 	if (!preferences) {
-		return redirect(href('/'))
+		return redirect(href('/:lang/home', { lang }))
 	}
 
 	return data({
 		...preferences,
 		description: t(
 			'routes.register.description',
-			"Register for a Ne'Na'Na account to access an OFN store directly via this website.",
+			"Register with Ne'Na'Na to access a store directly via this website.",
 		),
-		title: t('routes.register.title', "Ne'Na'Na - Registration"),
+		title: t('routes.register.title', "Ne'Na'Na Registration"),
 	})
 }
 
@@ -151,7 +153,7 @@ export async function action({ context, request }: ActionFunctionArgs) {
 	})
 
 	logger.debug('Registration form submitted', data)
-	return redirect(href('/:lang?/registration/sent', { lang }))
+	return redirect(href('/:lang/registration/sent', { lang }))
 }
 
 export function ErrorBoundary(args: RootRoute.ErrorBoundaryProps) {
@@ -171,8 +173,11 @@ export default function Register() {
 		resolver,
 	})
 
+	const { lang } = useLang()
+
 	const onCancelClick = async () => {
-		await navigate(href('/'))
+		void plausibleClientEvent({ name: RegistrationEvents.FormCancel })
+		await navigate(href('/:lang/home', { lang }))
 	}
 
 	const disabled = !isValid || isSubmitting || isLoading
@@ -180,9 +185,7 @@ export default function Register() {
 	return (
 		<>
 			<LayoutContainer>
-				<H1 className="card-title">
-					{t('register.title', "Ne'Na'Na Box / OpenFoodNetwork Hub Account Registration")}
-				</H1>
+				<H1 className="card-title">{t('register.title', "Ne'Na'Na Box Registration")}</H1>
 				<H2>{t('register.box.title', 'Registration instructions')}</H2>
 				<Alert>
 					<div>
@@ -245,22 +248,18 @@ export default function Register() {
 							<CheckboxCombo
 								description={t(
 									'register.form.description.communication',
-									"NeNanA can send you reminders so you don't miss your weekly order cycle, as well as information about events and special offers. You can choose none, one or both.",
+									"Ne'Na'Na can send you reminders so you don't miss your weekly order cycle, as well as information about events and special offers. You can choose none, one or both.",
 								)}
 								error={errors}
 								label={t(
 									'register.form.label.communication',
-									"Would you like to receive notifications from Ne'Na'Na?",
+									"Would you like to subscribe to the Ne'Na'Na newsletter?",
 								)}
 								options={[
 									{
 										fieldName: 'notificationsByEmail',
-										label: t('register.form.label.email', 'Yes, by Email'),
+										label: t('register.form.label.notificationsByEmail', 'Yes, by Email'),
 										value: true,
-									},
-									{
-										fieldName: 'notificationsByTelegram',
-										label: t('register.form.label.telegram', 'Yes, by Telegram'),
 									},
 								]}
 								register={register as any}
@@ -269,7 +268,7 @@ export default function Register() {
 								{...register('termsAccepted')}
 								label={t(
 									'register.form.label.termsAccepted',
-									"I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed (registration on the OpenFoodNetwork platform, access to the repository, etc.).",
+									"I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed. I agree that Ne'Na'Na may send me weekly order reminders. I can unsubscribe from these at any time.",
 								)}
 							/>
 							{loaderData.selectedStore && (
@@ -292,7 +291,11 @@ export default function Register() {
 								</>
 							)}
 							<div className="card-actions justify-between">
-								<Button disabled={disabled} type="submit" variant="primary">
+								<Button
+									disabled={disabled}
+									onClick={() => void plausibleClientEvent({ name: RegistrationEvents.FormSubmit })}
+									type="submit"
+									variant="primary">
 									{t('actions.register', 'Register')}
 								</Button>
 								<Button onClick={onCancelClick} type="button" variant="secondary">

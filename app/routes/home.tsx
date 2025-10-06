@@ -40,7 +40,7 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 	if (
 		userPreferences.preferences.storeSelectionStatus === StoreSelectionStatus.registration_pending
 	) {
-		return redirect(href('/:lang?/registration/pending', { lang }))
+		return redirect(href('/:lang/registration/pending', { lang }))
 	}
 
 	return data({
@@ -78,7 +78,7 @@ export async function action({ context, request }: Route.ActionArgs) {
 	let pathname = new URL(request.url).pathname
 
 	if (userPrefsCookie.storeSelectionStatus === StoreSelectionStatus.registration_started) {
-		pathname = href('/:lang?/registration', { lang })
+		pathname = href('/:lang/registration', { lang })
 	}
 
 	return redirect(pathname, {
@@ -107,16 +107,15 @@ export default function Home() {
 	return (
 		<>
 			{loaderData?.preferences?.storeRedirectUrl ? <SelectedStore /> : <HomeInfo />}
-			<DemoHub />
 			<ClientOnly>{() => <PwaInstallClient />}</ClientOnly>
 			<div className="w-full max-w-3xl px-3 md:px-0">
 				<StoreSelection />
 			</div>
 			{loaderData?.isValidPreferences &&
 				loaderData?.preferences?.storeRedirectUrl &&
-				loaderData?.preferences?.storeSelectionStatus === StoreSelectionStatus.registration_completed && (
-				<RedirectOverlay />
-			)}
+				loaderData?.preferences?.storeSelectionStatus ===
+					StoreSelectionStatus.registration_completed && <RedirectOverlay />}
+			<DemoHub />
 		</>
 	)
 }

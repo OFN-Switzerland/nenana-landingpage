@@ -12,6 +12,15 @@ export const [i18nextMiddleware, getLocale, getInstance] = createI18nextMiddlewa
 		async findLocale(request: Request) {
 			let locale = i18nConfig.fallbackLng
 
+			// First, check if locale is explicitly set in the URL path
+			const firstPathSegment = new URL(request.url).pathname.split('/').at(1)
+			if (firstPathSegment && i18nConfig.supportedLngs.includes(firstPathSegment)) {
+				// URL locale takes precedence over everything else
+				logger.debug({ locale: firstPathSegment, localeSource: 'URL path' })
+				return firstPathSegment
+			}
+
+			// Fallback to Accept-Language header if no locale in URL
 			const acceptLanguageHeader = request.headers.get('Accept-Language')
 			if (acceptLanguageHeader) {
 				const preferredLanguages = parser.parse(acceptLanguageHeader)
@@ -21,18 +30,13 @@ export const [i18nextMiddleware, getLocale, getInstance] = createI18nextMiddlewa
 						i18nConfig.supportedLngs.includes(lang.code),
 					)
 					if (match) {
-						logger.debug({ match })
+						logger.debug({ locale: match.code, localeSource: 'Accept-Language' })
 						locale = match.code
 					}
 				}
 			}
 
-			const firstPathSegment = new URL(request.url).pathname.split('/').at(1) || locale
-			if (i18nConfig.supportedLngs.includes(firstPathSegment)) {
-				locale = firstPathSegment
-			}
-
-			logger.debug({ locale })
+			logger.debug({ locale, localeSource: 'fallback' })
 			return locale
 		},
 		order: ['custom', 'header'],

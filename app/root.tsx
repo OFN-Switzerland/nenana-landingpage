@@ -16,23 +16,21 @@ import { useChangeLanguage } from 'remix-i18next/react'
 
 import { DevModeOverlay } from '~/components/devmode-overlay'
 import { ServiceWorkerUpdater } from '~/components/pwa/service-worker-updater.client'
+import { GenericAppEvents, getHostname, plausibleClientEvent } from '~/features/plausible'
 import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
 import { userPreferencesCookie } from '~/lib/cookies/store-selection/store-selection-cookie.server.ts'
 import { isClient } from '~/lib/is-client.ts'
 import { logger } from '~/lib/logger.ts'
-import { GenericAppEvents } from '~/lib/plausible/event-names.ts'
-import { getHostname } from '~/lib/plausible/get-hostname.ts'
 import { cn } from '~/lib/utils.ts'
 import { getLocale, i18nextMiddleware } from '~/middleware/i18next.ts'
-import { performanceMiddleware } from '~/middleware/performance.ts'
 
 import './webfonts.css'
 import './tailwind.css'
+import { performanceMiddleware } from '~/middleware/performance.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { getTheme } from '~/services/theme.server'
 
 import { type Route } from './+types/root.ts'
-import { plausibleClientEvent } from './lib/plausible/plausible-client-event.ts'
 import versionFile from './version.json'
 
 export const links: LinksFunction = () => [
@@ -121,7 +119,7 @@ export function Layout({ children }: PropsWithChildren) {
 	useChangeLanguage(locale || i18n.language)
 
 	useEffect(() => {
-		plausibleClientEvent({ name: GenericAppEvents.PageView })
+		void plausibleClientEvent({ name: GenericAppEvents.PageView })
 	}, [location.pathname])
 
 	useEffect(() => {

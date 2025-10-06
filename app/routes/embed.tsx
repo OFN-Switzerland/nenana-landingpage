@@ -11,16 +11,18 @@ import {
 
 import { Button } from '~/components/ui/button.tsx'
 import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
+import { getInstance } from '~/middleware/i18next.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 
 import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
+export const loader = async ({ context, request }: LoaderFunctionArgs) => {
+	const { language: lang } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 	let headers = new Headers()
 
 	if (!preferences) {
-		return redirect(href('/'))
+		return redirect(href('/:lang/home', { lang }))
 	}
 
 	return data(
@@ -35,11 +37,12 @@ export type EmbedRouteLoaderData = typeof loader
 
 export default function Embed() {
 	const loaderData = useLoaderData<EmbedRouteLoaderData>()
-	const { t } = useTranslation()
+	const { i18n, t } = useTranslation()
+	const lang = i18n.language
 	const navigate = useNavigate()
 
 	const onGoToSelection = async () => {
-		await navigate(href('/'))
+		await navigate(href('/:lang/home', { lang }))
 	}
 	return (
 		<div className="flex size-full grow flex-col">

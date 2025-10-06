@@ -5,18 +5,20 @@ import { Spinner } from '~/components/ui/spinner.tsx'
 import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
 import { userPreferencesCookie } from '~/lib/cookies/store-selection/store-selection-cookie.server.ts'
 import { StoreSelectionStatus } from '~/lib/cookies/store-selection/store-selection-status.ts'
+import { getInstance } from '~/middleware/i18next.ts'
 import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 
 import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
+export const loader = async ({ context, request }: LoaderFunctionArgs) => {
+	const { language: lang } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 
 	if (!preferences || !preferences.preferences.storeId) {
-		return redirect(href('/'))
+		return redirect(href('/:lang/home', { lang }))
 	}
 
-	return redirect(href('/'), {
+	return redirect(href('/:lang/home', { lang }), {
 		headers: {
 			'Set-Cookie': await userPreferencesCookie.serialize({
 				...preferences.preferences,
