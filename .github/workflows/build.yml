@@ -34,9 +34,9 @@ jobs:
         shell: bash
         run: |
           if [ "${{ needs.build.result }}" == "success" ]; then
-            echo "STATUS_MESSAGE=Successfully built the app for the latest commit on main :white_check_mark:" >> $GITHUB_ENV
+            echo "STATUS_MESSAGE=Successfully built the app for the latest commit on ${{ github.ref_name }} :white_check_mark:" >> $GITHUB_ENV
           else
-            echo "STATUS_MESSAGE=:boom: :boom: :boom: Building the app based on the latest commit on main failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
+            echo "STATUS_MESSAGE=:boom: :boom: :boom: Building the app based on the latest commit on ${{ github.ref_name }} failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
           fi
 
       - name: Mattermost Notification
