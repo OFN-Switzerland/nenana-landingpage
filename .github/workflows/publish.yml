@@ -12,6 +12,9 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.meta.outputs.tags }}
+      version: ${{ steps.meta.outputs.version }}
     permissions:
       contents: read
       packages: write
@@ -53,9 +56,9 @@ jobs:
         shell: bash
         run: |
           if [ "${{ needs.build-and-push.result }}" == "success" ]; then
-            echo "STATUS_MESSAGE=Successfully built and pushed the docker image ${{ steps.meta.outputs.tags }} ${{ steps.meta.outputs.labels }} :white_check_mark:" >> $GITHUB_ENV
+            echo "STATUS_MESSAGE=Successfully built and pushed docker image \`${{ needs.build-and-push.outputs.version }}\` from branch \`${{ github.ref_name }}\` :white_check_mark:" >> $GITHUB_ENV
           else
-            echo "STATUS_MESSAGE=:boom: :boom: :boom: Building the docker image failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
+            echo "STATUS_MESSAGE=:boom: :boom: :boom: Building the docker image from branch \`${{ github.ref_name }}\` failed, more information is available in the GitHub action logs." >> $GITHUB_ENV
           fi
 
       - name: Mattermost Notification
