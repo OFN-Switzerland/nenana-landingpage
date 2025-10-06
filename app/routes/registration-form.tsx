@@ -151,7 +151,7 @@ export async function action({ context, request }: ActionFunctionArgs) {
 	})
 
 	logger.debug('Registration form submitted', data)
-	return redirect(href('/:lang?/registration/sent', { lang }))
+	return redirect(href('/:lang/registration/sent', { lang }))
 }
 
 export function ErrorBoundary(args: RootRoute.ErrorBoundaryProps) {
@@ -257,10 +257,6 @@ export default function Register() {
 										fieldName: 'notificationsByEmail',
 										label: t('register.form.label.notificationsByEmail', 'Yes, by Email'),
 										value: true,
-									},
-									{
-										fieldName: 'notificationsByTelegram',
-										label: t('register.form.label.telegram', 'Yes, by Telegram'),
 									},
 								]}
 								register={register as any}

@@ -32,7 +32,7 @@ export const StoreCard: React.FC<Props> = ({ data, embedded }) => {
 	}
 
 	return (
-		<Form action={href('/:lang?/home', { lang })} method="post" onSubmit={handleSelect}>
+		<Form action={href('/:lang/home', { lang })} method="post" onSubmit={handleSelect}>
 			<input name="selectedStoreId" type="hidden" value={data.id} />
 			<div
 				className={cn(

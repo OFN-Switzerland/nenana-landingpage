@@ -23,11 +23,11 @@ export type MenuItems = (MenuDivider | MenuItem)[]
 export const AppMenus: Menu = {
 	app: [
 		// {
-		// 	path: (lang: string) => href('/:lang?/products', { lang }),
+		// 	path: (lang: string) => href('/:lang/products', { lang }),
 		// 	name: t('route.products.name', 'Online Shop'),
 		// },
 		// {
-		// 	path: (lang: string) => href('/:lang?/showroom-store', { lang }),
+		// 	path: (lang: string) => href('/:lang/showroom-store', { lang }),
 		// 	name: t('route.store.name', 'Showroom & Store'),
 		// },
 	],

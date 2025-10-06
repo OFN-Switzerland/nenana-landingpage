@@ -50,7 +50,6 @@
         "name": "Name",
         "notificationsByEmail": "Ja, per Email",
         "phone": "Telefon",
-        "telegram": "Wöchentlich per Mail erinnert werden, meine Bestellung aufzugeben",
         "termsAccepted": "Ich akzeptiere die Nutzungsbedingungen: Mit dem Absenden dieses Formulars erkläre ich mich damit einverstanden, dass Ne'Na'Na mich kontaktiert, um mich Willkommen zu heissen und mir Informationen zum weiteren Vorgehen zu geben. Ich erkläre mich damit einverstanden, dass mir Ne'Na'Na wöchentliche Bestellerinnerungen schicken darf. Von diesen kann ich mich jederzeit abmelden."
       }
     },
@@ -75,7 +74,7 @@
   },
   "registrationSent": {
     "box": {
-      "button": "Zur Startseite",
+      "button": "Weiter zum Shop",
       "p1": "Vielen Dank für deine Registrierung bei Ne'Na'Na. Bitte überprüfe deine E-Mails für weitere Anweisungen. Wir melden uns innerhalb von 1–2 Werktagen bei dir."
     },
     "title": "Deine Registrierung wurde gesendet"

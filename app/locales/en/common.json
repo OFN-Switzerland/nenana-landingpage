@@ -50,7 +50,6 @@
         "name": "Name",
         "notificationsByEmail": "Yes, by Email",
         "phone": "Phone",
-        "telegram": "Receive weekly reminders by email to place my order",
         "termsAccepted": "I accept the terms of use: By submitting this form, I agree that Ne'Na'Na may contact me to welcome me and provide me with information on how to proceed. I agree that Ne'Na'Na may send me weekly order reminders. I can unsubscribe from these at any time."
       }
     },
@@ -75,7 +74,7 @@
   },
   "registrationSent": {
     "box": {
-      "button": "Go back to the home page",
+      "button": "Continue to the shop",
       "p1": "Thank you for registering with Ne'Na'Na. Please check your email for further instructions. We will contact you within 1-2 business days."
     },
     "title": "Your registration was sent"

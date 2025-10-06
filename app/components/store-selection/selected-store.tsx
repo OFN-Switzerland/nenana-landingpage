@@ -29,14 +29,14 @@ export const SelectedStore: React.FC = () => {
 				)}
 			</div>
 			{preferences?.storeSelectionStatus === StoreSelectionStatus.registration_started && (
-				<Link to={href('/:lang?/registration/form', { lang })}>
+				<Link to={href('/:lang/registration/form', { lang })}>
 					<Button type="button" variant="neutral">
 						{t('userActions.continueRegistration', 'Continue registration')}
 					</Button>
 				</Link>
 			)}
 			{preferences?.storeSelectionStatus === StoreSelectionStatus.registration_pending && (
-				<Link className="w-full sm:w-auto" to={href('/:lang?/registration/completed', { lang })}>
+				<Link className="w-full sm:w-auto" to={href('/:lang/registration/completed', { lang })}>
 					<Button className="w-full" type="button" variant="primary">
 						{t('userActions.finalizeRegistration', 'I received my registration info')}
 					</Button>

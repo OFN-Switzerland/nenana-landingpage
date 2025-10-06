@@ -40,7 +40,7 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 	if (
 		userPreferences.preferences.storeSelectionStatus === StoreSelectionStatus.registration_pending
 	) {
-		return redirect(href('/:lang?/registration/pending', { lang }))
+		return redirect(href('/:lang/registration/pending', { lang }))
 	}
 
 	return data({
@@ -78,7 +78,7 @@ export async function action({ context, request }: Route.ActionArgs) {
 	let pathname = new URL(request.url).pathname
 
 	if (userPrefsCookie.storeSelectionStatus === StoreSelectionStatus.registration_started) {
-		pathname = href('/:lang?/registration', { lang })
+		pathname = href('/:lang/registration', { lang })
 	}
 
 	return redirect(pathname, {

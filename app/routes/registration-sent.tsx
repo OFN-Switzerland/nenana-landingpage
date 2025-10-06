@@ -7,6 +7,7 @@ import {
 	type LoaderFunctionArgs,
 	type MetaFunction,
 	redirect,
+	useLoaderData,
 } from 'react-router'
 
 import { H1 } from '~/components/typography/h1.tsx'
@@ -64,7 +65,7 @@ export function ErrorBoundary(args: RootRoute.ErrorBoundaryProps) {
 
 export default function RegistrationSent() {
 	const { t } = useTranslation()
-	// const loaderData = useLoaderData<typeof loader>()
+	const loaderData = useLoaderData<typeof loader>()
 
 	return (
 		<>
@@ -75,9 +76,15 @@ export default function RegistrationSent() {
 					We will contact you within 1-2 business days.
 				</Trans>
 			</P>
-			<Link to={href('/')}>
-				<Button>{t('registrationSent.box.button', 'Go back to the home page')}</Button>
-			</Link>
+			{loaderData.selectedStore?.forwardUrl ? (
+				<a href={loaderData.selectedStore.forwardUrl} target="_blank" rel="noopener noreferrer">
+					<Button>{t('registrationSent.box.button', 'Continue to the shop')}</Button>
+				</a>
+			) : (
+				<Link to={href('/')}>
+					<Button>{t('registrationSent.box.button', 'Continue to the shop')}</Button>
+				</Link>
+			)}
 		</>
 	)
 }

@@ -15,7 +15,8 @@ export function ErrorBoundary(args: RootRoute.ErrorBoundaryProps) {
 }
 
 export default function RegistrationStart() {
-	const { t } = useTranslation()
+	const { t, i18n } = useTranslation()
+	const lang = i18n.language
 
 	return (
 		<>
@@ -28,7 +29,7 @@ export default function RegistrationStart() {
 			</P>
 			<Alert className="flex w-full flex-col">
 				<div className="flex w-full flex-col gap-6 md:flex-row">
-					<Link className="w-full" to={href('/:lang?/registration/form')}>
+					<Link className="w-full" to={href('/:lang/registration/form', { lang })}>
 						<Button className="w-full">
 							{t('registerStart.actions.register', 'Start registration')}
 						</Button>
@@ -36,7 +37,7 @@ export default function RegistrationStart() {
 							{t('registerStart.actions.registerLegend', 'For new customers')}
 						</legend>
 					</Link>
-					<Link className="w-full" to={href('/:lang?/registration/completed')}>
+					<Link className="w-full" to={href('/:lang/registration/completed', { lang })}>
 						<Button className="w-full" variant="outline">
 							{t('registerStart.actions.continue', 'Continue without registration')}
 						</Button>
