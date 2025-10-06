@@ -10,6 +10,7 @@ import {
 	StoreSearchFilter,
 } from '~/components/store-selection/store-search-filter.tsx'
 import { Alert } from '~/components/ui/alert.tsx'
+import { plausibleClientEvent, StoreSelectionEvents } from '~/features/plausible'
 import { type RootRouteLoaderData } from '~/root.tsx'
 
 export const StoreSelection = () => {
@@ -38,6 +39,10 @@ export const StoreSelection = () => {
 
 	// Function to clear all filters
 	const clearAllFilters = () => {
+		void plausibleClientEvent({
+			name: StoreSelectionEvents.FilterStores,
+			props: { action: 'clear' },
+		})
 		setSearchParams({}, { replace: true })
 	}
 
@@ -70,7 +75,15 @@ export const StoreSelection = () => {
 						<X />
 					</button>
 				)}
-				<button className="btn btn-outline ml-auto" onClick={() => setShowMap(!showMap)}>
+				<button
+					className="btn btn-outline ml-auto"
+					onClick={() => {
+						void plausibleClientEvent({
+							name: StoreSelectionEvents.MapToggle,
+							props: { view: !showMap ? 'map' : 'list' },
+						})
+						setShowMap(!showMap)
+					}}>
 					{showMap
 						? t('storeSelection.showList', 'Show List')
 						: t('storeSelection.showMap', 'Show Map')}

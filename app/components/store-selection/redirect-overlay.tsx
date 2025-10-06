@@ -5,6 +5,7 @@ import { useRouteLoaderData } from 'react-router'
 import { H2 } from '~/components/typography/h2.tsx'
 import { P } from '~/components/typography/p.tsx'
 import { Button } from '~/components/ui/button.tsx'
+import { plausibleClientEvent, StoreSelectionEvents } from '~/features/plausible'
 import { logger } from '~/lib/logger.ts'
 import { type RootRouteLoaderData } from '~/root.tsx'
 
@@ -66,6 +67,7 @@ export const RedirectOverlay = () => {
 	}, [redirectUrl, progress])
 
 	const onCancelClick = () => {
+		void plausibleClientEvent({ name: StoreSelectionEvents.CancelRedirect })
 		dialogRef.current?.close()
 	}
 

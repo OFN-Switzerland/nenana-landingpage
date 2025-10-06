@@ -1,123 +1,123 @@
 {
-  "actions": {
-    "cancel": "Abbrechen",
-    "hubInfo": "Information",
-    "info": "Mehr Informationen",
-    "register": "Registrieren"
-  },
-  "common": {
-    "404": {
-      "goBack": "Zurück",
-      "message": "Die gesuchte Seite existiert nicht.",
-      "title": "Seite nicht gefunden"
-    },
-    "footerText": "{{year}} Ne'Na'Na - Alle Rechte vorbehalten"
-  },
-  "home": {
-    "hero": {
-      "sub": "Netzwerk Natürliche Nahrung"
-    },
-    "info": {
-      "demo": {
-        "button": "Zum Demo Laden",
-        "demoInstructions": "Du möchtest erst mal schauen, welche Lebensmittel du bei Ne'Na'Na einkaufen kannst? Stöbere durch unseren Demo Laden, um dir ein Bild zu machen, ohne dich registrieren zu müssen. ",
-        "description": "Um dich zu registrieren, musst du danach auf diese Seite zurückkehren und dir deinen bevorzugten Abholort aus der Karte auswählen."
-      },
-      "description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
-      "title": "Wähle deinen bevorzugten Abholort auf der Karte aus."
-    }
-  },
-  "redirecting": {
-    "description": "Du wirst in wenigen Sekunden zur neuen Seite weitergeleitet. Klicke auf Abbrechen oder drücke Esc, um einen anderen Abholort zu wählen",
-    "title": "Weiterleitung..."
-  },
-  "register": {
-    "box": {
-      "p1": "Um in diesem Laden einkaufen zu können, musst du dich bei Ne'Na'Na als Kunde registrieren. <2>Nur Kunden, die sich über dieses Formular registriert haben, können bei Ne'Na'Na einkaufen</2>. Fülle dazu das untenstehende Formular aus und sende es ab.",
-      "p2": "Sobald du als Kunde hinzugefügt wurdest, erhältst du eine Willkommens-E-Mail von Ne'Na'Na. Diese E-Mail enthält alle Informationen, die du zum Fortfahren benötigst, sowie Informationen zum Einkaufen (Informationen über Open Food Network, Zugang zum Depot, Bestellzyklusverfahren usw.).",
-      "title": "Anweisungen zur Registrierung"
-    },
-    "form": {
-      "description": {
-        "communication": "",
-        "email": "Die E-Mailadresse, die wir verwenden, um dich zu kontaktieren",
-        "name": "Dein Vor- und Nachname",
-        "phone": "Deine Telefonnummer unter welcher du tagsüber kontaktiert werden kannst"
-      },
-      "label": {
-        "communication": "Möchtest du den Newsletter von Ne'Na'Na abonnieren?",
-        "email": "Email Adresse",
-        "name": "Name",
-        "notificationsByEmail": "Ja, per Email",
-        "phone": "Telefon",
-        "termsAccepted": "Ich akzeptiere die Nutzungsbedingungen: Mit dem Absenden dieses Formulars erkläre ich mich damit einverstanden, dass Ne'Na'Na mich kontaktiert, um mich Willkommen zu heissen und mir Informationen zum weiteren Vorgehen zu geben. Ich erkläre mich damit einverstanden, dass mir Ne'Na'Na wöchentliche Bestellerinnerungen schicken darf. Von diesen kann ich mich jederzeit abmelden."
-      }
-    },
-    "title": "Ne'Na'Na Box Registrierung"
-  },
-  "registerStart": {
-    "actions": {
-      "continue": "Ohne Registrierung fortfahren",
-      "continueLegend": "Für bestehende Kunden mit OFN Account",
-      "register": "Registrieren",
-      "registerLegend": "Für neue Kunden"
-    },
-    "p1": "Um im Ne'Na'Na Laden einkaufen zu können, ist eine Registrierung erforderlich. Wenn du bereits bei Ne'Na'Na registriert bist und Anweisungen von unserem Team erhalten hast (vielleicht verwendest du diese App auf einem neuen Gerät?), kannst du ohne weitere Registrierung fortfahren und warten. Du wirst danach zu deinem ausgewählten Laden weitergeleitet.",
-    "title": "Du bist bereits bei Ne'Na'Na registriert?"
-  },
-  "registrationPending": {
-    "box": {
-      "p1": "Du hast dich bereits bei Ne'Na'Na registriert. Bitte überprüfe deine E-Mails, um Anweisungen zum Abschluss deiner Registrierung zu erhalten. Bitte registriere dich nicht erneut. Wenn du glaubst, dass ein Fehler aufgetreten ist, wende dich bitte an den Manager des Ladens.",
-      "title": "Registrierung bereits gesendet"
-    },
-    "title": "Deine Registrierung wurde gesendet"
-  },
-  "registrationSent": {
-    "box": {
-      "button": "Weiter zum Shop",
-      "p1": "Vielen Dank für deine Registrierung bei Ne'Na'Na. Bitte überprüfe deine E-Mails für weitere Anweisungen. Wir melden uns innerhalb von 1–2 Werktagen bei dir."
-    },
-    "title": "Deine Registrierung wurde gesendet"
-  },
-  "routes": {
-    "home": {
-      "description": "Wähle einen Laden aus, zu dem du beim nächsten Besuch dieser Seite weitergeleitet wirst",
-      "title": "Ne'Na'Na"
-    },
-    "register": {
-      "description": "Registriere dich für bei Ne'Na'Na, um direkt über diese Website auf einen Laden zuzugreifen.",
-      "title": "Ne'Na'Na Registration"
-    }
-  },
-  "store": {
-    "notAvailable": "Link zum Standort ist nicht verfügbar",
-    "selected": "Gewählt",
-    "selectedStore": "Ausgewählter Standort",
-    "unknown": "Unbekannter Standort"
-  },
-  "storeInfo": {
-    "address": "Adresse",
-    "contact": "Kontakt"
-  },
-  "storeMap": {
-    "noStores": "Es gibt keine Standorte, die auf der Karte angezeigt werden sollen"
-  },
-  "storeSelection": {
-    "allStates": "Alle Kantone",
-    "clearFilters": "Zurücksetzen",
-    "error": "Beim Laden der Standorte ist ein Fehler aufgetreten",
-    "noResults": "Keine Standorte gefunden",
-    "resultsCount_one": "Zeige {{count}} Standort",
-    "resultsCount_other": "Zeige {{count}} Standorte",
-    "searchPlaceholder": "Standorte suchen...",
-    "showList": "Liste anzeigen",
-    "showMap": "Karte anzeigen"
-  },
-  "userActions": {
-    "continueRegistration": "Registrierung fortsetzen",
-    "finalizeRegistration": "Ich habe die Registrierung abgeschlossen",
-    "goToSelection": "Zur Auswahl",
-    "navigateToStore": "Zur Standortseite",
-    "select": "Auswählen"
-  }
+	"actions": {
+		"cancel": "Abbrechen",
+		"hubInfo": "Information",
+		"info": "Mehr Informationen",
+		"register": "Registrieren"
+	},
+	"common": {
+		"404": {
+			"goBack": "Zurück",
+			"message": "Die gesuchte Seite existiert nicht.",
+			"title": "Seite nicht gefunden"
+		},
+		"footerText": "{{year}} Ne'Na'Na - Alle Rechte vorbehalten"
+	},
+	"home": {
+		"hero": {
+			"sub": "Netzwerk Natürliche Nahrung"
+		},
+		"info": {
+			"demo": {
+				"button": "Zum Demo Laden",
+				"demoInstructions": "Du möchtest erst mal schauen, welche Lebensmittel du bei Ne'Na'Na einkaufen kannst? Stöbere durch unseren Demo Laden, um dir ein Bild zu machen, ohne dich registrieren zu müssen. ",
+				"description": "Um dich zu registrieren, musst du danach auf diese Seite zurückkehren und dir deinen bevorzugten Abholort aus der Karte auswählen."
+			},
+			"description": "Um dir den Zugang zu deinem Laden zu erleichtern und zu beschleunigen, wird dein gewählter Abholort gespeichert und beim nächsten Besuch dieser Website automatisch ausgewählt.",
+			"title": "Wähle deinen bevorzugten Abholort auf der Karte aus."
+		}
+	},
+	"redirecting": {
+		"description": "Du wirst in wenigen Sekunden zur neuen Seite weitergeleitet. Klicke auf Abbrechen oder drücke Esc, um einen anderen Abholort zu wählen",
+		"title": "Weiterleitung..."
+	},
+	"register": {
+		"box": {
+			"p1": "Um in diesem Laden einkaufen zu können, musst du dich bei Ne'Na'Na als Kunde registrieren. <2>Nur Kunden, die sich über dieses Formular registriert haben, können bei Ne'Na'Na einkaufen</2>. Fülle dazu das untenstehende Formular aus und sende es ab.",
+			"p2": "Sobald du als Kunde hinzugefügt wurdest, erhältst du eine Willkommens-E-Mail von Ne'Na'Na. Diese E-Mail enthält alle Informationen, die du zum Fortfahren benötigst, sowie Informationen zum Einkaufen (Informationen über Open Food Network, Zugang zum Depot, Bestellzyklusverfahren usw.).",
+			"title": "Anweisungen zur Registrierung"
+		},
+		"form": {
+			"description": {
+				"communication": "",
+				"email": "Die E-Mailadresse, die wir verwenden, um dich zu kontaktieren",
+				"name": "Dein Vor- und Nachname",
+				"phone": "Deine Telefonnummer unter welcher du tagsüber kontaktiert werden kannst"
+			},
+			"label": {
+				"communication": "Möchtest du den Newsletter von Ne'Na'Na abonnieren?",
+				"email": "Email Adresse",
+				"name": "Name",
+				"notificationsByEmail": "Ja, per Email",
+				"phone": "Telefon",
+				"termsAccepted": "Ich akzeptiere die Nutzungsbedingungen: Mit dem Absenden dieses Formulars erkläre ich mich damit einverstanden, dass Ne'Na'Na mich kontaktiert, um mich Willkommen zu heissen und mir Informationen zum weiteren Vorgehen zu geben. Ich erkläre mich damit einverstanden, dass mir Ne'Na'Na wöchentliche Bestellerinnerungen schicken darf. Von diesen kann ich mich jederzeit abmelden."
+			}
+		},
+		"title": "Ne'Na'Na Box Registrierung"
+	},
+	"registerStart": {
+		"actions": {
+			"continue": "Ohne Registrierung fortfahren",
+			"continueLegend": "Für bestehende Kunden mit OFN Account",
+			"register": "Registrieren",
+			"registerLegend": "Für neue Kunden"
+		},
+		"p1": "Um im Ne'Na'Na Laden einkaufen zu können, ist eine Registrierung erforderlich. Wenn du bereits bei Ne'Na'Na registriert bist und Anweisungen von unserem Team erhalten hast (vielleicht verwendest du diese App auf einem neuen Gerät?), kannst du ohne weitere Registrierung fortfahren und warten. Du wirst danach zu deinem ausgewählten Laden weitergeleitet.",
+		"title": "Du bist bereits bei Ne'Na'Na registriert?"
+	},
+	"registrationPending": {
+		"box": {
+			"p1": "Du hast dich bereits bei Ne'Na'Na registriert. Bitte überprüfe deine E-Mails, um Anweisungen zum Abschluss deiner Registrierung zu erhalten. Bitte registriere dich nicht erneut. Wenn du glaubst, dass ein Fehler aufgetreten ist, wende dich bitte an den Manager des Ladens.",
+			"title": "Registrierung bereits gesendet"
+		},
+		"title": "Deine Registrierung wurde gesendet"
+	},
+	"registrationSent": {
+		"box": {
+			"button": "Weiter zum Shop",
+			"p1": "Vielen Dank für deine Registrierung bei Ne'Na'Na. Bitte überprüfe deine E-Mails für weitere Anweisungen. Wir melden uns innerhalb von 1–2 Werktagen bei dir."
+		},
+		"title": "Deine Registrierung wurde gesendet"
+	},
+	"routes": {
+		"home": {
+			"description": "Wähle einen Laden aus, zu dem du beim nächsten Besuch dieser Seite weitergeleitet wirst",
+			"title": "Ne'Na'Na"
+		},
+		"register": {
+			"description": "Registriere dich für bei Ne'Na'Na, um direkt über diese Website auf einen Laden zuzugreifen.",
+			"title": "Ne'Na'Na Registration"
+		}
+	},
+	"store": {
+		"notAvailable": "Link zum Standort ist nicht verfügbar",
+		"selected": "Gewählt",
+		"selectedStore": "Ausgewählter Standort",
+		"unknown": "Unbekannter Standort"
+	},
+	"storeInfo": {
+		"address": "Adresse",
+		"contact": "Kontakt"
+	},
+	"storeMap": {
+		"noStores": "Es gibt keine Standorte, die auf der Karte angezeigt werden sollen"
+	},
+	"storeSelection": {
+		"allStates": "Alle Kantone",
+		"clearFilters": "Zurücksetzen",
+		"error": "Beim Laden der Standorte ist ein Fehler aufgetreten",
+		"noResults": "Keine Standorte gefunden",
+		"resultsCount_one": "Zeige {{count}} Standort",
+		"resultsCount_other": "Zeige {{count}} Standorte",
+		"searchPlaceholder": "Standorte suchen...",
+		"showList": "Liste anzeigen",
+		"showMap": "Karte anzeigen"
+	},
+	"userActions": {
+		"continueRegistration": "Registrierung fortsetzen",
+		"finalizeRegistration": "Ich habe die Registrierung abgeschlossen",
+		"goToSelection": "Zur Auswahl",
+		"navigateToStore": "Zur Standortseite",
+		"select": "Auswählen"
+	}
 }

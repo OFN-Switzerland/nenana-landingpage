@@ -7,6 +7,7 @@ import { Form, href, useRevalidator, useRouteLoaderData } from 'react-router'
 import { StoreInfoOverlay } from '~/components/store-selection/store-info-overlay.tsx'
 import { Alert } from '~/components/ui/alert.tsx'
 import { Button } from '~/components/ui/button.tsx'
+import { plausibleClientEvent, StoreSelectionEvents } from '~/features/plausible'
 import { useLang } from '~/hooks/use-lang.tsx'
 import { cn } from '~/lib/utils.ts'
 import { type RootRouteLoaderData } from '~/root.tsx'
@@ -28,6 +29,10 @@ export const StoreCard: React.FC<Props> = ({ data, embedded }) => {
 	}, [loaderData, data.id])
 
 	const handleSelect = async () => {
+		void plausibleClientEvent({
+			name: StoreSelectionEvents.Select,
+			props: { storeId: data.id.toString(), storeName: data.name },
+		})
 		await revalidate()
 	}
 

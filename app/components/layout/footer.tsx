@@ -2,17 +2,19 @@ import { useTranslation } from 'react-i18next'
 import { href, Link } from 'react-router'
 
 import { Logo } from '~/components/theme/logo.tsx'
+import { useLang } from '~/hooks/use-lang.tsx'
 
 export const Footer: React.FC = () => {
 	const { t } = useTranslation()
+	const { lang } = useLang()
 	return (
 		<div className="mt-6 flex flex-row items-center justify-between md:mt-16">
-			<Link to={href('/')}>
+			<Link to={href('/:lang/home', { lang })}>
 				<Logo variant="sm" />
 			</Link>
 			<div className="flex items-center gap-2 text-xs">
 				<div>
-					{t('common.footerText', '{{year}} Ne\'Na\'Na - All rights reserved', {
+					{t('common.footerText', "{{year}} Ne'Na'Na - All rights reserved", {
 						year: new Date().getFullYear(),
 					})}
 				</div>

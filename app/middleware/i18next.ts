@@ -16,7 +16,7 @@ export const [i18nextMiddleware, getLocale, getInstance] = createI18nextMiddlewa
 			const firstPathSegment = new URL(request.url).pathname.split('/').at(1)
 			if (firstPathSegment && i18nConfig.supportedLngs.includes(firstPathSegment)) {
 				// URL locale takes precedence over everything else
-				logger.debug({ localeSource: 'URL path', locale: firstPathSegment })
+				logger.debug({ locale: firstPathSegment, localeSource: 'URL path' })
 				return firstPathSegment
 			}
 
@@ -30,13 +30,13 @@ export const [i18nextMiddleware, getLocale, getInstance] = createI18nextMiddlewa
 						i18nConfig.supportedLngs.includes(lang.code),
 					)
 					if (match) {
-						logger.debug({ localeSource: 'Accept-Language', locale: match.code })
+						logger.debug({ locale: match.code, localeSource: 'Accept-Language' })
 						locale = match.code
 					}
 				}
 			}
 
-			logger.debug({ localeSource: 'fallback', locale })
+			logger.debug({ locale, localeSource: 'fallback' })
 			return locale
 		},
 		order: ['custom', 'header'],

@@ -113,9 +113,8 @@ export default function Home() {
 			</div>
 			{loaderData?.isValidPreferences &&
 				loaderData?.preferences?.storeRedirectUrl &&
-				loaderData?.preferences?.storeSelectionStatus === StoreSelectionStatus.registration_completed && (
-				<RedirectOverlay />
-			)}
+				loaderData?.preferences?.storeSelectionStatus ===
+					StoreSelectionStatus.registration_completed && <RedirectOverlay />}
 			<DemoHub />
 		</>
 	)

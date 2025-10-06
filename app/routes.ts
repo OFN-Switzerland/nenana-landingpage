@@ -1,5 +1,7 @@
 import { layout, prefix, route, type RouteConfig } from '@react-router/dev/routes'
 
+import { plausibleEventsRoutes } from './features/plausible/routes'
+
 export default [
 	layout('./routes/layout.tsx', [
 		route('*', './routes/error-404.tsx'),
@@ -17,6 +19,6 @@ export default [
 	...prefix('api', [
 		route('locales/:lang/:ns?', './routes/api/locales.ts'),
 		route('health', './routes/api/healthcheck.ts'),
-		route('event', './routes/api/event.ts'),
 	]),
+	...plausibleEventsRoutes,
 ] satisfies RouteConfig

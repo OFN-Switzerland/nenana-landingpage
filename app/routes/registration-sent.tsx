@@ -13,6 +13,7 @@ import {
 import { H1 } from '~/components/typography/h1.tsx'
 import { P } from '~/components/typography/p.tsx'
 import { Button } from '~/components/ui/button.tsx'
+import { plausibleClientEvent, UserActionEvents } from '~/features/plausible'
 import { getUserPreferences } from '~/lib/cookies/store-selection/get-user-preferences.tsx'
 import { userPreferencesCookie } from '~/lib/cookies/store-selection/store-selection-cookie.server.ts'
 import { StoreSelectionStatus } from '~/lib/cookies/store-selection/store-selection-status.ts'
@@ -22,11 +23,11 @@ import { ErrorBoundaryShared } from '~/services/error-boundary-shared.tsx'
 import { type Route as RootRoute } from '../../.react-router/types/app/+types/root.ts'
 
 export const loader = async ({ context, request }: LoaderFunctionArgs) => {
-	const { t } = getInstance(context as any)
+	const { language: lang, t } = getInstance(context as any)
 	const preferences = await getUserPreferences(request)
 
 	if (!preferences || !preferences.preferences.storeId) {
-		return redirect(href('/'))
+		return redirect(href('/:lang/home', { lang }))
 	}
 
 	return data(
@@ -34,9 +35,9 @@ export const loader = async ({ context, request }: LoaderFunctionArgs) => {
 			...preferences,
 			description: t(
 				'routes.register.description',
-				'Register with Ne\'Na\'Na to access a store directly via this website.',
+				"Register with Ne'Na'Na to access a store directly via this website.",
 			),
-			title: t('routes.register.title', 'Ne\'Na\'Na Registration'),
+			title: t('routes.register.title', "Ne'Na'Na Registration"),
 		},
 		{
 			headers: {
@@ -64,8 +65,9 @@ export function ErrorBoundary(args: RootRoute.ErrorBoundaryProps) {
 }
 
 export default function RegistrationSent() {
-	const { t } = useTranslation()
+	const { i18n, t } = useTranslation()
 	const loaderData = useLoaderData<typeof loader>()
+	const lang = i18n.language
 
 	return (
 		<>
@@ -77,11 +79,22 @@ export default function RegistrationSent() {
 				</Trans>
 			</P>
 			{loaderData.selectedStore?.forwardUrl ? (
-				<a href={loaderData.selectedStore.forwardUrl} target="_blank" rel="noopener noreferrer">
-					<Button>{t('registrationSent.box.button', 'Continue to the shop')}</Button>
+				<a href={loaderData.selectedStore.forwardUrl} rel="noopener noreferrer" target="_blank">
+					<Button
+						onClick={() =>
+							void plausibleClientEvent({
+								name: UserActionEvents.ContinueToShop,
+								props: {
+									storeId: loaderData.selectedStore?.id?.toString() || '',
+									storeName: loaderData.selectedStore?.name || '',
+								},
+							})
+						}>
+						{t('registrationSent.box.button', 'Continue to the shop')}
+					</Button>
 				</a>
 			) : (
-				<Link to={href('/')}>
+				<Link to={href('/:lang/home', { lang })}>
 					<Button>{t('registrationSent.box.button', 'Continue to the shop')}</Button>
 				</Link>
 			)}
