@@ -2,6 +2,7 @@ import { render } from '@react-email/render'
 import React from 'react'
 
 import ManagerNotification from '../../../emails/hub-application/manager-notification'
+import UserNotificationHasTelegram from '../../../emails/hub-application/user-notification-has-telegram.tsx'
 import { logger } from '../logger'
 import { sendMail } from './sendmail'
 
@@ -74,6 +75,10 @@ export async function sendHubApplicationEmails({
 		})
 
 		// Render email templates using react-email's render function
+		const userEmailHtml = await render(
+			<UserNotificationHasTelegram customerData={customerData} languageCode={languageCode} />,
+		)
+
 		const registrationRecipientEmailHtml = await render(
 			<ManagerNotification
 				customerData={customerData}
@@ -82,14 +87,26 @@ export async function sendHubApplicationEmails({
 			/>,
 		)
 
+		// Send confirmation email to the customer
+		const userMailPromise = sendMail({
+			from: process.env.MAIL_FROM,
+			html: userEmailHtml,
+			replyTo: registrationRecipientEmail,
+			subject: messages[languageCode]?.mailSubjectUser || '',
+			to: customerData.email,
+		})
+
 		// Send notification email to the hub manager
-		await sendMail({
+		const managerMailPromise = sendMail({
 			from: process.env.MAIL_FROM,
 			html: registrationRecipientEmailHtml,
 			replyTo: customerData.email,
 			subject: messages[languageCode]?.mailSubjectManager || '',
 			to: registrationRecipientEmail,
 		})
+
+		// Send emails in parallel
+		await Promise.all([userMailPromise, managerMailPromise])
 
 		logger.debug('Successfully sent hub application emails', {
 			customerEmail: customerData.email,
