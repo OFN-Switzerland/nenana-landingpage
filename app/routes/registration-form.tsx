@@ -42,7 +42,6 @@ const registrationSchema = z.object({
 	email: z.string().email({ message: 'Please enter a valid email address' }),
 	name: z.string().min(2, { message: 'Name must be at least 2 characters long' }),
 	notificationsByEmail: z.boolean(),
-	notificationsByTelegram: z.boolean(),
 	phone: z
 		.string()
 		.min(5, { message: 'Phone number must be at least 5 characters long' })
@@ -136,7 +135,6 @@ export async function action({ context, request }: ActionFunctionArgs) {
 		email: data.email,
 		name: data.name,
 		notificationsByEmail: data.notificationsByEmail,
-		notificationsByTelegram: data.notificationsByTelegram,
 		phone: data.phone,
 	}
 

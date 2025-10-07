@@ -36,7 +36,6 @@ const messages = {
 		noNotifications: 'Keine Benachrichtigungen',
 		notifications: 'Benachrichtigungen',
 		notificationsByEmail: 'E-Mail',
-		notificationsByTelegram: 'Telegram',
 		phone: 'Telefon',
 		preview: 'Neue Kundenregistrierung erhalten',
 		title: "Neue Ne'Na'Na Box Registrierung",
@@ -58,7 +57,6 @@ const messages = {
 		noNotifications: 'No notifications',
 		notifications: 'Notifications',
 		notificationsByEmail: 'Email',
-		notificationsByTelegram: 'Telegram',
 		phone: 'Phone',
 		preview: 'New customer registration received',
 		title: "New Ne'Na'Na Box Registration",
@@ -73,7 +71,6 @@ type Props = {
 		email: string
 		name: string
 		notificationsByEmail: boolean
-		notificationsByTelegram: boolean
 		phone: string
 	}
 	hubData: {
@@ -95,14 +92,11 @@ export const ManagerNotification = ({ customerData, hubData, languageCode = 'en'
 		if (customerData.notificationsByEmail) {
 			notifications.push(t('notificationsByEmail'))
 		}
-		if (customerData.notificationsByTelegram) {
-			notifications.push(t('notificationsByTelegram'))
-		}
 		if (notifications.length === 0) {
 			return t('noNotifications')
 		}
 		return notifications.join(', ')
-	}, [customerData.notificationsByEmail, customerData.notificationsByTelegram, t])
+	}, [customerData.notificationsByEmail, t])
 
 	return (
 		<MailBody languageCode={languageCode} previewText={t('preview')}>
@@ -178,7 +172,6 @@ ManagerNotification.PreviewProps = {
 		email: 'a@b.c',
 		name: 'John Doe',
 		notificationsByEmail: true,
-		notificationsByTelegram: false,
 		phone: '+49 123 4567890',
 	},
 	hubData: {
