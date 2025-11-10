@@ -39,7 +39,7 @@
 		},
 		"form": {
 			"description": {
-				"communication": "Ne'Na'Na kann dir Erinnerungen senden, damit du deinen wöchentlichen Bestellzyklus nicht verpasst, sowie Informationen über Veranstaltungen und Sonderangebote. Du kannst keine, eine oder beide Optionen wählen.",
+				"communication": "Ne'Na'Na kann dir Erinnerungen senden, damit du deinen wöchentlichen Bestellzyklus nicht verpasst, sowie Informationen über Veranstaltungen und Sonderangebote.",
 				"email": "Die E-Mailadresse, die wir verwenden, um dich zu kontaktieren",
 				"name": "Dein Vor- und Nachname",
 				"phone": "Deine Telefonnummer unter welcher du tagsüber kontaktiert werden kannst"
@@ -117,7 +117,7 @@
 		"continueRegistration": "Registrierung fortsetzen",
 		"finalizeRegistration": "Ich habe die Registrierung abgeschlossen",
 		"goToSelection": "Zur Auswahl",
-		"navigateToStore": "Zur Standortseite",
+		"navigateToStore": "Zur Laden",
 		"select": "Auswählen"
 	}
 }
